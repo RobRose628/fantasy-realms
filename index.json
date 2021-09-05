@@ -211,7 +211,7 @@
             "name": "Corrupted Dwarves",
             "id": "corrupted_dwarves",
             "url": "corrupted_dwarves.json",
-            "color": "#360c30",
+            "color": "#3d3354",
             "alliance": "chaos",
             "description": "Twisted by the whispers of dead gods, the Corrupted Dwarves have learned to put chaotic magic into their machines.  They fight as much at the whims of their dark masters as their own choice.",
             "subfactions": {
