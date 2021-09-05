@@ -1,0 +1,129 @@
+{
+    "name": "Vermin Colonies",
+    "id": "ratmen_colonies",
+    "author": "Xekon#8266",
+    "units": {
+        "warlord": {
+            "name": "Vermin Warlord",
+            "description": "",
+            "category": "hero",
+            "models": [
+                {
+                    "name": "Vermin Warlord",
+                    "movement": 7,
+                    "courage": 6,
+                    "shoot": 5,
+                    "fight": 6,
+                    "defense": 6,
+                    "reflexes": 6,
+                    "weapons": [{"id": "great_weapon", "count": 3}],
+                    "min": 1,
+                    "max": 1,
+                    "rules": [{"id": "wounds", "x": 3}, "leader", {"id": "ratmen_tactics", "x": 1}],
+                    "options": [
+                        {
+                            "replaceWeapon": [{"id": "great_weapon", "count": 3}],
+                            "withWeapon": [{"id": "heavy_polearm", "count": 3}, {"id": "great_weapon", "count": 4}, {"id": "grand_weapon", "count": 3}]
+                        },
+                        {"addRule": ["enchanted_shield", "runic_armor"], "limit": 1}
+                    ]
+                }
+            ]
+        },
+        "vermin_warriors": {
+            "name": "Vermin Warriors",
+            "description": "",
+            "category": "core",
+            "models": [
+                {
+                    "name": "Vermin Warrior",
+                    "movement": 7,
+                    "courage": 4,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 5,
+                    "reflexes": 5,
+                    "weapons": ["handweapon"],
+                    "min": 10,
+                    "max": 30,
+                    "options": [{"replaceWeapon": ["handweapon"], "withWeapon": ["spear", "sling"], "modelLimit": "all"}, {"addWeapon": ["shield"], "modelLimit": "all"}]
+                }
+            ]
+        },
+        "vermin_elites": {
+            "name": "Vermin Elites",
+            "description": "",
+            "category": "core",
+            "models": [
+                {
+                    "name": "Vermin Elite",
+                    "movement": 7,
+                    "courage": 5,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 5,
+                    "reflexes": 5,
+                    "weapons": [{"id": "heavy_polearm", "count": 2}],
+                    "min": 10,
+                    "max": 30,
+                    "options": [{"addWeapon": ["shield"], "modelLimit": "all"}]
+                }
+            ]
+        },
+        "prophet": {
+            "name": "Vermin Prophet",
+            "description": "",
+            "category": "hero",
+            "models": [
+                {
+                    "name": "Vermin Prophet",
+                    "movement": 7,
+                    "courage": 6,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 5,
+                    "reflexes": 6,
+                    "weapons": ["light_handweapon", "great_staff"],
+                    "min": 1,
+                    "max": 1,
+                    "rules": [{"id": "wounds", "x": 3}, "leader", {"id": "power", "x": 2}]
+                }
+            ]
+        },
+        "engineer": {
+            "name": "Vermin Engineer",
+            "description": "",
+            "category": "hero",
+            "models": [
+                {
+                    "name": "Vermin Engineer",
+                    "movement": 7,
+                    "courage": 6,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 5,
+                    "reflexes": 6,
+                    "weapons": ["heavy_pistol", "polearm"],
+                    "min": 1,
+                    "max": 1,
+                    "rules": [{"id": "wounds", "x": 3}, "leader", {"id": "power", "x": 1}, "runic_armor"],
+                    "options": [{"replaceWeapon": ["heavy_pistol"], "withWeapon": ["rocket_launcher", "handgun", "repeater_handgun"]}]
+                }
+            ]
+        }
+    },
+    "weapons": {"sling": {"name": "Sling", "attacks": 1, "short": 9, "medium": 18, "rules": ["assault"]}},
+    "rules": {
+        "ratmen_tactics": {
+            "name": "Ratmen Tactics",
+            "inputs": ["x"],
+            "description": "When this unit is activated, choose up to X friendly _Infantry_ units within 6\" to receive one of the following bonuses until the end of the round: \n * Re-roll failed Accuracy tests of 9+ \n * Re-roll failed Strength tests of 9+",
+            "points": ["rule.x", {"multiply": 10}]
+        },
+        "runic_armor": {"name": "Runic Armor", "description": "Roll a D10 each time this model is hit. On a 3 or less, that hit is ignored. ", "points": 6}
+    },
+    "powers": {},
+    "strategies": [],
+    "relics": [],
+    "color": "#3D3636"
+}
