@@ -2,7 +2,7 @@
     "name": "Merchant Dwarves",
     "id": "merchant_dwarves",
     "author": "Xekon#8266",
-    "description": "A race of travelling merchants and glory-seekers with advanced weaponry.",
+    "description": "Famous for their gold-lust, the Merchant Dwarves hire themselves out to any force that can afford them. Their powerful technology and airships make them a dangerous foe.",
     "alliance": "order",
     "units": {
         "lord_navigator": {
@@ -60,8 +60,8 @@
                     "fight": 6,
                     "defense": 8,
                     "reflexes": 6,
-                    "rules": [{"id": "wounds", "x": 4}, "repair_toolkit", "leader", {"id": "blackpowder_tactics", "x": 1}],
-                    "weapons": [{"id": "chainsaw", "count": 3}, "steam_cannon", {"id": "volley_gun", "count": 2}, {"id": "heavy_pistol", "count": 2}],
+                    "rules": [{"id": "wounds", "x": 4}, "repair_toolkit", "leader", {"id": "blackpowder_tactics", "x": 1}, "fly"],
+                    "weapons": [{"id": "chainsaw", "count": 3}, "handcannon", "heavy_pistol", "volley_gun"],
                     "min": 1,
                     "max": 1,
                     "options": [{"replaceRule": [{"id": "blackpowder_tactics", "x": 1}], "withRule": [{"id": "blackpowder_tactics", "x": 2}]}]
@@ -82,7 +82,7 @@
                     "defense": 8,
                     "reflexes": 6,
                     "rules": [{"id": "wounds", "x": 3}, "leader", {"id": "ranger_tactics", "x": 1}],
-                    "weapons": [{"id": "grand_hammer", "count": 3}, {"id": "pistol", "count": 3}],
+                    "weapons": [{"id": "grand_hammer", "count": 3}, {"id": "repeater_pistol", "count": 2}],
                     "options": [{"addRule": ["suit"]}, {"replaceRule": [{"id": "ranger_tactics", "x": 1}], "withRule": [{"id": "ranger_tactics", "x": 2}]}],
                     "min": 1,
                     "max": 1
@@ -103,7 +103,7 @@
                     "defense": 7,
                     "reflexes": 6,
                     "rules": [{"id": "wounds", "x": 3}, "leader", {"id": "power", "x": 2}],
-                    "weapons": [{"id": "handweapon", "count": 2}, "steam_cannon"],
+                    "weapons": [{"id": "handweapon", "count": 2}, "chemthrower"],
                     "min": 1,
                     "max": 1
                 }
@@ -126,8 +126,8 @@
                     "min": 10,
                     "max": 30,
                     "options": [
-                        {"replaceWeapon": ["light_pistol", "handweapon"], "withWeapon": [{"id": "heavy_polearm", "count": 2}, "harpoon_rifle", "volley_gun"], "modelLimit": "3/10"},
-                        {"replaceWeapon": ["light_pistol"], "withWeapon": [{"id": "light_pistol", "count": 3}], "modelLimit": 1}
+                        {"replaceWeapon": ["light_pistol", "handweapon"], "withWeapon": [{"id": "pike", "count": 2}, "harpoon_rifle", "volley_gun"], "modelLimit": "3/10"},
+                        {"replaceWeapon": ["light_pistol"], "withWeapon": [{"id": "repeater_pistol", "count": 2}, "flamethrower_pistol"], "modelLimit": "1/10"}
                     ]
                 }
             ],
@@ -148,8 +148,8 @@
                     "reflexes": 5,
                     "weapons": ["light_handweapon", {"id": "handgun", "count": 2}],
                     "min": 5,
-                    "max": 10,
-                    "options": [{"replaceWeapon": [{"id": "handgun", "count": 2}], "withWeapon": ["steam_cannon", {"id": "shotgun", "count": 3}, "burst_rifle"], "modelLimit": "2/5"}]
+                    "max": 20,
+                    "options": [{"replaceWeapon": [{"id": "handgun", "count": 2}], "withWeapon": [{"id": "shotgun", "count": 2}, "chemthrower", "handcannon", "mortar_rifle", "volley_gun"]}]
                 }
             ],
             "options": [{"addRule": [["champion", "clockwork_companion"]], "modelLimit": 1}, {"addRule": ["banner"], "modelLimit": 1}, {"addRule": ["musician"], "modelLimit": 1}]
@@ -167,16 +167,16 @@
                     "fight": 6,
                     "defense": 7,
                     "reflexes": 5,
-                    "weapons": [{"id": "heavy_pistol", "count": 2}, "heavy_polearm", "frag_grenade"],
+                    "weapons": ["frag_grenade", "flamethrower_pistol", {"id": "pike", "count": 2}],
                     "min": 3,
-                    "max": 6,
+                    "max": 15,
                     "options": [
                         {
-                            "replaceWeapon": [{"id": "heavy_pistol", "count": 2}, "heavy_polearm"],
-                            "withWeapon": [{"id": "harpoon_rifle", "count": 2}, "net_launcher", "drill_cannon"],
+                            "replaceWeapon": ["flamethrower_pistol", {"id": "pike", "count": 2}],
+                            "withWeapon": [{"id": "harpoon_rifle", "count": 2}, "net_launcher", {"id": "drill_cannon", "count": 2}],
                             "modelLimit": "1/3"
                         },
-                        {"replaceWeapon": [{"id": "heavy_pistol", "count": 2}, "heavy_polearm"], "withWeapon": ["volley_gun"], "modelLimit": "1/3"}
+                        {"replaceWeapon": ["flamethrower_pistol", {"id": "pike", "count": 2}], "withWeapon": [{"id": "volley_gun", "count": 2}], "modelLimit": "1/3"}
                     ]
                 }
             ],
@@ -196,12 +196,16 @@
                     "fight": 6,
                     "defense": 7,
                     "reflexes": 5,
-                    "weapons": ["chainsaw", {"id": "light_pistol", "count": 3}],
+                    "weapons": [{"id": "chainsaw", "count": 2}, "repeater_pistol"],
                     "min": 3,
-                    "max": 6,
+                    "max": 15,
                     "options": [
-                        {"replaceWeapon": ["chainsaw", {"id": "light_pistol", "count": 3}], "withWeapon": [{"id": "harpoon_rifle", "count": 2}, "net_launcher"], "modelLimit": "1/3"},
-                        {"replaceWeapon": ["chainsaw", {"id": "light_pistol", "count": 3}], "withWeapon": ["volley_gun"], "modelLimit": "1/3"}
+                        {
+                            "replaceWeapon": [{"id": "chainsaw", "count": 2}, "repeater_pistol"],
+                            "withWeapon": [{"id": "harpoon_rifle", "count": 2}, "net_launcher", {"id": "drill_cannon", "count": 2}],
+                            "modelLimit": "1/3"
+                        },
+                        {"replaceWeapon": [{"id": "chainsaw", "count": 2}, "repeater_pistol"], "withWeapon": ["volley_gun"], "modelLimit": "1/3"}
                     ]
                 }
             ],
@@ -221,9 +225,9 @@
                     "fight": 5,
                     "defense": 9,
                     "reflexes": 6,
-                    "rules": ["fly", "damage_chart"],
-                    "weapons": ["mortar", "light_bomb", "volley_gun", "crushing_hull", "torpedoes"],
-                    "options": [{"replaceWeapon": ["mortar"], "withWeapon": ["drill_cannon", "burst_cannon"]}],
+                    "rules": ["damage_chart", {"id": "impact", "x": 3}, "hover_mode", "aircraft"],
+                    "weapons": ["mortar", "light_bomb", "torpedoes", {"id": "carbine", "count": 2}],
+                    "options": [{"replaceWeapon": ["mortar"], "withWeapon": ["drill_cannon"]}],
                     "min": 1,
                     "max": 1
                 }
@@ -243,9 +247,9 @@
                     "fight": 5,
                     "defense": 10,
                     "reflexes": 6,
-                    "rules": ["fly", "damage_chart", {"id": "transport", "x": 5}, {"id": "open_topped", "x": 5}],
-                    "weapons": ["mortar", "medium_bomb", "volley_gun", "crushing_hull", {"id": "torpedoes", "count": 2}],
-                    "options": [{"replaceWeapon": ["mortar"], "withWeapon": ["harpoon_rifle_warmachine", "burst_cannon"]}],
+                    "rules": ["damage_chart", {"id": "transport", "x": 5}, {"id": "open_topped", "x": 5}, {"id": "impact", "x": 3}, "hover_mode", "aircraft"],
+                    "weapons": ["mortar", "medium_bomb", {"id": "torpedoes", "count": 2}, {"id": "carbine", "count": 4}],
+                    "options": [{"replaceWeapon": ["mortar"], "withWeapon": ["harpoon_rifle_warmachine"]}],
                     "min": 1,
                     "max": 1
                 }
@@ -265,9 +269,9 @@
                     "fight": 5,
                     "defense": 12,
                     "reflexes": 6,
-                    "rules": ["fly", "damage_chart", {"id": "transport", "x": 10}, {"id": "open_topped", "x": 10}],
-                    "weapons": [{"id": "crushing_hull", "count": 2}, "heavy_bomb", {"id": "torpedoes", "count": 4}, "heavy_volley_gun"],
-                    "options": [{"replaceWeapon": ["heavy_volley_gun"], "withWeapon": ["rocket_battery", "heavy_mortar"]}],
+                    "rules": ["damage_chart", {"id": "transport", "x": 10}, {"id": "open_topped", "x": 10}, {"id": "impact", "x": 6}, "hover_mode", "aircraft"],
+                    "weapons": ["heavy_bomb", {"id": "torpedoes", "count": 4}, {"id": "carbine", "count": 8}, {"id": "volley_gun", "count": 2}],
+                    "options": [{"replaceWeapon": [{"id": "volley_gun", "count": 2}], "withWeapon": [{"id": "mortar", "count": 2}, {"id": "harpoon_rifle_warmachine", "count": 2}]}],
                     "min": 1,
                     "max": 1
                 }
@@ -277,26 +281,8 @@
     },
     "weapons": {},
     "rules": {
-        "brew": {"name": "Dwarven Brew", "description": "Once per game when you activate this unit, you may heal D3 wounds that have been allocated to this unit."},
         "suit": {"name": "Skybound Suit", "description": "This model gains +3\" Movement, Wounds(+1) and may ignore terrain and other models without the Fly special rule when moving.", "points": 15},
-        "clockwork_companion": {"name": "Clockwork Companion", "description": "This model and its unit re-rolls failed hit rolls of 9+ when shooting.", "points": 5},
-        "mastercrafted_armor": {
-            "name": "Mastercrafted Armor",
-            "description": "This model gains +1 to their Save and causes 3 Melee hits with AP(1) when it successfully charges an enemy unit.",
-            "points": 15
-        }
-    },
-    "powers": {
-        "aetherwinds": {"name": "Aetherwinds", "description": "Target friendly unit within 12\" may immediately make a free move action. This power may only be cast once per turn.", "charge": 7},
-        "aethershock": {"name": "Aethershock", "description": "Target enemy unit within 12\" takes 3 hits with AP(3). This power may only be cast once per turn.", "charge": 6},
-        "mist": {"name": "Concealing Mist", "description": "Target friendly unit within 12\" gets -1 to be hit the next time it is attacked. This power may be cast unlimited times.", "charge": 6},
-        "cloudburst": {"name": "Cloudburst", "description": "Target enemy unit within 12\" gets -1 Accuracy until the end of the round. This power may be cast unlimited times.", "charge": 6},
-        "gilded_burden": {
-            "name": "Gilded Burden",
-            "description": "Target enemy unit within 12\" can only make one movement action next time it is activated. This power may only be cast once per turn.",
-            "charge": 7
-        },
-        "lead": {"name": "Steel to Lead", "description": "Target enemy unit within 12\" gets -1 Strength until the end of the round. This power may be cast unlimited times.", "charge": 7}
+        "clockwork_companion": {"name": "Clockwork Companion", "description": "This model and its unit re-rolls failed hit rolls of 9+ when shooting.", "points": 5}
     },
     "strategies": [
         {
@@ -310,7 +296,7 @@
             "name": "Stubborn",
             "phase": "activation",
             "description": "Use before activating a unit. That unit may immediately remove up to 2 Shock.",
-            "flavor": "Not letting such nuisance as sure defeat break them has made them withstand so many onslaughts.",
+            "flavor": "Not letting such nuisance as sure defeat break them has made them withstand many onslaughts.",
             "cost": 1
         },
         {
@@ -319,22 +305,6 @@
             "description": "Use when a _Dwarf Infantry_ unit is charged. The charging unit takes 4 automatic hits with AP0.",
             "flavor": "Novice Engineers build these to learn the intricate mechanism of greater warmachines.",
             "cost": 1
-        }
-    ],
-    "relics": [
-        {
-            "name": "Hidden Stash",
-            "description": "Upgrade one _Leader_ model with Dwarven Brew.",
-            "flavor": "Dwarves are known for their love of alcohol, which they even carry into battle.",
-            "points": 10,
-            "rule": "brew"
-        },
-        {
-            "name": "Mastercrafted Armor",
-            "description": "Upgrade one _Leader_ model with Mastercrafted Armor.",
-            "flavor": "Made from the strongest metals and inscribed with runes of power, its a sign of wealth.",
-            "points": 15,
-            "rule": "mastercrafted_armor"
         }
     ]
 }

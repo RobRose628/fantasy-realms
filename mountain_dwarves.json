@@ -165,11 +165,11 @@
                     "defense": 6,
                     "reflexes": 6,
                     "rules": [{"id": "leader_x", "x": "Warmachine"}, "repair_toolkit", {"id": "wounds", "x": 3}, {"id": "blackpowder_tactics", "x": 1}],
-                    "weapons": [{"id": "heavy_pistol", "count": 3}, {"id": "hammer", "count": 4}],
+                    "weapons": [{"id": "heavy_repeater_pistol", "count": 2}, {"id": "hammer", "count": 4}],
                     "min": 1,
                     "max": 1,
                     "options": [
-                        {"replaceWeapon": [{"id": "heavy_pistol", "count": 3}], "withWeapon": [{"id": "handgun", "count": 3}, {"id": "shotgun", "count": 3}, {"id": "repeater_handgun", "count": 3}]},
+                        {"replaceWeapon": [{"id": "heavy_repeater_pistol", "count": 2}], "withWeapon": [{"id": "handgun", "count": 3}, {"id": "shotgun", "count": 3}, "volley_gun"]},
                         {"replaceWeapon": [{"id": "hammer", "count": 4}], "withWeapon": [{"id": "great_hammer", "count": 4}]},
                         {"replaceRule": [{"id": "blackpowder_tactics", "x": 1}], "withRule": [{"id": "blackpowder_tactics", "x": 2}]}
                     ]
@@ -264,9 +264,17 @@
             "subfactions": ["none"],
             "options": [{"addRule": ["champion"], "modelLimit": 1}, {"addRule": ["banner"], "modelLimit": 1}, {"addRule": ["musician"], "modelLimit": 1}]
         },
+        "dwarf_shieldbreakers": {
+            "name": "Dwarven Shieldbreakers",
+            "description": "A squad of dwarven soldiers specialised in breaking enemy formations.",
+            "category": "core",
+            "models": [{"name": "Shieldbreaker", "movement": 5, "courage": 5, "shoot": 5, "fight": 6, "defense": 6, "reflexes": 5, "weapons": ["grand_hammer"], "min": 10, "max": 30}],
+            "subfactions": ["none"],
+            "options": [{"addRule": ["champion"], "modelLimit": 1}, {"addRule": ["banner"], "modelLimit": 1}, {"addRule": ["musician"], "modelLimit": 1}]
+        },
         "dwarf_veterans": {
             "name": "Dwarven Veterans",
-            "description": "A squad of dwarven veterans.",
+            "description": "A sguad of dwarven veteran.",
             "category": "core",
             "models": [
                 {
@@ -277,15 +285,15 @@
                     "fight": 6,
                     "defense": 6,
                     "reflexes": 5,
-                    "weapons": ["grand_axe"],
+                    "weapons": ["handweapon", "shield"],
                     "min": 10,
                     "max": 30,
                     "rules": ["fearless"],
-                    "options": [{"replaceWeapon": ["grand_axe"], "withWeapon": ["grand_hammer"], "modelLimit": "all"}]
+                    "options": [{"replaceWeapon": ["handweapon", "shield"], "withWeapon": [["spear", "shield"], "great_weapon"], "modelLimit": "all"}]
                 }
             ],
-            "options": [{"addRule": ["champion"], "modelLimit": 1}, {"addRule": ["banner"], "modelLimit": 1}, {"addRule": ["musician"], "modelLimit": 1}],
-            "subfactions": ["none"]
+            "subfactions": ["none"],
+            "options": [{"addRule": ["champion"], "modelLimit": 1}, {"addRule": ["banner"], "modelLimit": 1}, {"addRule": ["musician"], "modelLimit": 1}]
         },
         "veteran_roughriders": {
             "name": "Dwarven Veterans on War-Beasts",
@@ -348,7 +356,7 @@
                     "defense": 6,
                     "reflexes": 5,
                     "weapons": ["handgun", "light_handweapon"],
-                    "options": [{"replaceWeapon": ["handgun"], "withWeapon": [["heavy_pistol", "frag_grenade"]], "modelLimit": 1}],
+                    "options": [{"replaceWeapon": ["handgun"], "withWeapon": [["heavy_pistol", "frag_grenade"]], "modelLimit": "1/10"}],
                     "max": 30,
                     "min": 10
                 }
@@ -450,7 +458,7 @@
                     "name": "Hellblaster",
                     "movement": 5,
                     "shoot": 6,
-                    "weapons": ["flamethrower_cannon"],
+                    "weapons": ["flamethrower_warmachine"],
                     "rules": ["damage_chart"],
                     "min": 1,
                     "max": 1,
@@ -491,7 +499,7 @@
             "category": "rare",
             "models": [
                 {
-                    "options": [{"replaceWeapon": ["cannon"], "withWeapon": ["flamethrower_cannon"]}],
+                    "options": [{"replaceWeapon": ["cannon"], "withWeapon": ["flamethrower_warmachine"]}],
                     "name": "Forgefire Golem",
                     "movement": 5,
                     "fight": 7,
@@ -539,15 +547,15 @@
                     "name": "Light Gyrocopter",
                     "movement": 10,
                     "shoot": 6,
-                    "weapons": ["burst_cannon", "light_bomb", "crushing_hull"],
-                    "rules": [{"id": "wounds", "x": 2}, "fly", {"id": "impact", "x": 1}],
-                    "min": 1,
-                    "max": 1,
-                    "defense": 7,
+                    "defense": 8,
                     "courage": 5,
                     "reflexes": 5,
                     "fight": 5,
-                    "options": [{"replaceWeapon": ["burst_cannon"], "withWeapon": ["mortar"]}]
+                    "options": [{"replaceWeapon": ["mortar"], "withWeapon": ["flamethrower_warmachine"]}],
+                    "weapons": ["mortar", "light_bomb"],
+                    "rules": [{"id": "wounds", "x": 2}, "hover_mode", {"id": "impact", "x": 3}, "aircraft"],
+                    "min": 1,
+                    "max": 5
                 }
             ],
             "keywords": ["Warmachine"],
@@ -562,11 +570,11 @@
                     "name": "Heavy Gyrocopter",
                     "movement": 10,
                     "shoot": 6,
-                    "weapons": [{"id": "heavy_bomb", "count": 2}, "crushing_hull", "volley_gun"],
-                    "rules": [{"id": "wounds", "x": 3}, "fly", {"id": "impact", "x": 1}],
+                    "weapons": [{"id": "heavy_bomb", "count": 2}, "volley_gun"],
+                    "rules": [{"id": "wounds", "x": 3}, {"id": "impact", "x": 3}, "hover_mode", "aircraft"],
                     "min": 1,
-                    "max": 1,
-                    "defense": 8,
+                    "max": 5,
+                    "defense": 9,
                     "courage": 5,
                     "reflexes": 5,
                     "fight": 5
@@ -576,7 +584,6 @@
             "subfactions": ["none"]
         }
     },
-    "weapons": {},
     "rules": {"brew": {"name": "Dwarven Brew", "description": "Once per game when you activate this unit, you may heal D3 wounds that have been allocated to this model."}},
     "powers": {},
     "strategies": [
