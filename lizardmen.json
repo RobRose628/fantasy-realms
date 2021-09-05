@@ -109,15 +109,15 @@
             "keywords": ["Infantry", "Gecko"],
             "models": [
                 {
-                    "options": [{"replaceWeapon": ["blowpipe"], "withWeapon": ["shield"]}, {"addWeapon": "javelin"}, {"addRule": ["champion"], "modelLimit": 1}],
+                    "options": [{"replaceWeapon": ["handweapon", "shield"], "withWeapon": [["handweapon", "blowpipe"], ["blowpipe", "light_handweapon", "shield"], ["javelin", "light_handweapon", "shield"]]}, {"addWeapon": "shield"}, {"addRule": ["champion"], "modelLimit": 1}],
                     "name": "Gecko Warrior",
-                    "movement": 6,
+                    "movement": 7,
                     "courage": 5,
                     "shoot": 4,
                     "fight": 5,
                     "defense": 4,
-                    "reflexes": 6,
-                    "weapons": ["blowpipe", "handweapon"],
+                    "reflexes": 5,
+                    "weapons": ["handweapon", "shield"],
                     "min": 10,
                     "max": 30
                 }
