@@ -198,13 +198,22 @@
             "description": "The myriad of Human Kingdoms are mercurial and quick-blooded, wanting only peace one generation while seeking to conquer the world the next - and well-equipped for either."
         },
         "lizardmen": {
-            "version": "0.1",
+            "version": "1.0",
             "name": "Lizardmen",
             "id": "lizardmen",
             "url": "lizardmen.json",
             "color": "#087194",
             "alliance": "order",
             "description": "A race of relentless jungle-dwelling lizards who who believe they are the rightful inheritors to the world."
+        },
+        "ratmen_colonies": {
+            "version": "1.0",
+            "name": "Vermin Colonies",
+            "id": "ratmen_colonies",
+            "url": "ratmen_colonies.json",
+            "color": "#3D3636",
+            "alliance": "chaos",
+            "description": "A race of humanoid rat creatures. These beings live in large underground colonies, rarely venturing above ground except for when they launch their terrifying assaults."
         },
         "corrupted_dwarves": {
             "version": "1.0",
@@ -488,7 +497,7 @@
         "rending_claws": {"name": "Rending Claws", "attacks": 1, "ap": 1, "short": "Melee", "rules": ["rending"]},
         "claws": {"name": "Claws", "attacks": 1, "ap": 1, "short": "Melee"},
         "banshee_wail": {"name": "Banshee Wail", "ap": 3, "attacks": 1, "short": 9, "medium": 18, "rules": [{"id": "shocking", "x": 2}]},
-        "necrotic_breath": {"name": "Necrotic Breath", "ap":23, "attacks": 1, "short": 6, "medium": 12, "rules": ["flame"]},
+        "necrotic_breath": {"name": "Necrotic Breath", "ap": 23, "attacks": 1, "short": 6, "medium": 12, "rules": ["flame"]},
         "flame_breath": {"name": "Flame Breath", "short": 6, "medium": 12, "ap": 1, "attacks": 1, "rules": ["flame"]},
         "lightning_breath": {"name": "Lightning Breath", "short": 6, "medium": 12, "ap": 1, "attacks": 1, "rules": ["lethal"]},
         "rock_throw": {"name": "Rock Throw", "attacks": 1, "ap": 6, "rules": [{"id": "blast", "x": 2}, "scatter"], "short": 9, "medium": 18},

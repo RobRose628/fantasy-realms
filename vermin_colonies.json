@@ -2,6 +2,7 @@
     "name": "Vermin Colonies",
     "id": "ratmen_colonies",
     "author": "Xekon#8266",
+    "color": "#3D3636"
     "units": {
         "warlord": {
             "name": "Vermin Warlord",
@@ -124,6 +125,5 @@
     },
     "powers": {},
     "strategies": [],
-    "relics": [],
-    "color": "#3D3636"
+    "relics": []
 }
