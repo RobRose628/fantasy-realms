@@ -325,7 +325,7 @@
             "category": "elite",
             "models": [
                 {
-                    "options": [{"addWeapon": "shield", "modelLimit": "all"}],
+                    "options": [{"replaceWeapon": ["heavy_crossbow"], "withWeapon": [["throwing_axe", "shield"]], "modelLimit": "all"}],
                     "name": "Ranger",
                     "movement": 5,
                     "courage": 6,
