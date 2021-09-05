@@ -66,11 +66,12 @@
                     "courage": 5,
                     "shoot": 5,
                     "fight": 5,
-                    "defense": 5,
+                    "defense": 6,
                     "reflexes": 5,
                     "weapons": [{"id": "heavy_polearm", "count": 2}],
-                    "min": 10,
-                    "max": 30
+                    "options": [{"addWeapon": ["shield"]}],
+                    "min": 5,
+                    "max": 20
                 }
             ]
         },
