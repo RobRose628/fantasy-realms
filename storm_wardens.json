@@ -514,7 +514,7 @@
             "profiles": [{"name": "Claws", "ap": 2, "attacks": 1, "rules": ["rending"], "short": "Melee"}, {"name": "Beak", "ap": 2, "attacks": 1, "medium": 24, "short": 12, "rules": ["rending"]}]
         },
         "throwing_hammer": {"name": "Throwing Hammer", "ap": 2, "attacks": 1, "short": 6, "rules": ["assault"]},
-        "storm_trident": {"name": "Stormstrike Trident", "ap": 4, "attacks": 1, "short": 12, "medium": 12, "rules": ["assault", "lethal"]},
+        "storm_trident": {"name": "Stormstrike Trident", "ap": 3, "attacks": 1, "short": 6, "medium": 12, "rules": ["assault", "lethal"]},
         "sonic_boom": {"name": "Sonic Boom", "attacks": 2, "ap": 2, "short": 9, "medium": 18}
     },
     "rules": {
