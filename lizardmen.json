@@ -12,7 +12,7 @@
                 {
                     "options": [],
                     "name": "Gecko Priest",
-                    "movement": 9,
+                    "movement": 8,
                     "courage": 5,
                     "shoot": 5,
                     "fight": 5,
@@ -111,7 +111,7 @@
                 {
                     "options": [{"replaceWeapon": ["blowpipe"], "withWeapon": ["shield"]}, {"addWeapon": "javelin"}, {"addRule": ["champion"], "modelLimit": 1}],
                     "name": "Gecko Warrior",
-                    "movement": 9,
+                    "movement": 6,
                     "courage": 5,
                     "shoot": 4,
                     "fight": 5,
@@ -131,11 +131,11 @@
             "models": [
                 {
                     "name": "Giant Dinosaur",
-                    "movement": "12",
+                    "movement": 10,
                     "courage": 6,
                     "shoot": 4,
                     "fight": 5,
-                    "defense": 17,
+                    "defense": 13,
                     "reflexes": 5,
                     "weapons": [{"id": "armored_tail", "count": 1}, {"id": "gargantuan_jaws", "count": 3}, {"id": "raking_claws", "count": 6}],
                     "rules": ["damage_chart", {"id": "impact", "x": 3}, "titanic"],
