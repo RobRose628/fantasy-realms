@@ -206,11 +206,11 @@
             "alliance": "order",
             "description": "A race of relentless jungle-dwelling lizards who who believe they are the rightful inheritors to the world."
         },
-        "ratmen_colonies": {
+        "vermin_colonies": {
             "version": "1.0",
             "name": "Vermin Colonies",
-            "id": "ratmen_colonies",
-            "url": "ratmen_colonies.json",
+            "id": "vermin_colonies",
+            "url": "vermin_colonies.json",
             "color": "#3D3636",
             "alliance": "chaos",
             "description": "A race of humanoid rat creatures. These beings live in large underground colonies, rarely venturing above ground except for when they launch their terrifying assaults."
