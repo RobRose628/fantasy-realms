@@ -3,10 +3,83 @@
     "id": "lizardmen",
     "author": "guitarninja#5707",
     "units": {
+        "gecko_priest": {
+            "name": "Gecko Priest",
+            "description": "Small of body, great of spirit, the Gecko Priests are the religious core of the Lizardmen's supremacy",
+            "category": "hero",
+            "keywords": ["Gecko", "Infantry"],
+            "models": [
+                {
+                    "options": [],
+                    "name": "Gecko Priest",
+                    "movement": 9,
+                    "courage": 5,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 5,
+                    "reflexes": 6,
+                    "weapons": [{"id": "staff", "count": 1}],
+                    "rules": ["battle_prayer", {"id": "wounds", "x": 2}],
+                    "min": 1,
+                    "max": 1
+                }
+            ]
+        },
+        "lizard_ancient": {
+            "name": "Lizard Hero",
+            "description": "An ancient, wise, and self-assured warrior",
+            "category": "hero",
+            "keywords": ["Infantry"],
+            "models": [
+                {
+                    "options": [
+                        {"replaceRule": [{"id": "lizard_tactics", "x": 1}], "withRule": {"id": "lizard_tactics", "x": 2}},
+                        {
+                            "replaceWeapon": [{"id": "great_weapon", "count": 3}],
+                            "withWeapon": [{"id": "heavy_hammer", "count": 3}, {"id": "heavy_handweapon", "count": 5}, {"id": "heavy_spear", "count": 4}]
+                        }
+                    ],
+                    "name": "Lizard Hero",
+                    "movement": 5,
+                    "courage": 6,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 8,
+                    "reflexes": 5,
+                    "weapons": [{"id": "great_weapon", "count": 3}, "lizard_bite"],
+                    "rules": [{"id": "wounds", "x": 3}, {"id": "lizard_tactics", "x": 1}],
+                    "min": 1,
+                    "max": 1
+                }
+            ]
+        },
+        "greatlizard_mage": {
+            "name": "Great-Lizard Mage",
+            "description": "The oldest and wisest of the Lizardmen, the Great-Lizards command magic easier than they walk",
+            "category": "hero",
+            "keywords": ["Infantry"],
+            "models": [
+                {
+                    "options": [{"replaceRule": [{"id": "power", "x": 2}], "withRule": {"id": "power", "x": 3}}],
+                    "name": "Great-Lizard Mage",
+                    "movement": 5,
+                    "courage": 6,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 7,
+                    "reflexes": 4,
+                    "weapons": [{"id": "azure_lightning", "count": 6}],
+                    "rules": [{"id": "wounds", "x": 3}, {"id": "power", "x": 2}, "hover"],
+                    "min": 1,
+                    "max": 1
+                }
+            ]
+        },
         "lizard_warriors": {
             "name": "Lizard Warriors",
             "description": "",
             "category": "core",
+            "keywords": ["Infantry"],
             "models": [
                 {
                     "options": [
@@ -16,7 +89,7 @@
                         {"addRule": ["musician"], "modelLimit": 1}
                     ],
                     "name": "Lizard Warrior",
-                    "movement": 6,
+                    "movement": 5,
                     "courage": 5,
                     "shoot": 5,
                     "fight": 5,
@@ -28,11 +101,74 @@
                 }
             ],
             "subfactions": ["none"]
+        },
+        "gecko_warriors": {
+            "name": "Gecko Warriors",
+            "description": "Small in stature but large in numbers, the gecko warriors swarm forth",
+            "category": "core",
+            "keywords": ["Infantry", "Gecko"],
+            "models": [
+                {
+                    "options": [{"replaceWeapon": ["blowpipe"], "withWeapon": ["shield"]}, {"addWeapon": "javelin"}, {"addRule": ["champion"], "modelLimit": 1}],
+                    "name": "Gecko Warrior",
+                    "movement": 9,
+                    "courage": 5,
+                    "shoot": 4,
+                    "fight": 5,
+                    "defense": 4,
+                    "reflexes": 6,
+                    "weapons": ["blowpipe", "handweapon"],
+                    "min": 10,
+                    "max": 30
+                }
+            ]
+        },
+        "giant_dino": {
+            "name": "Giant Dinosaur",
+            "description": "It's hard to believe you're inferior when this thing is on your side!",
+            "category": "rare",
+            "keywords": ["Monster"],
+            "models": [
+                {
+                    "name": "Giant Dinosaur",
+                    "movement": "12",
+                    "courage": 6,
+                    "shoot": 4,
+                    "fight": 5,
+                    "defense": 17,
+                    "reflexes": 5,
+                    "weapons": [{"id": "armored_tail", "count": 1}, {"id": "gargantuan_jaws", "count": 3}, {"id": "raking_claws", "count": 6}],
+                    "rules": ["damage_chart", {"id": "impact", "x": 3}, "titanic"],
+                    "min": 1,
+                    "max": 1
+                }
+            ]
         }
     },
-    "weapons": {"lizard_bite": {"name": "Lizard Bite", "attacks": 1, "short": "Melee", "ap": 1}},
-    "rules": {},
+    "weapons": {
+        "lizard_bite": {"name": "Lizard Bite", "attacks": 1, "short": "Melee", "ap": 1},
+        "azure_lightning": {"name": "Azure Lightning", "attacks": 1, "short": "Melee", "ap": 3, "rules": [{"id": "reach", "x": 2}]},
+        "armored_tail": {"name": "Armored Tail", "attacks": 1, "short": "Melee", "ap": 6, "rules": [{"id": "reach", "x": 1}]},
+        "gargantuan_jaws": {"name": "Gargantuan Jaws", "attacks": 1, "short": "Melee", "ap": 9, "rules": [{"id": "reach", "x": 1}]},
+        "raking_claws": {"name": "Raking Claws", "attacks": 1, "short": "Melee", "ap": 4, "rules": [{"id": "reach", "x": 1}]}
+    },
+    "rules": {
+        "lizard_tactics": {
+            "name": "Lizard Tactics",
+            "inputs": ["x"],
+            "description": "When this unit is activated, choose up to X friendly _Infantry_ units within 6\". This unit and those units may re-roll failed Strength tests of 9+ until the end of the round.",
+            "points": ["rule.x", {"multiply": 10}]
+        }
+    },
     "relics": [],
     "powers": {},
-    "strategies": []
+    "strategies": {
+        "natural_camo": {
+            "phase": "activation",
+            "name": "Natural Camoflage",
+            "description": "Use when an enemy targets a _Gecko_ unit with an attack while that unit has the benefit of cover.  The enemy suffers a -1 to their attack rolls.",
+            "flavor": "Geckos are skilled at blending in with their environments.",
+            "cost": 2
+        }
+    }
 }
