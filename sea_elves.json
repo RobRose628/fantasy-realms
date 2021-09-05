@@ -166,7 +166,7 @@
                     "defense": 10,
                     "reflexes": 5,
                     "weapons": [{"id": "crushing_jaw", "count": 3}, {"id": "handweapon", "count": 6}, "net_launcher"],
-                    "options": [{"replaceWeapon": ["net_launcher"], "withWeapon": [{"id": "harpoon", "count": 2}]}],
+                    "options": [{"replaceWeapon": ["net_launcher"], "withWeapon": [{"id": "harpoon_rifle", "count": 2}]}],
                     "rules": ["hover", "damage_chart"],
                     "min": 1,
                     "max": 3
@@ -187,7 +187,7 @@
                     "fight": 7,
                     "defense": 12,
                     "reflexes": 5,
-                    "weapons": [{"id": "crush_bite", "count": 2}, {"id": "harpoon", "count": 2}, {"id": "heavy_spear", "count": 6}, {"id": "fins", "count": 4}],
+                    "weapons": [{"id": "crush_bite", "count": 2}, {"id": "harpoon_rifle", "count": 2}, {"id": "heavy_spear", "count": 6}, {"id": "fins", "count": 4}],
                     "rules": ["hover", "damage_chart", {"id": "impact", "x": 3}],
                     "min": 1,
                     "max": 1
@@ -200,7 +200,7 @@
         "claws": {"name": "Rending Claws", "ap": 2, "attacks": 1, "short": "Melee", "rules": [{"id": "rending"}]},
         "bite": {"name": "Bite", "attacks": 1, "ap": 3, "short": "Melee"},
         "swarm": {"name": "Bladefish Swarm", "attacks": 8, "medium": 18, "short": 9},
-        "harpoon": {"name": "Harpoon", "short": 12, "medium": 24, "attacks": 1, "ap": 6, "rules": [{"id": "deadly", "x": 2}]},
+        "harpoon_rifle": {"name": "harpoon_rifle", "short": 12, "medium": 24, "attacks": 1, "ap": 6, "rules": [{"id": "deadly", "x": 2}]},
         "net_launcher": {"name": "Net Launcher", "attacks": 1, "ap": 2, "rules": ["barbed_net", {"id": "blast", "x": 3}], "short": 9, "medium": 18},
         "crushing_jaw": {"name": "Crushing Jaw", "attacks": 1, "ap": 6, "short": "Melee"},
         "tentacle": {"name": "Lashing Tentacle", "attacks": 1, "ap": 1, "short": "Melee", "rules": [{"id": "reach", "x": 2}]},

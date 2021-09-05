@@ -247,7 +247,7 @@
                     "fight": 6,
                     "defense": 6,
                     "reflexes": 6,
-                    "weapons": [{"id": "poison_sword", "count": 3}, {"id": "heavy_handweapon", "count": 2}],
+                    "weapons": [{"id": "lethal_handweapon", "count": 3}, {"id": "heavy_handweapon", "count": 2}],
                     "rules": ["leader", {"id": "wounds", "x": 3}, "cloak", {"id": "warrior_tactics", "x": 1}],
                     "options": [{"replaceRule": [{"id": "warrior_tactics", "x": 1}], "withRule": [{"id": "warrior_tactics", "x": 2}]}]
                 }
@@ -298,13 +298,7 @@
             "subfactions": ["none"]
         }
     },
-    "weapons": {
-        "phoenix_claws": {"name": "Phoenix Claws", "ap": 5, "attacks": 1, "short": "Melee"},
-        "phoenix_flame": {"name": "Flaming Wings", "ap": 4, "attacks": 1, "medium": 12, "short": 6, "rules": ["flame", "bomb"]},
-        "poison_sword": {"name": "Poisoned Sword", "attacks": 1, "ap": 1, "short": "Melee", "rules": ["lethal"]},
-        "barbed_spear": {"name": "Barbed Spear", "attacks": 1, "ap": 1, "short": "Melee", "rules": [{"id": "reach", "x": 1}, "rending"]},
-        "poison_greatsword": {"name": "Poisoned Greatsword", "attacks": 1, "ap": 3, "short": "Melee", "rules": ["lethal"]}
-    },
+    "weapons": {"barbed_spear": {"name": "Barbed Spear", "attacks": 1, "ap": 1, "short": "Melee", "rules": [{"id": "reach", "x": 1}, "rending"]}},
     "rules": {
         "cloak": {"name": "Dragonscale Cloak", "description": "This model has +2 to its Save characteristic when being hit by a ranged attack.", "points": 2},
         "poisoned_blades": {"name": "Barbed Blades", "description": "This model's melee weapons have +1 AP against enemies without _Damage Table(X)_.", "points": 5},
