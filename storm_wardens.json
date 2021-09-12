@@ -12,7 +12,7 @@
                 {
                     "name": "Celestial Beast",
                     "min": 5,
-                    "max": 15,
+                    "max": 20,
                     "movement": 7,
                     "courage": 4,
                     "shoot": 6,
@@ -31,20 +31,26 @@
             "category": "core",
             "models": [
                 {
-                    "name": "Warrior",
+                    "name": "Stormforged Warrior",
                     "min": 5,
-                    "max": 20,
+                    "max": 25,
                     "movement": 6,
                     "courage": 6,
                     "shoot": 6,
                     "fight": 6,
                     "defense": 7,
                     "reflexes": 6,
-                    "weapons": [{"id": "mace", "count": 2}, "shield"],
+                    "weapons": [{"id": "handweapon", "count": 2}, "shield"],
                     "options": [
                         {
-                            "replaceWeapon": [{"id": "mace", "count": 2}, "shield"],
-                            "withWeapon": [{"id": "mace", "count": 3}, {"id": "great_weapon", "count": 2}, [{"id": "spear", "count": 2}, "shield"]]
+                            "replaceWeapon": [{"id": "handweapon", "count": 2}, "shield"],
+                            "withWeapon": [
+                                {"id": "mace", "count": 3},
+                                {"id": "great_weapon", "count": 2},
+                                [{"id": "spear", "count": 2}, "shield"],
+                                {"id": "handweapon", "count": 3},
+                                [{"id": "mace", "count": 2}, "shield"]
+                            ]
                         },
                         {"replaceWeapon": [{"id": "handweapon", "count": 2}, "shield"], "withWeapon": ["grand_mace"], "modelLimit": "1/5"},
                         {"addWeapon": ["spirit_flask"], "modelLimit": 3}
@@ -53,13 +59,13 @@
             ],
             "options": [{"addRule": ["champion"], "modelLimit": 1}, {"addRule": ["banner"], "modelLimit": 1}, {"addRule": ["musician"], "modelLimit": 1}]
         },
-        "stormforged_scouts": {
-            "name": "Stormforged Scouts",
+        "stormforged_archers": {
+            "name": "Stormforged Archers",
             "description": "Warriors mages who use the elements to strengthen their bows.",
             "category": "core",
             "models": [
                 {
-                    "name": "Scout",
+                    "name": "Stormforged Archer",
                     "movement": 6,
                     "courage": 6,
                     "shoot": 6,
@@ -70,22 +76,22 @@
                     "options": [
                         {"replaceWeapon": ["heavy_long_bow", "handweapon"], "withWeapon": [["long_bow", {"id": "handweapon", "count": 2}]]},
                         {"replaceWeapon": ["heavy_long_bow"], "withWeapon": ["storm_bow"], "modelLimit": "1/5"},
-                        {"addWeapon": ["spirit_flask"], "modelLimit": 3}
+                        {"addWeapon": ["spirit_flask"], "modelLimit": 3},
+                        {"addRule": ["scout", "ambush"], "modelLimit": "all", "limit": 1}
                     ],
                     "min": 5,
-                    "max": 15,
-                    "rules": ["scout"]
+                    "max": 25
                 }
             ],
             "options": [{"addRule": ["champion"], "modelLimit": 1}, {"addRule": ["banner"], "modelLimit": 1}, {"addRule": ["musician"], "modelLimit": 1}]
         },
         "stormforged_hunters": {
-            "name": "Stormforged Hunters",
+            "name": "Stormforged Arbalesters",
             "description": "Warriors mages who use the elements to strengthen their crossbows.",
             "category": "core",
             "models": [
                 {
-                    "name": "Hunter",
+                    "name": "Stormforged Arbalester",
                     "movement": 6,
                     "courage": 6,
                     "shoot": 6,
@@ -94,13 +100,13 @@
                     "reflexes": 6,
                     "weapons": ["repeater_crossbow", {"id": "handweapon", "count": 2}],
                     "min": 5,
-                    "max": 20,
+                    "max": 25,
                     "options": [
                         {"replaceWeapon": ["repeater_crossbow"], "withWeapon": ["heavy_crossbow"]},
                         {"replaceWeapon": ["repeater_crossbow"], "withWeapon": ["storm_crossbow"], "modelLimit": "1/5"},
-                        {"addWeapon": ["spirit_flask"], "modelLimit": 3}
-                    ],
-                    "rules": ["outflank"]
+                        {"addWeapon": ["spirit_flask"], "modelLimit": 3},
+                        {"addRule": ["scout", "ambush"], "modelLimit": "all", "limit": 1}
+                    ]
                 }
             ],
             "options": [{"addRule": ["champion"], "modelLimit": 1}, {"addRule": ["banner"], "modelLimit": 1}, {"addRule": ["musician"], "modelLimit": 1}]
