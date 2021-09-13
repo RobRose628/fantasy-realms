@@ -2,7 +2,7 @@
     "name": "Corrupted Legions",
     "id": "corrupted_legions",
     "author": "Xekon#8266",
-    "color": "#231f20",
+    "color": "#343a40",
     "units": {
         "corrupted_lord": {
             "name": "Corrupted Lord",
