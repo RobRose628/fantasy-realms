@@ -123,6 +123,28 @@
                 }
             ]
         },
+        "pterodactyl_riders": {
+            "name": "Pterodactyl Riders",
+            "description": "Great flying creatures carrying lizard warriors to battle",
+            "category": "elite",
+            "keywords": ["Cavalry"],
+            "models": [
+                {
+                    "name": "Pterodactyl Riders",
+                    "movement": 12,
+                    "courage": 6,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 5,
+                    "reflexes": 5,
+                    "weapons": [{"id": "beak", "count": 4}, "javelin", "handweapon", "toad_rage"],
+                    "min": 3,
+                    "max": 9,
+                    "rules": ["fly", {"id": "wounds", "x": 2}],
+                    "options": [{"replaceWeapon": "javelin", "withweapon": "bolas"}]
+                }
+            ]
+        },
         "giant_dino": {
             "name": "Giant Dinosaur",
             "description": "It's hard to believe you're inferior when this thing is on your side!",
@@ -150,7 +172,9 @@
         "azure_lightning": {"name": "Azure Lightning", "attacks": 1, "short": "Melee", "ap": 3, "rules": [{"id": "reach", "x": 2}]},
         "armored_tail": {"name": "Armored Tail", "attacks": 1, "short": "Melee", "ap": 6, "rules": [{"id": "reach", "x": 1}]},
         "gargantuan_jaws": {"name": "Gargantuan Jaws", "attacks": 1, "short": "Melee", "ap": 9, "rules": [{"id": "reach", "x": 1}]},
-        "raking_claws": {"name": "Raking Claws", "attacks": 1, "short": "Melee", "ap": 4, "rules": [{"id": "reach", "x": 1}]}
+        "raking_claws": {"name": "Raking Claws", "attacks": 1, "short": "Melee", "ap": 4, "rules": [{"id": "reach", "x": 1}]},
+        "toad_rage": {"name": "Toad Rage", "attacks": 2, "short": 6, "ap": 2, "rules": ["bomb", {"id": "ammo", "x": 2}, {"id": "blast", "x": 2}]},
+        "bolas": {"name": "Bolas", "attacks": 3, "short": 6, "ap": 2}
     },
     "rules": {
         "lizard_tactics": {
