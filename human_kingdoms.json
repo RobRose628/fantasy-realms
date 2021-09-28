@@ -5,7 +5,7 @@
     "units": {
         "battle_mage": {
             "name": "Battlemage",
-            "description": "",
+            "description": "A mage who sets out onto the battlefield to protect their allies and destroy their enemies.",
             "category": "hero",
             "models": [
                 {
@@ -23,11 +23,60 @@
                     "options": [{"replaceWeapon": ["staff", "handweapon"], "withWeapon": ["great_staff"]}, {"replaceRule": [{"id": "power", "x": 1}], "withRule": [{"id": "power", "x": 2}]}]
                 }
             ],
-            "subfactions": ["none"]
+            "subfactions": ["none", "conquest", "blackpowder"]
+        },
+        "battle_mage_horse": {
+            "name": "Battlemage on Warhorse",
+            "description": "A mage who sets out onto the battlefield atop a warhorse to protect their allies and destroy their enemies.",
+            "category": "hero",
+            "models": [
+                {
+                    "name": "Battlemage on Warhorse",
+                    "movement": 8,
+                    "courage": 6,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 5,
+                    "reflexes": 6,
+                    "weapons": ["staff", "handweapon", {"id": "hooves_and_teeth", "count": 2}],
+                    "min": 1,
+                    "max": 1,
+                    "rules": [{"id": "wounds", "x": 3}, {"id": "power", "x": 1}, {"id": "leader_x", "x": "Infantry, Cavalry"}],
+                    "options": [{"replaceWeapon": ["staff", "handweapon"], "withWeapon": ["great_staff"]}, {"replaceRule": [{"id": "power", "x": 1}], "withRule": [{"id": "power", "x": 2}]}]
+                }
+            ],
+            "subfactions": ["none", "conquest", "blackpowder"],
+            "keywords": ["Cavalry"]
+        },
+        "battle_mage_unicorn": {
+            "name": "Battlemage on Unicorn",
+            "description": "A mage who sets out onto the battlefield atop a unicorn to protect their allies and destroy their enemies.",
+            "category": "hero",
+            "models": [
+                {
+                    "name": "Battlemage on Unicorn",
+                    "movement": 8,
+                    "courage": 6,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 6,
+                    "reflexes": 6,
+                    "weapons": [{"id": "heavy_hooves_and_teeth", "count": 2}, {"id": "handweapon", "count": 2}, {"id": "staff", "count": 2}],
+                    "min": 1,
+                    "max": 1,
+                    "rules": [{"id": "wounds", "x": 3}, {"id": "power", "x": 1}, {"id": "impact", "x": 1}, {"id": "leader_x", "x": "Infantry, Cavalry"}],
+                    "options": [
+                        {"replaceWeapon": [{"id": "staff", "count": 2}, {"id": "handweapon", "count": 2}], "withWeapon": [{"id": "great_staff", "count": 2}]},
+                        {"replaceRule": [{"id": "power", "x": 1}], "withRule": [{"id": "power", "x": 2}]}
+                    ]
+                }
+            ],
+            "subfactions": ["none", "conquest", "blackpowder"],
+            "keywords": ["Cavalry"]
         },
         "warrior_priest": {
             "name": "Warrior-Priest",
-            "description": "",
+            "description": "A cleric who has sworn to crush his enemies by force and faith.",
             "category": "hero",
             "models": [
                 {
@@ -38,18 +87,18 @@
                     "fight": 6,
                     "defense": 6,
                     "reflexes": 6,
-                    "weapons": [{"id": "great_hammer", "count": 3}, "enchanted_shield"],
+                    "weapons": [{"id": "great_weapon", "count": 3}, "enchanted_shield"],
                     "min": 1,
                     "max": 1,
                     "rules": [{"id": "wounds", "x": 3}, "leader", "furious", "battle_prayer"],
                     "options": [{"replaceWeapon": [{"id": "great_hammer", "count": 3}, "enchanted_shield"], "withWeapon": [{"id": "grand_hammer", "count": 3}, {"id": "great_hammer", "count": 4}]}]
                 }
             ],
-            "subfactions": ["none"]
+            "subfactions": ["none", "conquest", "blackpowder"]
         },
         "warrior_priest_horse": {
             "name": "Warrior-Priest on Warhorse",
-            "description": "",
+            "description": "A cleric who rides into the fray with hammer and faith at his side.",
             "category": "hero",
             "models": [
                 {
@@ -67,12 +116,12 @@
                     "options": [{"replaceWeapon": [{"id": "great_hammer", "count": 3}, "enchanted_shield"], "withWeapon": [{"id": "grand_hammer", "count": 3}, {"id": "great_hammer", "count": 4}]}]
                 }
             ],
-            "subfactions": ["none"],
+            "subfactions": ["none", "conquest", "blackpowder"],
             "keywords": ["Cavalry"]
         },
         "captain": {
             "name": "Captain",
-            "description": "A captain of the Great Kingdoms who inspires and directs troops.",
+            "description": "A captain of the Human Kingdoms who inspires his troops.",
             "category": "hero",
             "models": [
                 {
@@ -92,16 +141,16 @@
                             "replaceWeapon": [{"id": "handweapon", "count": 3}, "enchanted_shield"],
                             "withWeapon": [{"id": "great_weapon", "count": 3}, {"id": "grand_hammer", "count": 3}, {"id": "zweihänder", "count": 3}, {"id": "handweapon", "count": 5}]
                         },
-                        {"addWeapon": ["heavy_pistol", "heavy_crossbow"]},
+                        {"addWeapon": ["heavy_pistol", "heavy_crossbow", "repeater_handgun"]},
                         {"replaceRule": [{"id": "human_kingdoms_tactics", "x": 1}], "withRule": [{"id": "human_kingdoms_tactics", "x": 2}]}
                     ]
                 }
             ],
-            "subfactions": ["none"]
+            "subfactions": ["none", "conquest", "blackpowder"]
         },
         "captain_horse": {
             "name": "Captain on Warhorse",
-            "description": "A captain of the Great Kingdoms who inspires and directs troops.",
+            "description": "A captain of the Human Kingdoms who inspires his troops from horseback.",
             "category": "hero",
             "models": [
                 {
@@ -127,17 +176,17 @@
                                 {"id": "handweapon", "count": 5}
                             ]
                         },
-                        {"addWeapon": ["heavy_pistol", "heavy_crossbow"]},
+                        {"addWeapon": ["heavy_pistol", "heavy_crossbow", "repeater_handgun"]},
                         {"replaceRule": [{"id": "human_kingdoms_tactics", "x": 1}], "withRule": [{"id": "human_kingdoms_tactics", "x": 2}]}
                     ]
                 }
             ],
-            "subfactions": ["none"],
+            "subfactions": ["none", "conquest", "blackpowder"],
             "keywords": ["Cavalry"]
         },
         "general_gryphon": {
             "name": "General on Gryphon",
-            "description": "A general of the Great Kingdoms who inspires and directs troops.",
+            "description": "A general of the Human Kingdoms flying across the battlefield atop a terrifying beast.",
             "category": "hero",
             "models": [
                 {
@@ -146,27 +195,28 @@
                     "courage": 7,
                     "shoot": 7,
                     "fight": 7,
-                    "defense": 10,
+                    "defense": 8,
                     "reflexes": 6,
                     "weapons": [{"id": "heavy_great_weapon", "count": 3}, "relic_shield", {"id": "beak_and_claws", "count": 6}],
                     "min": 1,
                     "max": 1,
-                    "rules": [{"id": "human_kingdoms_tactics", "x": 2}, "fly", "damage_chart", {"id": "leader_x", "x": "Infantry, Cavalry"}],
+                    "rules": [{"id": "human_kingdoms_tactics", "x": 1}, "fly", {"id": "leader_x", "x": "Infantry, Cavalry"}, {"id": "wounds", "x": 1}],
                     "options": [
                         {
                             "replaceWeapon": [{"id": "heavy_great_weapon", "count": 3}, "relic_shield"],
                             "withWeapon": [{"id": "heavy_great_weapon", "count": 5}, [{"id": "heavy_lance", "count": 3}, "relic_shield"], {"id": "grand_hammer", "count": 3}]
                         },
-                        {"addWeapon": ["heavy_pistol", "heavy_crossbow"]}
+                        {"addWeapon": ["heavy_pistol", "heavy_crossbow", "repeater_handgun"]},
+                        {"replaceRule": [{"id": "human_kingdoms_tactics", "x": 1}], "withRule": [{"id": "human_kingdoms_tactics", "x": 2}]}
                     ]
                 }
             ],
-            "subfactions": ["none"],
+            "subfactions": ["none", "conquest", "blackpowder"],
             "keywords": ["Beast", "Cavalry"]
         },
         "general_pegasus": {
             "name": "General on Pegasus",
-            "description": "A general of the Great Kingdoms who inspires and directs troops.",
+            "description": "A general of the Human Kingdoms flying across the battlefield atop a beatiful beast.",
             "category": "hero",
             "models": [
                 {
@@ -180,7 +230,7 @@
                     "weapons": [{"id": "heavy_handweapon", "count": 3}, "enchanted_shield", {"id": "heavy_hooves_and_teeth", "count": 2}],
                     "min": 1,
                     "max": 1,
-                    "rules": [{"id": "human_kingdoms_tactics", "x": 2}, "fly", {"id": "leader_x", "x": "Infantry, Cavalry"}, {"id": "wounds", "x": 3}],
+                    "rules": [{"id": "human_kingdoms_tactics", "x": 1}, "fly", {"id": "leader_x", "x": "Infantry, Cavalry"}, {"id": "wounds", "x": 3}],
                     "options": [
                         {
                             "replaceWeapon": [{"id": "heavy_handweapon", "count": 3}, "enchanted_shield"],
@@ -192,34 +242,37 @@
                                 {"id": "heavy_handweapon", "count": 5}
                             ]
                         },
-                        {"addWeapon": ["pistol"]}
+                        {"addWeapon": ["heavy_pistol", "heavy_crossbow", "repeater_handgun"]}
                     ]
                 }
             ],
-            "subfactions": ["none"],
-            "keywords": ["Beast", "Cavalry"]
+            "subfactions": ["none", "conquest", "blackpowder"],
+            "keywords": ["Cavalry"]
         },
-        "battle_mage_horse": {
-            "name": "Battlemage on Warhorse",
-            "description": "",
+        "crusader": {
+            "name": "Crusader",
+            "description": "A noble of the Human Kingdoms, commanding his personal knights.",
             "category": "hero",
             "models": [
                 {
-                    "name": "Battlemage on Warhorse",
+                    "name": "Crusader",
                     "movement": 8,
-                    "courage": 6,
-                    "shoot": 5,
-                    "fight": 5,
-                    "defense": 5,
+                    "courage": 7,
+                    "shoot": 7,
+                    "fight": 7,
+                    "defense": 7,
                     "reflexes": 6,
-                    "weapons": ["staff", "handweapon", {"id": "hooves_and_teeth", "count": 2}],
+                    "weapons": [{"id": "heavy_handweapon", "count": 3}, "enchanted_shield", {"id": "hooves_and_teeth", "count": 2}],
                     "min": 1,
                     "max": 1,
-                    "rules": [{"id": "wounds", "x": 3}, {"id": "power", "x": 1}, {"id": "leader_x", "x": "Infantry, Cavalry"}],
-                    "options": [{"replaceWeapon": ["staff", "handweapon"], "withWeapon": ["great_staff"]}, {"replaceRule": [{"id": "power", "x": 1}], "withRule": [{"id": "power", "x": 2}]}]
+                    "rules": [{"id": "wounds", "x": 3}, {"id": "knight_tactics", "x": 1}, {"id": "leader_x", "x": "Cavalry"}],
+                    "options": [
+                        {"replaceWeapon": [{"id": "heavy_handweapon", "count": 3}], "withWeapon": [{"id": "lance", "count": 3}, {"id": "great_hammer", "count": 3}, {"id": "flail", "count": 3}]},
+                        {"replaceRule": [{"id": "knight_tactics", "x": 1}], "withRule": [{"id": "knight_tactics", "x": 2}]}
+                    ]
                 }
             ],
-            "subfactions": ["none"],
+            "subfactions": ["none", "conquest", "blackpowder"],
             "keywords": ["Cavalry"]
         },
         "spirit_guardian": {
@@ -230,7 +283,7 @@
                 {
                     "name": "Spirit Guardian",
                     "movement": 8,
-                    "courage": 6,
+                    "courage": 7,
                     "shoot": 6,
                     "fight": 7,
                     "defense": 7,
@@ -240,40 +293,17 @@
                     "max": 1,
                     "rules": [{"id": "defiant", "x": 3}, {"id": "wounds", "x": 3}, {"id": "knight_tactics", "x": 1}, {"id": "leader_x", "x": "Infantry, Cavalry"}, "fly", "ambush"],
                     "options": [
-                        {"replaceWeapon": [{"id": "heavy_great_weapon", "count": 4}, "shield"], "withWeapon": [[{"id": "heavy_lance", "count": 4}, "shield"]]},
+                        {"replaceWeapon": [{"id": "heavy_great_weapon", "count": 4}], "withWeapon": [{"id": "heavy_lance", "count": 4}]},
                         {"replaceRule": [{"id": "knight_tactics", "x": 1}], "withRule": [{"id": "knight_tactics", "x": 2}]}
                     ]
                 }
             ],
-            "subfactions": ["none"],
-            "keywords": ["Cavalry"]
-        },
-        "battle_mage_unicorn": {
-            "name": "Exalted Mage on Unicorn",
-            "description": "",
-            "category": "hero",
-            "models": [
-                {
-                    "name": "Exalted Mage on Unicorn",
-                    "movement": 8,
-                    "courage": 6,
-                    "shoot": 5,
-                    "fight": 5,
-                    "defense": 6,
-                    "reflexes": 6,
-                    "weapons": [{"id": "heavy_hooves_and_teeth", "count": 3}, {"id": "heavy_handweapon", "count": 3}],
-                    "min": 1,
-                    "max": 1,
-                    "rules": [{"id": "wounds", "x": 3}, {"id": "power", "x": 1}, {"id": "impact", "x": 1}, {"id": "leader_x", "x": "Infantry, Cavalry"}],
-                    "options": [{"replaceRule": [{"id": "power", "x": 1}], "withRule": [{"id": "power", "x": 2}]}]
-                }
-            ],
-            "subfactions": ["none"],
-            "keywords": ["Cavalry"]
+            "subfactions": ["none", "conquest", "blackpowder"],
+            "keywords": ["Cavalry", "Undead"]
         },
         "militia": {
             "name": "Militia",
-            "description": "",
+            "description": "A cobbled together force of peasants, drafted into war or defending their home.",
             "category": "core",
             "models": [
                 {
@@ -290,12 +320,12 @@
                     "max": 30
                 }
             ],
-            "subfactions": ["none"],
+            "subfactions": ["none", "conquest", "blackpowder"],
             "options": [{"addRule": ["champion"], "modelLimit": 1}, {"addRule": ["banner"], "modelLimit": 1}, {"addRule": ["musician"], "modelLimit": 1}]
         },
         "men_at_arms": {
             "name": "Men-at-arms",
-            "description": "",
+            "description": "The human kingdoms have a standing army, training every day for war.",
             "category": "core",
             "models": [
                 {
@@ -314,12 +344,12 @@
                     "max": 30
                 }
             ],
-            "subfactions": ["none"],
+            "subfactions": ["none", "conquest", "blackpowder"],
             "options": [{"addRule": ["champion"], "modelLimit": 1}, {"addRule": ["banner"], "modelLimit": 1}, {"addRule": ["musician"], "modelLimit": 1}]
         },
         "bowmen": {
             "name": "Bowmen",
-            "description": "",
+            "description": "A unit of trained bowmen, firing at advancing enemies from afar.",
             "category": "core",
             "models": [
                 {
@@ -336,12 +366,12 @@
                     "max": 30
                 }
             ],
-            "subfactions": ["none"],
+            "subfactions": ["none", "conquest", "blackpowder"],
             "options": [{"addRule": ["champion"], "modelLimit": 1}, {"addRule": ["banner"], "modelLimit": 1}, {"addRule": ["musician"], "modelLimit": 1}]
         },
         "handgunners": {
             "name": "Handgunners",
-            "description": "",
+            "description": "A firing line of handgunners, inaccurate but deadly.",
             "category": "core",
             "models": [
                 {
@@ -358,7 +388,7 @@
                     "options": [{"replaceWeapon": ["handgun"], "withWeapon": ["repeater_handgun", "long_rifle"], "modelLimit": 1}]
                 }
             ],
-            "subfactions": ["none"],
+            "subfactions": ["none", "conquest", "blackpowder"],
             "options": [{"addRule": ["champion"], "modelLimit": 1}, {"addRule": ["banner"], "modelLimit": 1}, {"addRule": ["musician"], "modelLimit": 1}]
         },
         "pistoliers": {
@@ -380,11 +410,11 @@
                     "fight": 5,
                     "weapons": [{"id": "hooves_and_teeth", "count": 2}, "handweapon", {"id": "pistol", "count": 2}],
                     "min": 5,
-                    "max": 20
+                    "max": 25
                 }
             ],
             "keywords": ["Cavalry"],
-            "subfactions": ["none"],
+            "subfactions": ["none", "conquest", "blackpowder"],
             "options": [{"addRule": ["champion"], "modelLimit": 1}, {"addRule": ["musician"], "modelLimit": 1}]
         },
         "honor_guard": {
@@ -434,15 +464,16 @@
         },
         "realm_knights": {
             "name": "Realm Knights",
-            "description": "",
+            "description": "Those who can afford better equipment and are of noble blood march united into battle.",
             "category": "elite",
             "models": [
                 {
                     "options": [
                         {
-                            "replaceWeapon": [{"id": "handweapon", "count": 2}, "shield"],
-                            "withWeapon": [{"id": "great_weapon", "count": 2}, {"id": "great_hammer", "count": 2}, [{"id": "heavy_mace", "count": 2}, "shield"]]
-                        }
+                            "replaceWeapon": [{"id": "handweapon", "count": 2}],
+                            "withWeapon": [{"id": "heavy_mace", "count": 2}, {"id": "great_weapon", "count": 2}, {"id": "great_hammer", "count": 2}, {"id": "polearm", "count": 2}]
+                        },
+                        {"addWeapon": ["shield"]}
                     ],
                     "name": "Realm Knight",
                     "movement": 6,
@@ -451,32 +482,21 @@
                     "fight": 6,
                     "defense": 6,
                     "reflexes": 6,
-                    "weapons": [{"id": "handweapon", "count": 2}, "shield"],
+                    "weapons": [{"id": "handweapon", "count": 2}],
                     "min": 10,
-                    "max": 20
+                    "max": 30
                 }
             ],
-            "subfactions": ["none"],
+            "subfactions": ["none", "conquest", "blackpowder"],
             "options": [{"addRule": ["champion"], "modelLimit": 1}, {"addRule": ["banner"], "modelLimit": 1}, {"addRule": ["musician"], "modelLimit": 1}]
         },
         "realm_knights_horse": {
             "name": "Realm Knights on Warhorses",
-            "description": "",
+            "description": "Those who can afford a warhorse and are of noble blood ride united into battle.",
             "category": "elite",
             "models": [
                 {
-                    "options": [
-                        {
-                            "replaceWeapon": [{"id": "handweapon", "count": 2}, "shield"],
-                            "withWeapon": [
-                                ["lance", "shield"],
-                                {"id": "great_weapon", "count": 2},
-                                {"id": "great_hammer", "count": 2},
-                                [{"id": "heavy_mace", "count": 2}, "shield"],
-                                ["flail", "shield"]
-                            ]
-                        }
-                    ],
+                    "options": [{"replaceWeapon": [{"id": "lance", "count": 2}], "withWeapon": [{"id": "flail", "count": 3}, {"id": "handweapon", "count": 3}]}],
                     "name": "Realm Knight on Warhorse",
                     "movement": 8,
                     "courage": 6,
@@ -484,23 +504,23 @@
                     "fight": 6,
                     "defense": 6,
                     "reflexes": 6,
-                    "weapons": [{"id": "heavy_hooves_and_teeth", "count": 2}, "shield", {"id": "handweapon", "count": 2}],
+                    "weapons": [{"id": "heavy_hooves_and_teeth", "count": 2}, "shield", {"id": "lance", "count": 2}],
                     "min": 5,
-                    "max": 10,
+                    "max": 25,
                     "rules": ["furious"]
                 }
             ],
             "keywords": ["Cavalry"],
-            "subfactions": ["none"],
+            "subfactions": ["none", "conquest", "blackpowder"],
             "options": [{"addRule": ["champion"], "modelLimit": 1}, {"addRule": ["banner"], "modelLimit": 1}, {"addRule": ["musician"], "modelLimit": 1}]
         },
         "realm_knights_gryphon": {
             "name": "Realm Knights on Gryphons",
-            "description": "",
+            "description": "Gryphons are mighty creatures and are often being mounted by noble knights.",
             "category": "rare",
             "models": [
                 {
-                    "options": [{"replaceWeapon": [{"id": "lance", "count": 3}], "withWeapon": [{"id": "heavy_polearm", "count": 3}]}],
+                    "options": [{"replaceWeapon": [{"id": "lance", "count": 3}], "withWeapon": [{"id": "heavy_polearm", "count": 3}, {"id": "great_weapon", "count": 3}]}],
                     "name": "Realm Knight on Gryphon",
                     "movement": 10,
                     "courage": 6,
@@ -510,21 +530,20 @@
                     "reflexes": 6,
                     "weapons": [{"id": "beak_and_claws", "count": 3}, "heavy_shield", {"id": "lance", "count": 3}],
                     "min": 3,
-                    "max": 6,
+                    "max": 12,
                     "rules": ["fly", {"id": "wounds", "x": 2}]
                 }
             ],
             "keywords": ["Beast", "Cavalry"],
-            "subfactions": ["none"],
+            "subfactions": ["none", "conquest", "blackpowder"],
             "options": [{"addRule": ["champion"], "modelLimit": 1}, {"addRule": ["banner"], "modelLimit": 1}, {"addRule": ["musician"], "modelLimit": 1}]
         },
         "realm_knights_pegasus": {
             "name": "Realm Knights on Pegasi",
-            "description": "",
+            "description": "The winged Pegasi let their riders strike at any moment.",
             "category": "rare",
             "models": [
                 {
-                    "options": [{"replaceWeapon": [{"id": "handweapon", "count": 2}], "withWeapon": ["lance"]}],
                     "name": "Realm Knight on Pegasus",
                     "movement": 10,
                     "courage": 6,
@@ -532,14 +551,14 @@
                     "fight": 6,
                     "defense": 6,
                     "reflexes": 6,
-                    "weapons": [{"id": "hooves_and_teeth", "count": 2}, "heavy_shield", {"id": "handweapon", "count": 2}],
+                    "weapons": [{"id": "hooves_and_teeth", "count": 2}, "heavy_shield", {"id": "lance", "count": 3}],
                     "min": 3,
-                    "max": 6,
+                    "max": 12,
                     "rules": ["fly", {"id": "wounds", "x": 2}]
                 }
             ],
             "keywords": ["Cavalry"],
-            "subfactions": ["none"],
+            "subfactions": ["none", "conquest", "blackpowder"],
             "options": [{"addRule": ["champion"], "modelLimit": 1}, {"addRule": ["banner"], "modelLimit": 1}, {"addRule": ["musician"], "modelLimit": 1}]
         },
         "paladin_pegasus": {
@@ -558,22 +577,27 @@
                     "reflexes": 6,
                     "weapons": [{"id": "heavy_hooves_and_teeth", "count": 2}, "tower_shield", {"id": "heavy_great_weapon", "count": 5}],
                     "min": 2,
-                    "max": 6,
+                    "max": 8,
                     "rules": ["fly", {"id": "wounds", "x": 4}]
                 }
             ],
             "keywords": ["Cavalry"],
-            "subfactions": ["none"],
+            "subfactions": ["none", "conquest", "blackpowder"],
             "options": [{"addRule": ["champion"], "modelLimit": 1}, {"addRule": ["banner"], "modelLimit": 1}, {"addRule": ["musician"], "modelLimit": 1}]
         },
         "paladin_horse": {
             "name": "Paladins on Warhorses",
-            "description": "",
+            "description": "Mounted on the strongest and fastest horses of the realms, crushing enemy resistance.",
             "category": "rare",
             "models": [
                 {
-                    "options": [{"replaceWeapon": [{"id": "heavy_great_weapon", "count": 5}], "withWeapon": [{"id": "heavy_lance", "count": 5}]}],
-                    "name": "Paladins on Warhorse",
+                    "options": [
+                        {
+                            "replaceWeapon": [{"id": "heavy_great_weapon", "count": 5}],
+                            "withWeapon": [{"id": "heavy_lance", "count": 5}, {"id": "great_flail", "count": 5}, {"id": "grand_hammer", "count": 5}]
+                        }
+                    ],
+                    "name": "Paladin on Warhorse",
                     "movement": 8,
                     "courage": 7,
                     "shoot": 7,
@@ -582,12 +606,35 @@
                     "reflexes": 6,
                     "weapons": [{"id": "heavy_hooves_and_teeth", "count": 2}, {"id": "heavy_great_weapon", "count": 5}, "enchanted_shield"],
                     "min": 3,
-                    "max": 6,
+                    "max": 12,
                     "rules": [{"id": "wounds", "x": 3}]
                 }
             ],
             "keywords": ["Cavalry"],
-            "subfactions": ["none"],
+            "subfactions": ["none", "conquest", "blackpowder"],
+            "options": [{"addRule": ["champion"], "modelLimit": 1}, {"addRule": ["banner"], "modelLimit": 1}, {"addRule": ["musician"], "modelLimit": 1}]
+        },
+        "paladin": {
+            "name": "Paladins",
+            "description": "Heavily armored and blessed by their faith, they face any threat with honor.",
+            "category": "rare",
+            "models": [
+                {
+                    "options": [{"replaceWeapon": [{"id": "heavy_great_weapon", "count": 5}], "withWeapon": [{"id": "grand_hammer", "count": 5}, {"id": "great_flail", "count": 5}]}],
+                    "name": "Paladin",
+                    "movement": 5,
+                    "courage": 7,
+                    "shoot": 7,
+                    "fight": 7,
+                    "defense": 7,
+                    "reflexes": 6,
+                    "weapons": [{"id": "heavy_great_weapon", "count": 5}, "enchanted_shield"],
+                    "min": 3,
+                    "max": 15,
+                    "rules": [{"id": "wounds", "x": 3}]
+                }
+            ],
+            "subfactions": ["none", "conquest", "blackpowder"],
             "options": [{"addRule": ["champion"], "modelLimit": 1}, {"addRule": ["banner"], "modelLimit": 1}, {"addRule": ["musician"], "modelLimit": 1}]
         },
         "bowmen_horse": {
@@ -783,7 +830,11 @@
             "points": ["rule.x", {"multiply": 10}]
         }
     },
-    "powers": {},
+    "powers": {
+        "banishment": {"name": "Banishment", "description": "Target enemy model within 12\" takes 1 hit with AP(7).", "charge": 5},
+        "judgement": {"name": "Judgement", "description": "Target enemy unit within 12\" takes 3 hit with AP(3).", "charge": 6},
+        "second_wind": {"name": "Second Wind", "description": "Target friendly unit within 12\" removes 1 Shock.", "charge": 7}
+    },
     "strategies": [
         {
             "phase": "activation",
