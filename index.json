@@ -52,6 +52,16 @@
                 }
             }
         },
+        "scorned": {
+            "version": "1.0",
+            "name": "The Scorned",
+            "id": "scorned",
+            "url": "scorned.json",
+            "color": "#580816",
+            "description": "Once a mighty civilization that served the gods, the Scorned now use ancient rituals and powerful armies to see them reborn.",
+            "alliance": "chaos"
+        
+        },
         "corrupted_legions": {
             "version": "1.0",
             "name": "Corrupted Legions",
