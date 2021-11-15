@@ -1,0 +1,967 @@
+{
+  "name": "Halflings",
+  "id": "halflings",
+  "author": "ctb33391#6127",
+  "alliance": "order",
+  "units": {
+    "gastromancer": {
+      "name": "Gastromancer",
+      "description": "What's better than food? Magic food, of course!",
+      "category": "hero",
+      "models": [
+        {
+          "name": "Gastromancer",
+          "movement": 6,
+          "courage": 6,
+          "shoot": 5,
+          "fight": 5,
+          "defense": 5,
+          "reflexes": 6,
+          "weapons": [
+            "staff",
+            "handweapon"
+          ],
+          "rules": [
+            {
+              "id": "wounds",
+              "x": 3
+            },
+            {
+              "id": "power",
+              "x": 1
+            },
+            "leader"
+          ],
+          "options": [
+            {
+              "replaceRule": [
+                {
+                  "id": "power",
+                  "x": 1
+                }
+              ],
+              "withRule": [
+                {
+                  "id": "power",
+                  "x": 2
+                }
+              ]
+            }
+          ],
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "subfactions": [
+        "none"
+      ]
+    },
+    "gastromancer_dog": {
+      "name": "Gastromancer on Hound",
+      "description": "What's better than food? Magic food, of course!",
+      "category": "hero",
+      "models": [
+        {
+          "name": "Gastromancer on Hound",
+          "movement": 9,
+          "courage": 6,
+          "shoot": 5,
+          "fight": 5,
+          "defense": 5,
+          "reflexes": 6,
+          "weapons": [
+            "staff",
+            "handweapon",
+            "dog_bite"
+          ],
+          "rules": [
+            {
+              "id": "wounds",
+              "x": 3
+            },
+            {
+              "id": "power",
+              "x": 1
+            },
+            "leader"
+          ],
+          "options": [
+            {
+              "replaceRule": [
+                {
+                  "id": "power",
+                  "x": 1
+                }
+              ],
+              "withRule": [
+                {
+                  "id": "power",
+                  "x": 2
+                }
+              ]
+            }
+          ],
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "keywords": [
+        "Cavalry"
+      ],
+      "subfactions": [
+        "none"
+      ]
+    },
+    "commander": {
+      "name": "Commander",
+      "description": "A halfling army may be a rabble, but the right leadership can make them a terrifying foe.",
+      "category": "hero",
+      "models": [
+        {
+          "name": "Commander",
+          "movement": 6,
+          "courage": 6,
+          "shoot": 5,
+          "fight": 6,
+          "defense": 5,
+          "reflexes": 6,
+          "weapons": [
+            {
+              "id": "heavy_handweapon",
+              "count": 3
+            },
+            "shield"
+          ],
+          "rules": [
+            {
+              "id": "wounds",
+              "x": 3
+            },
+            {
+              "id": "halfling_tactics",
+              "x": 1
+            },
+            "leader"
+          ],
+          "options": [
+            {
+              "replaceRule": [
+                {
+                  "id": "halfling_tactics",
+                  "x": 1
+                }
+              ],
+              "withRule": [
+                {
+                  "id": "halfling_tactics",
+                  "x": 2
+                }
+              ]
+            }
+          ],
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "subfactions": [
+        "none"
+      ]
+    },
+    "commander_dog": {
+      "name": "Commander on Hound",
+      "description": "A halfling army may be a rabble, but the right leadership can make them a terrifying foe.",
+      "category": "hero",
+      "models": [
+        {
+          "name": "Commander on Hound",
+          "movement": 9,
+          "courage": 6,
+          "shoot": 5,
+          "fight": 6,
+          "defense": 5,
+          "reflexes": 6,
+          "weapons": [
+            {
+              "id": "heavy_handweapon",
+              "count": 3
+            },
+            "dog_bite"
+          ],
+          "rules": [
+            {
+              "id": "wounds",
+              "x": 3
+            },
+            {
+              "id": "halfling_tactics",
+              "x": 1
+            },
+            "leader"
+          ],
+          "options": [
+            {
+              "replaceRule": [
+                {
+                  "id": "halfling_tactics",
+                  "x": 1
+                }
+              ],
+              "withRule": [
+                {
+                  "id": "halfling_tactics",
+                  "x": 2
+                }
+              ]
+            }
+          ],
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "subfactions": [
+        "none"
+      ],
+      "keywords": [
+        "Cavalry"
+      ]
+    },
+    "commander_pegadog": {
+      "name": "Commander on Pegadog",
+      "description": "A halfling army may be a rabble, but the right leadership can make them a terrifying foe.",
+      "category": "hero",
+      "models": [
+        {
+          "name": "Commander on Pegadog",
+          "movement": 10,
+          "courage": 6,
+          "shoot": 5,
+          "fight": 6,
+          "defense": 5,
+          "reflexes": 6,
+          "weapons": [
+            {
+              "id": "great_weapon",
+              "count": 3
+            },
+            "dog_bite"
+          ],
+          "rules": [
+            {
+              "id": "wounds",
+              "x": 3
+            },
+            {
+              "id": "halfling_tactics",
+              "x": 1
+            },
+            "leader",
+            "fly"
+          ],
+          "options": [
+            {
+              "replaceRule": [
+                {
+                  "id": "halfling_tactics",
+                  "x": 1
+                }
+              ],
+              "withRule": [
+                {
+                  "id": "halfling_tactics",
+                  "x": 2
+                }
+              ]
+            }
+          ],
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "subfactions": [
+        "none"
+      ],
+      "keywords": [
+        "Cavalry"
+      ]
+    },
+    "companions": {
+      "name": "Companions",
+      "description": "A willing and experienced militia forms the core of a village's army.",
+      "category": "core",
+      "models": [
+        {
+          "name": "Companion",
+          "movement": 6,
+          "courage": 5,
+          "shoot": 5,
+          "fight": 5,
+          "defense": 4,
+          "reflexes": 5,
+          "min": 10,
+          "max": 30,
+          "weapons": [
+            "handweapon",
+            "buckler"
+          ],
+          "options": [
+            {
+              "replaceWeapon": [
+                "handweapon"
+              ],
+              "withWeapon": [
+                "long_spear"
+              ],
+              "modelLimit": "all"
+            },
+            {
+              "addWeapon": [
+                "sling"
+              ],
+              "modelLimit": "all"
+            }
+          ]
+        }
+      ],
+      "options": [
+        {
+          "addRule": [
+            "champion"
+          ],
+          "modelLimit": 1
+        },
+        {
+          "addRule": [
+            "banner"
+          ],
+          "modelLimit": 1
+        },
+        {
+          "addRule": [
+            "musician"
+          ],
+          "modelLimit": 1
+        }
+      ],
+      "subfactions": [
+        "none"
+      ]
+    },
+    "hearthguard": {
+      "name": "Hearthguard",
+      "description": "Halflings count themselves lucky to have these armoured shock troops around.",
+      "category": "elite",
+      "models": [
+        {
+          "name": "Hearthguard",
+          "movement": 6,
+          "courage": 6,
+          "shoot": 5,
+          "fight": 5,
+          "defense": 6,
+          "reflexes": 5,
+          "min": 10,
+          "max": 30,
+          "weapons": [
+            "great_weapon"
+          ],
+          "options": [
+            {
+              "replaceWeapon": [
+                "great_weapon"
+              ],
+              "withWeapon": [
+                "polearm"
+              ],
+              "modelLimit": "all"
+            },
+            {
+              "addWeapon": [
+                "sling"
+              ],
+              "modelLimit": "all"
+            }
+          ]
+        }
+      ],
+      "options": [
+        {
+          "addRule": [
+            "champion"
+          ],
+          "modelLimit": 1
+        },
+        {
+          "addRule": [
+            "banner"
+          ],
+          "modelLimit": 1
+        },
+        {
+          "addRule": [
+            "musician"
+          ],
+          "modelLimit": 1
+        }
+      ],
+      "subfactions": [
+        "none"
+      ]
+    },
+    "ogre_riders": {
+      "name": "Ogre Riders",
+      "description": "A natural love of food allowed these two disparate races to bond together. The fact that riding an ogre gives you a great vantage point for shooting helps too.",
+      "category": "elite",
+      "models": [
+        {
+          "name": "Ogre Rider",
+          "movement": 6,
+          "courage": 7,
+          "shoot": 5,
+          "fight": 6,
+          "defense": 6,
+          "reflexes": 5,
+          "min": 3,
+          "max": 6,
+          "weapons": [
+            {
+              "id": "heavy_handweapon",
+              "count": 3
+            },
+            "jezzail"
+          ],
+          "rules": [
+            {
+              "id": "wounds",
+              "x": 2
+            }
+          ]
+        }
+      ],
+      "options": [
+        {
+          "addRule": [
+            "champion"
+          ],
+          "modelLimit": 1
+        },
+        {
+          "addRule": [
+            "banner"
+          ],
+          "modelLimit": 1
+        },
+        {
+          "addRule": [
+            "musician"
+          ],
+          "modelLimit": 1
+        }
+      ],
+      "subfactions": [
+        "none"
+      ]
+    },
+    "siege_mower": {
+      "name": "Siege Mower",
+      "description": "A giant lawnmower that reaps enemy lines like corn.",
+      "category": "rare",
+      "models": [
+        {
+          "name": "Siege Mower",
+          "movement": 6,
+          "courage": 7,
+          "shoot": 5,
+          "fight": 6,
+          "defense": 7,
+          "reflexes": 6,
+          "min": 1,
+          "max": 2,
+          "weapons": [
+            {
+              "id": "heavy_handweapon",
+              "count": 8
+            },
+            "handweapon"
+          ],
+          "rules": [
+            "damage_chart"
+          ]
+        }
+      ],
+      "keywords": [
+        "Warmachine"
+      ],
+      "subfactions": [
+        "none"
+      ]
+    },
+    "minutemen": {
+      "name": "Minutemen",
+      "description": "Named both for their size and the speed at which they muster when called to war, these warriors rake their foes with arrows and shot.",
+      "category": "core",
+      "models": [
+        {
+          "name": "Minuteman",
+          "movement": 6,
+          "courage": 5,
+          "shoot": 5,
+          "fight": 5,
+          "defense": 4,
+          "reflexes": 5,
+          "min": 10,
+          "max": 30,
+          "weapons": [
+            "light_handweapon",
+            "short_bow"
+          ],
+          "options": [
+            {
+              "replaceWeapon": [
+                "short_bow"
+              ],
+              "withWeapon": [
+                "handgun"
+              ],
+              "modelLimit": "all"
+            }
+          ]
+        }
+      ],
+      "options": [
+        {
+          "addRule": [
+            "champion"
+          ],
+          "modelLimit": 1
+        },
+        {
+          "addRule": [
+            "banner"
+          ],
+          "modelLimit": 1
+        },
+        {
+          "addRule": [
+            "musician"
+          ],
+          "modelLimit": 1
+        }
+      ],
+      "subfactions": [
+        "none"
+      ]
+    },
+    "hobelars": {
+      "name": "Hobelars",
+      "description": "Riding fast large hounds, these light cavalrymen are great rangers and skirmishers.",
+      "category": "core",
+      "models": [
+        {
+          "name": "Hobelar",
+          "movement": 9,
+          "courage": 5,
+          "shoot": 5,
+          "fight": 5,
+          "defense": 4,
+          "reflexes": 5,
+          "min": 5,
+          "max": 20,
+          "weapons": [
+            "handweapon",
+            "buckler",
+            "dog_bite"
+          ],
+          "options": [
+            {
+              "replaceWeapon": [
+                "handweapon",
+                "buckler"
+              ],
+              "withWeapon": [
+                [
+                  "spear",
+                  "buckler"
+                ],
+                [
+                  "light_handweapon",
+                  "carbine"
+                ]
+              ],
+              "modelLimit": "all"
+            }
+          ]
+        }
+      ],
+      "keywords": [
+        "Cavalry"
+      ],
+      "options": [
+        {
+          "addRule": [
+            "champion"
+          ],
+          "modelLimit": 1
+        },
+        {
+          "addRule": [
+            "banner"
+          ],
+          "modelLimit": 1
+        },
+        {
+          "addRule": [
+            "musician"
+          ],
+          "modelLimit": 1
+        }
+      ],
+      "subfactions": [
+        "none"
+      ]
+    },
+    "cuirassiers": {
+      "name": "Cuirassiers",
+      "description": "Riding foul-tempered goats, a few cuirassiers can add some well-needed punch to a village guard.",
+      "category": "elite",
+      "models": [
+        {
+          "name": "Cuirassier",
+          "movement": 9,
+          "courage": 5,
+          "shoot": 5,
+          "fight": 6,
+          "defense": 5,
+          "reflexes": 5,
+          "min": 5,
+          "max": 20,
+          "weapons": [
+            "demilance",
+            "buckler",
+            "ram_horns"
+          ]
+        }
+      ],
+      "options": [
+        {
+          "addRule": [
+            "champion"
+          ],
+          "modelLimit": 1
+        },
+        {
+          "addRule": [
+            "banner"
+          ],
+          "modelLimit": 1
+        },
+        {
+          "addRule": [
+            "musician"
+          ],
+          "modelLimit": 1
+        }
+      ],
+      "keywords": [
+        "Cavalry"
+      ],
+      "subfactions": [
+        "none"
+      ]
+    },
+    "flying_hobelars": {
+      "name": "Avia Hobelars",
+      "description": "Birds are notoriously hard to mount, but being able to rain down pain on the foe more than makes up for it.",
+      "category": "elite",
+      "models": [
+        {
+          "name": "Avia Hobelar",
+          "movement": 10,
+          "courage": 5,
+          "shoot": 5,
+          "fight": 5,
+          "defense": 4,
+          "reflexes": 5,
+          "min": 5,
+          "max": 20,
+          "weapons": [
+            "handweapon",
+            "buckler",
+            "birb_wings"
+          ],
+          "options": [
+            {
+              "replaceWeapon": [
+                "handweapon",
+                "buckler"
+              ],
+              "withWeapon": [
+                [
+                  "spear",
+                  "buckler"
+                ],
+                [
+                  "light_handweapon",
+                  "carbine"
+                ]
+              ],
+              "modelLimit": "all"
+            }
+          ],
+          "rules": [
+            "fly"
+          ]
+        }
+      ],
+      "options": [
+        {
+          "addRule": [
+            "champion"
+          ],
+          "modelLimit": 1
+        },
+        {
+          "addRule": [
+            "banner"
+          ],
+          "modelLimit": 1
+        },
+        {
+          "addRule": [
+            "musician"
+          ],
+          "modelLimit": 1
+        }
+      ],
+      "keywords": [
+        "Cavalry"
+      ],
+      "subfactions": [
+        "none"
+      ]
+    },
+    "balloons": {
+      "name": "Hot Air Ballooners",
+      "description": "Drifting gracefully through the air, small hot air balloons provide explosive support to their grounded comrades.",
+      "category": "elite",
+      "models": [
+        {
+          "name": "Hot Air Ballooner",
+          "movement": 10,
+          "courage": 5,
+          "shoot": 5,
+          "fight": 5,
+          "defense": 4,
+          "reflexes": 5,
+          "min": 3,
+          "max": 6,
+          "weapons": [
+            "balloon_bomb"
+          ],
+          "rules": [
+            "fly",
+            {
+              "id": "wounds",
+              "x": 2
+            }
+          ]
+        }
+      ],
+      "keywords": [
+        "Warmachine"
+      ],
+      "subfactions": [
+        "none"
+      ]
+    },
+    "hotpot": {
+      "name": "Hotpot Launcher",
+      "description": "Large catapults and slings are often used by halflings to cover the foe in scalding (but scrumptious) stew.",
+      "category": "rare",
+      "models": [
+        {
+          "name": "Crew",
+          "movement": 6,
+          "courage": 5,
+          "shoot": 5,
+          "fight": 5,
+          "defense": 4,
+          "reflexes": 5,
+          "min": 3,
+          "max": 3,
+          "weapons": [
+            "light_handweapon"
+          ]
+        },
+        {
+          "name": "Hotpot Launcher",
+          "movement": 6,
+          "courage": 5,
+          "shoot": 5,
+          "fight": 5,
+          "defense": 4,
+          "reflexes": 5,
+          "min": 3,
+          "max": 3,
+          "weapons": [
+            "hot_pot"
+          ],
+          "rules": [
+            {
+              "id": "crew",
+              "x": 3
+            }
+          ]
+        }
+      ],
+      "keywords": [
+        "Warmachine",
+        "Artillery"
+      ],
+      "subfactions": [
+        "none"
+      ]
+    }
+  },
+  "color": "#35c544",
+  "relics": [],
+  "strategies": [
+    {
+      "name": "Good Grub",
+      "phase": "activation",
+      "description": "Use before activating a unit. That unit may immediately heal 1 point of damage suffered.",
+      "flavor": "A mid-battle snack can sometimes make the difference between life and death.",
+      "cost": 2
+    },
+    {
+      "name": "For Hearth and Home",
+      "phase": "activation",
+      "description": "Use when an _Infantry_ or _Cavalry_ unit fights in melee. Hit rolls of 1-2 cause 1 additional hit.",
+      "flavor": "Halflings love their homelands, and will fight to the bitter end to protect them.",
+      "cost": 1
+    },
+    {
+      "name": "Skilled Poachers",
+      "phase": "activation",
+      "description": "Use when a unit activates. That unit gains the benefit of cover.",
+      "flavor": "Small and nimble, halflings are adept at sneaking through the brush.",
+      "cost": 1
+    }
+  ],
+  "powers": {
+    "garlic": {
+      "name": "Tears of Garlic",
+      "description": "Target enemy unit within 12\" subtracts 1 from its hit rolls.",
+      "charge": 7
+    },
+    "ravenous": {
+      "name": "Ravenous Hunger",
+      "description": "Target enemy unit within 18\" subtracts 1 from its Move stat.",
+      "charge": 6
+    },
+    "f_poison": {
+      "name": "Food Poisoning",
+      "description": "Target enemy unit within 12\" takes 3 hits with Poison.",
+      "charge": 6
+    }
+  },
+  "weapons": {
+    "demilance": {
+      "name": "Demi-lance",
+      "ap": 1,
+      "attacks": 1,
+      "short": "Melee",
+      "rules": [
+        {
+          "id": "lance"
+        }
+      ]
+    },
+    "dog_bite": {
+      "name": "Hound Bite",
+      "ap": 1,
+      "attacks": 1,
+      "short": "Melee",
+      "rules": [
+        {
+          "id": "lance"
+        }
+      ]
+    },
+    "ram_horns": {
+      "name": "Hound Bite",
+      "ap": 2,
+      "attacks": 1,
+      "short": "Melee"
+    },
+    "birb_wings": {
+      "name": "Bird Wings",
+      "ap": 0,
+      "attacks": 1,
+      "short": "Melee",
+      "rules": [
+        {
+          "id": "lance"
+        }
+      ]
+    },
+    "sling": {
+      "name": "Sling",
+      "attacks": 1,
+      "short": 9,
+      "medium": 18,
+      "rules": [
+        "assault"
+      ]
+    },
+    "jezzail": {
+      "name": "Jezzail",
+      "attacks": 1,
+      "ap": 3,
+      "short": 15,
+      "medium": 30
+    },
+    "balloon_bomb": {
+      "name": "Ballooner Bombs",
+      "attacks": 1,
+      "ap": 2,
+      "short": 6,
+      "rules": [
+        "bomb",
+        {
+          "id": "blast",
+          "x": 3
+        }
+      ]
+    },
+    "hot_pot": {
+      "name": "Hot Pot",
+      "attacks": 1,
+      "ap": 2,
+      "short": 18,
+      "medium": 36,
+      "rules": [
+        "indirect",
+        "scatter",
+        {
+          "id": "blast",
+          "x": 3
+        }
+      ]
+    }
+  },
+  "rules": {
+    "halfling_tactics": {
+      "name": "Halfling Tactics",
+      "inputs": [
+        "x"
+      ],
+      "description": "When this unit is activated, choose up to X friendly _Infantry_ units within 6\" to receive one of the following bonuses until the end of the round: \n * Re-roll failed Accuracy tests of 9+ \n * Re-roll failed Strength tests of 9+",
+      "points": [
+        "rule.x",
+        {
+          "multiply": 10
+        }
+      ]
+    }
+  }
+}
