@@ -1067,7 +1067,7 @@
       "name": "Magic Bolt",
       "ap": 2,
       "attacks": 1,
-      "short": 8,
+      "short": 9,
       "rules": [
         "assault"
       ]
@@ -1155,9 +1155,26 @@
         "sniper"
       ]
     },
+    "jezzail": {
+      "name": "Jezzail",
+      "ap": 4,
+      "attacks": 1,
+      "short": 15,
+      "medium": 30
+    },
     "carbine": {
       "name": "Carbine",
       "ap": 2,
+      "attacks": 1,
+      "short": 9,
+      "medium": 18,
+      "rules": [
+        "assault"
+      ]
+    },
+    "sling": {
+      "name": "Sling",
+      "ap": 1,
       "attacks": 1,
       "short": 9,
       "medium": 18,
@@ -1584,7 +1601,7 @@
   "rules": {
     "poisoned_blades": {
       "name": "Poisoned Blades",
-      "description": "This model's melee weapons have +1 AP against enemies without _Damage Table(X)_.",
+      "description": "This model\u0027s melee weapons have +1 AP against enemies without _Damage Table(X)_.",
       "points": 5
     },
     "legend_strategist": {
@@ -1662,7 +1679,7 @@
     },
     "regeneration": {
       "name": "Regeneration",
-      "description": "At the end of it's activation you can heal 1 wound that has been allocated to this model.",
+      "description": "At the end of it\u0027s activation you can heal 1 wound that has been allocated to this model.",
       "points": 5
     },
     "enchanted": {
@@ -1707,7 +1724,7 @@
       "inputs": [
         "x"
       ],
-      "description": "At any point during this unit's activation, if within 3\" of a Vehicle or Warmachine, roll one die. On an X or less the vehicle or warmachine may remove one critical damage.",
+      "description": "At any point during this unit\u0027s activation, if within 3\" of a Vehicle or Warmachine, roll one die. On an X or less the vehicle or warmachine may remove one critical damage.",
       "points": [
         "rule.x",
         {
@@ -1741,7 +1758,7 @@
     },
     "trappers": {
       "name": "Trappers",
-      "description": "When this model's unit successfully performs a counter attack or escape reaction, the charging unit suffers 6 hits with no AP.",
+      "description": "When this model\u0027s unit successfully performs a counter attack or escape reaction, the charging unit suffers 6 hits with no AP.",
       "points": [
         1
       ]
@@ -2095,7 +2112,7 @@
           "name": "Blood",
           "id": "blood",
           "color": "#547588",
-          "description": "Fledgling vampires are eager to drink and don't have the patience for just biting their enemies."
+          "description": "Fledgling vampires are eager to drink and don\u0027t have the patience for just biting their enemies."
         },
         "dread": {
           "name": "Dread",
@@ -2112,7 +2129,7 @@
       "url": "corrupted_legions.json",
       "color": "#343a40",
       "alliance": "chaos",
-      "description": "The Corrupted Legions prove that even dead gods can be mightier than mortals.  Wearing powerful cursed armour and wielding weapons with ancient enchantments, they seek the ressurection of their dark masters.",
+      "description": "The Corrupted Legions prove that even dead gods can be mightier than mortals. Wearing powerful cursed armour and wielding weapons with ancient enchantments, they seek the resurrection of their dark masters.",
       "subfactions": {
         "change": {
           "name": "Magic",
@@ -2272,6 +2289,20 @@
           "color": "#d6e5e4",
           "description": "Those who call the frozen wastes of the northern realms home are vicious but flexible fighters.",
           "restricted": false
+        },
+        "east": {
+          "name": "Eastern Kingdoms",
+          "color": "#ad1a5c",
+          "description": "Prideful and mysterious, the eastern kingdoms are a well-oiled war machine.",
+          "restricted": false,
+          "id": "east"
+        },
+        "south": {
+          "name": "Southern Kingdoms",
+          "color": "#d1ad2a",
+          "description": "The exotic southern deserts are home to firey zeal and relentless cavalry.",
+          "restricted": false,
+          "id": "south"
         }
       }
     },
@@ -2345,7 +2376,7 @@
       "url": "dark_elves.json",
       "color": "#4e2894",
       "alliance": "chaos",
-      "description": "Also known as Shadow Elves, these once-proud people were cursed by the whispers of the Old Gods and became twisted parodies of their kin that lurch from the darkness into the fray."
+      "description": "Also known as shadow elves, these once-proud people were cursed by the echoes of the Old Gods and have since devolved into sadistic warbands."
     },
     "wood_elves": {
       "version": "1.0",
@@ -2354,7 +2385,7 @@
       "url": "wood_elves.json",
       "color": "#38733a",
       "alliance": "order",
-      "description": "Hidden away in their forests, the Wood Elves seek only peace, and the spreading of nature's gifts.  They go to war only to fight those who would despoil their forests or stop their spread.",
+      "description": "Hidden away in their forests, the Wood Elves seek only peace, and the spreading of nature\u0027s gifts.  They go to war only to fight those who would despoil their forests or stop their spread.",
       "subfactions": {
         "spite": {
           "name": "Spite-Grove",
@@ -2402,7 +2433,7 @@
       "url": "halflings.json",
       "color": "#35c544",
       "alliance": "order",
-      "description": "A diminutive yet wholesome race of plucky adventurers, many underestimate the lengths which halflings will go to in order to defend their homes. Using dwarven weaponry, elf-bred canine steeds, and their own good luck, it's easy to see why experienced warlords will often avoid halfling settlements until it's too late."
+      "description": "Diminutive yet lucky, many warlords underestimate the tenacity of the halflings until it\u0027s too late."
     }
   },
   "categories": {
