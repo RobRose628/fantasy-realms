@@ -179,7 +179,7 @@
             "category": "elite",
             "models": [
                 {
-                    "options": [{"replaceWeapon": ["glaive_carbine"], "withWeapon": ["flamethrower", "burst_rifle"], "modelLimit": "1/5"}],
+                    "options": [{"replaceWeapon": ["glaive_carbine"], "withWeapon": ["flamethrower", "mortar_rifle"], "modelLimit": "1/5"}],
                     "name": "Corrupted Engineers",
                     "movement": 5,
                     "courage": 5,
