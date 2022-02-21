@@ -23,7 +23,7 @@
                         {"addRule": ["companion"]},
                         {"replaceRule": [{"id": "power", "x": 1}], "withRule": [{"id": "power", "x": 2}]}
                     ],
-                    "rules": ["agile", {"id": "wounds", "x": 2}, "leader", {"id": "power", "x": 1}],
+                    "rules": [{"id": "wounds", "x": 2}, "leader", {"id": "power", "x": 1}],
                     "min": 1,
                     "max": 1
                 }
@@ -53,7 +53,7 @@
                         {"addRule": [{"name": "Wings", "id": "fly"}]},
                         {"replaceRule": [{"id": "ranger_tactics", "x": 1}], "withRule": [{"id": "melee_tactics", "x": 1}]}
                     ],
-                    "rules": ["agile", {"id": "wounds", "x": 3}, "leader", {"id": "ranger_tactics", "x": 1}],
+                    "rules": [{"id": "wounds", "x": 3}, "leader", {"id": "ranger_tactics", "x": 1}],
                     "min": 1,
                     "max": 1
                 }
@@ -83,7 +83,7 @@
                         {"addRule": ["enchanted_shield"]},
                         {"replaceRule": [{"id": "marauder_tactics", "x": 1}], "withRule": [{"id": "knight_tactics", "x": 1}]}
                     ],
-                    "rules": [{"id": "wounds", "x": 3}, "leader", {"id": "marauder_tactics", "x": 1}, "agile"],
+                    "rules": [{"id": "wounds", "x": 3}, "leader", {"id": "marauder_tactics", "x": 1}],
                     "min": 1,
                     "max": 1
                 }
@@ -135,7 +135,7 @@
                     "defense": 11,
                     "reflexes": 6,
                     "weapons": ["impaling_claws", {"id": "roots", "count": 5}],
-                    "rules": ["leader", {"id": "power", "x": 1}, "damage_chart", "ambush", "agile"],
+                    "rules": ["leader", {"id": "power", "x": 1}, "damage_chart", "ambush"],
                     "min": 1,
                     "max": 1,
                     "options": [
@@ -160,7 +160,7 @@
                     "fight": 5,
                     "defense": 5,
                     "reflexes": 6,
-                    "rules": ["agile"],
+                    "rules": ["scout"],
                     "min": 10,
                     "max": 30,
                     "weapons": ["light_handweapon", "longbow"]
@@ -182,7 +182,6 @@
                     "fight": 5,
                     "defense": 5,
                     "reflexes": 6,
-                    "rules": ["agile"],
                     "max": 30,
                     "min": 10,
                     "weapons": ["spear", "shield"],
@@ -208,7 +207,7 @@
                     "weapons": [{"id": "claws", "count": 2}],
                     "min": 10,
                     "max": 30,
-                    "rules": ["agile", "furious"]
+                    "rules": ["furious"]
                 }
             ],
             "options": [{"addRule": ["champion"], "modelLimit": 1}, {"addRule": ["banner"], "modelLimit": 1}, {"addRule": ["musician"], "modelLimit": 1}],
@@ -230,7 +229,6 @@
                     "weapons": ["great_weapon", "rending_claws"],
                     "min": 5,
                     "max": 20,
-                    "rules": ["agile"],
                     "options": [
                         {"replaceWeapon": ["great_weapon"], "withWeapon": ["heavy_polearm", "long_bow", {"id": "rending_claws", "count": 2}], "modelLimit": "all"},
                         {"addRule": ["fear", "ambush"], "modelLimit": "all"}
@@ -256,7 +254,7 @@
                     "weapons": [{"id": "claws", "count": 3}],
                     "min": 3,
                     "max": 6,
-                    "rules": ["agile", {"id": "wounds", "x": 3}],
+                    "rules": [{"id": "wounds", "x": 3}],
                     "options": [{"replaceWeapon": [{"id": "claws", "count": 1}], "withWeapon": ["great_weapon", "great_polearm", "great_bow"]}]
                 }
             ],
@@ -279,7 +277,6 @@
                     "min": 5,
                     "max": 15,
                     "weapons": [{"id": "hooves_and_teeth", "count": 2}, "handweapon", "long_bow"],
-                    "rules": ["agile"],
                     "options": [
                         {"replaceWeapon": ["handweapon", "long_bow"], "withWeapon": [["lance", "shield"], ["lance", "javelin"]], "modelLimit": "all"},
                         {"replaceWeapon": [{"id": "hooves_and_teeth", "count": 2}], "withWeapon": [{"id": "antlers_and_hooves", "count": 2}], "modelLimit": "all"}
@@ -306,7 +303,7 @@
                     "defense": 6,
                     "reflexes": 6,
                     "weapons": [{"id": "lance", "count": 2}, {"id": "antlers_and_hooves", "count": 2}],
-                    "rules": ["agile", {"id": "power", "x": 1}]
+                    "rules": [{"id": "power", "x": 1}]
                 }
             ],
             "options": [{"addRule": ["champion"], "modelLimit": 1}, {"addRule": ["banner"], "modelLimit": 1}, {"addRule": ["musician"], "modelLimit": 1}],
