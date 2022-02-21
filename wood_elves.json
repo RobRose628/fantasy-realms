@@ -314,7 +314,7 @@
             "name": "Elven Rangers",
             "description": "Travelling along the hidden Spirit Paths, ambushing patrols or fools that have travelled too far into the sacred forests.",
             "category": "elite",
-            "models": [{"name": "Ranger", "movement": 7, "courage": 5, "shoot": 6, "fight": 6, "defense": 5, "reflexes": 6, "weapons": ["long_bow", "handweapon"], "min": 10, "max": 20}],
+            "models": [{"name": "Ranger", "movement": 7, "courage": 5, "shoot": 6, "fight": 6, "defense": 5, "reflexes": 6, "weapons": ["long_bow", "handweapon"], "min": 5, "max": 20}],
             "rules": ["stealth", "ambush"],
             "subfactions": ["none", "watchers"],
             "options": [{"addRule": ["champion"], "modelLimit": 1}, {"addRule": ["banner"], "modelLimit": 1}, {"addRule": ["musician"], "modelLimit": 1}]
