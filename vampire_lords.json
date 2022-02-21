@@ -404,9 +404,14 @@
             "inputs": ["x"],
             "description": "When this unit is activated, choose up to X friendly _Infantry_ units within 6\". This unit and those units gain +1 AP on all Melee weapons until the end of the round.",
             "points": ["rule.x", {"multiply": 10}]
-        }
+        },
+        "sanguine_chalice": {
+            "name": "Sanguine Chalice",
+            "description": "Once per game roll a die each time a friendly unit within 3\" kills an enemy model. On a roll of 1 or 2, return a model to that unit. This may not bring the unit over its starting size.",
+            "points": 10
+        },
+        "staff_of_dominion": {"name": "Staff of Dominion", "description": "This model subtracts 1 from Power rolls.", "points": 15}
     },
-    "relics": [],
     "powers": {
         "raise_dead": {"name": "Raise Dead", "description": "Target friendly _Undead_ _Infantry_ unit within 12\" restores 1D3 models. This power may only be cast once per turn.", "charge": 5},
         "death_hex": {"name": "Death Hex", "description": "Target enemy unit within 12\" must re-roll one succesful die on its next Save test. This power may be cast unlimited times.", "charge": 6},
@@ -436,6 +441,29 @@
             "flavor": "Corpses raised from their grave, preying on their once beloved with uncanny ferocity.",
             "cost": 1,
             "subfactions": ["blood", "bone", "dread", "none"]
+        }
+    },
+    "relics": {
+        "lord_of_the_night": {
+            "name": "Lord of the Night",
+            "rule": "fear",
+            "description": "Upgrade one Leader model with Fear.",
+            "flavor": "Stories about the creatures of the night are seldom exaggerated.",
+            "points": 5
+        },
+        "sanguine_chalice": {
+            "name": "The Sanguine Chalice",
+            "rule": "sanguine_chalice",
+            "description": "Upgrade one Leader model with Sanguine Chalice.",
+            "flavor": "This chalice overflows with fresh blood, inciting fallen soldiers to return from beyond.",
+            "points": 10
+        },
+        "staff_of_dominion": {
+            "name": "Staff of Dominion",
+            "rule": "staff_of_dominion",
+            "description": "Upgrade one Power model with Staff of Dominion.",
+            "flavor": "This ivory staff channels unholy energies to allow for easier spellcasting.",
+            "points": 15
         }
     }
 }
