@@ -6,37 +6,26 @@
     "units": {
         "corrupted_lord": {
             "name": "Corrupted Lord",
-            "description": "A lord of the dark gods.",
+            "description": "A favored champion of the dark gods, leading their warband into war.",
             "category": "hero",
             "models": [
                 {
                     "name": "Corrupted Lord",
                     "movement": 6,
                     "courage": 7,
-                    "shoot": 6,
+                    "shoot": 5,
                     "fight": 7,
                     "defense": 7,
                     "reflexes": 6,
-                    "weapons": [{"id": "heavy_great_weapon", "count": 3}, "leeching_blade"],
+                    "weapons": [{"id": "great_weapon", "count": 3}, "leeching_blade"],
                     "options": [
                         {
-                            "replaceWeapon": [{"id": "heavy_great_weapon", "count": 3}],
-                            "withWeapon": [
-                                {"id": "heavy_polearm", "count": 3},
-                                {"id": "heavy_flail", "count": 3},
-                                {"id": "heavy_great_weapon", "count": 4},
-                                [{"id": "heavy_polearm", "count": 2}, {"id": "heavy_great_weapon", "count": 2}],
-                                {"id": "grand_weapon", "count": 3}
-                            ]
+                            "replaceWeapon": [{"id": "great_weapon", "count": 3}],
+                            "withWeapon": [{"id": "heavy_polearm", "count": 3}, {"id": "heavy_flail", "count": 3}, {"id": "great_weapon", "count": 4}, {"id": "grand_weapon", "count": 3}]
                         },
-                        {"addRule": ["enchanted_shield"]},
-                        {"addRule": [[{"id": "power", "x": 1}, "disk_of_change"]], "subfactions": ["change"]},
+                        {"addRule": ["enchanted_shield", {"id": "icon", "x": "Infantry"}]},
                         {"replaceRule": [{"id": "corrupted_tactics", "x": 1}], "withRule": [{"id": "corrupted_tactics", "x": 2}]},
-                        {"addRule": [{"name": "Blessing of Excess", "id": "swift"}], "subfactions": ["excess"]},
-                        {"addRule": [{"name": "Blessing of Magic", "id": "ambush"}], "subfactions": ["change"]},
-                        {"subfactions": ["pestilence"], "addRule": [{"name": "Blessing of Pestilence", "id": "distracting"}]},
-                        {"addRule": [{"name": "Blessing of Deception", "id": "evasive"}], "subfactions": ["deception"]},
-                        {"addRule": [{"name": "Blessing of Wrath", "id": "furious"}], "subfactions": ["wrath"]}
+                        {"addRule": ["disk_of_magic"], "subfactions": ["magic", "change"]}
                     ],
                     "rules": [{"id": "wounds", "x": 3}, {"id": "corrupted_tactics", "x": 1}, "leader"],
                     "min": 1,
@@ -45,41 +34,35 @@
             ],
             "subfactions": ["none"]
         },
-        "corrupted_lord_horse": {
+        "corrupted_lord_steed": {
             "name": "Corrupted Lord on Cursed Steed",
-            "description": "A lord of the dark gods.",
+            "description": "A favored champion of the dark gods, leading their warband into war ontop of a demonic beast.",
             "category": "hero",
             "models": [
                 {
                     "name": "Corrupted Lord on Cursed Steed",
                     "movement": 8,
                     "courage": 7,
-                    "shoot": 6,
+                    "shoot": 5,
                     "fight": 7,
                     "defense": 7,
                     "reflexes": 6,
-                    "weapons": [{"id": "heavy_hooves_and_teeth", "count": 2}, {"id": "heavy_great_weapon", "count": 3}, "leeching_blade"],
+                    "weapons": [{"id": "heavy_hooves_and_teeth", "count": 2}, {"id": "great_weapon", "count": 3}, "leeching_blade"],
                     "options": [
                         {
-                            "replaceWeapon": [{"id": "heavy_great_weapon", "count": 3}],
+                            "replaceWeapon": [{"id": "great_weapon", "count": 3}],
                             "withWeapon": [
                                 {"id": "heavy_polearm", "count": 3},
                                 {"id": "heavy_flail", "count": 3},
-                                {"id": "heavy_great_weapon", "count": 4},
+                                {"id": "great_weapon", "count": 4},
                                 {"id": "grand_weapon", "count": 3},
                                 {"id": "great_lance", "count": 3}
                             ]
                         },
-                        {"addRule": ["enchanted_shield"]},
-                        {"addRule": [{"id": "power", "x": 1}], "subfactions": ["change"]},
-                        {"replaceRule": [{"id": "corrupted_tactics", "x": 1}], "withRule": [{"id": "corrupted_tactics", "x": 2}]},
-                        {"addRule": [{"name": "Blessing of Excess", "id": "swift"}], "subfactions": ["excess"]},
-                        {"addRule": [{"name": "Blessing of Magic", "id": "ambush"}], "subfactions": ["change"]},
-                        {"subfactions": ["pestilence"], "addRule": [{"name": "Blessing of Pestilence", "id": "distracting"}]},
-                        {"addRule": [{"name": "Blessing of Deception", "id": "evasive"}], "subfactions": ["deception"]},
-                        {"addRule": [{"name": "Blessing of Wrath", "id": "furious"}], "subfactions": ["wrath"]}
+                        {"addRule": ["enchanted_shield", {"id": "icon", "x": "Infantry, Cavalry"}]},
+                        {"replaceRule": [{"id": "corrupted_tactics", "x": 1}], "withRule": [{"id": "corrupted_tactics", "x": 2}]}
                     ],
-                    "rules": [{"id": "leader_x", "x": "Infantry, Cavalry"}, {"id": "wounds", "x": 4}, {"id": "corrupted_tactics", "x": 1}],
+                    "rules": [{"id": "leader_x", "x": "Infantry, Cavalry"}, {"id": "wounds", "x": 3}, {"id": "corrupted_tactics", "x": 1}],
                     "min": 1,
                     "max": 1
                 }
@@ -89,31 +72,31 @@
         },
         "corrupted_lord_on_lizard": {
             "name": "Corrupted Lord on Lizard Beast",
-            "description": "A lord of the dark gods mounted on a dangerous lizard beast.",
+            "description": "A favored champion of the dark gods, leading their warband into war ontop of a massive lizard beast.",
             "category": "hero",
             "models": [
                 {
                     "name": "Corrupted Lord on Lizard Beast",
                     "movement": 8,
                     "courage": 7,
-                    "shoot": 6,
+                    "shoot": 5,
                     "fight": 7,
                     "defense": 8,
                     "reflexes": 6,
-                    "weapons": [{"id": "horn_and_claws", "count": 3}, {"id": "bashing_tail", "count": 2}, "leeching_blade", {"id": "heavy_polearm", "count": 3}],
+                    "weapons": [{"id": "horn_and_claws", "count": 3}, {"id": "bashing_tail", "count": 2}, "leeching_blade", {"id": "great_weapon", "count": 3}],
                     "options": [
                         {
-                            "replaceWeapon": [{"id": "heavy_polearm", "count": 3}],
-                            "withWeapon": [{"id": "heavy_great_weapon", "count": 3}, {"id": "heavy_great_weapon", "count": 4}, {"id": "grand_weapon", "count": 3}, {"id": "great_lance", "count": 3}]
+                            "replaceWeapon": [{"id": "great_weapon", "count": 3}],
+                            "withWeapon": [
+                                {"id": "heavy_polearm", "count": 3},
+                                {"id": "heavy_flail", "count": 3},
+                                {"id": "great_weapon", "count": 4},
+                                {"id": "grand_weapon", "count": 3},
+                                {"id": "great_lance", "count": 3}
+                            ]
                         },
-                        {"addRule": ["enchanted_shield"]},
-                        {"addRule": [{"id": "power", "x": 1}], "subfactions": ["change"]},
-                        {"replaceRule": [{"id": "corrupted_tactics", "x": 1}], "withRule": [{"id": "corrupted_tactics", "x": 2}]},
-                        {"addRule": [{"name": "Blessing of Excess", "id": "swift"}], "subfactions": ["excess"]},
-                        {"addRule": [{"name": "Blessing of Magic", "id": "ambush"}], "subfactions": ["change"]},
-                        {"subfactions": ["pestilence"], "addRule": [{"name": "Blessing of Pestilence", "id": "distracting"}]},
-                        {"addRule": [{"name": "Blessing of Deception", "id": "evasive"}], "subfactions": ["deception"]},
-                        {"addRule": [{"name": "Blessing of Wrath", "id": "furious"}], "subfactions": ["wrath"]}
+                        {"addRule": ["tower_shield", {"id": "icon", "x": "Infantry, Cavalry"}]},
+                        {"replaceRule": [{"id": "corrupted_tactics", "x": 1}], "withRule": [{"id": "corrupted_tactics", "x": 2}]}
                     ],
                     "rules": [{"id": "leader_x", "x": "Infantry, Cavalry"}, {"id": "wounds", "x": 4}, {"id": "corrupted_tactics", "x": 1}],
                     "min": 1,
@@ -121,11 +104,47 @@
                 }
             ],
             "subfactions": ["none"],
-            "keywords": ["Cavalry", "Monster"]
+            "keywords": ["Beast", "Cavalry", "Monster"]
+        },
+        "corrupted_lord_manticore": {
+            "name": "Corrupted Lord on Manticore",
+            "description": "A favored champion of the dark gods, leading their warband into war ontop of a deadly manticore.",
+            "category": "hero",
+            "models": [
+                {
+                    "name": "Corrupted Lord on Manticore",
+                    "movement": 10,
+                    "courage": 7,
+                    "shoot": 5,
+                    "fight": 7,
+                    "defense": 9,
+                    "reflexes": 6,
+                    "weapons": [{"id": "fangs_and_claws", "count": 6}, {"id": "bashing_tail", "count": 4}, {"id": "great_weapon", "count": 4}, "leeching_blade"],
+                    "options": [
+                        {
+                            "replaceWeapon": [{"id": "great_weapon", "count": 4}],
+                            "withWeapon": [
+                                {"id": "heavy_polearm", "count": 4},
+                                {"id": "heavy_flail", "count": 4},
+                                {"id": "great_weapon", "count": 5},
+                                {"id": "grand_weapon", "count": 4},
+                                {"id": "great_lance", "count": 4}
+                            ]
+                        },
+                        {"addRule": ["relic_shield"]},
+                        {"replaceRule": [{"id": "corrupted_tactics", "x": 2}], "withRule": [{"id": "corrupted_tactics", "x": 3}]}
+                    ],
+                    "rules": [{"id": "leader_x", "x": "Infantry, Cavalry"}, {"id": "corrupted_tactics", "x": 2}, "fly", "fear", "damage_chart"],
+                    "min": 1,
+                    "max": 1
+                }
+            ],
+            "subfactions": ["none"],
+            "keywords": ["Beast", "Cavalry", "Monster"]
         },
         "sorcerer": {
             "name": "Sorcerer",
-            "description": "An exalted sorcerer, master of the arcane arts.",
+            "description": "A corrupted spellcaster, bending reality to their twisted visions.",
             "category": "hero",
             "models": [
                 {
@@ -135,17 +154,12 @@
                     "shoot": 5,
                     "fight": 5,
                     "defense": 7,
-                    "reflexes": 5,
+                    "reflexes": 6,
                     "weapons": ["heavy_handweapon", "great_staff"],
                     "options": [
                         {"replaceRule": {"id": "power", "x": 1}, "withRule": {"id": "power", "x": 2}},
                         {"addRule": ["companion"]},
-                        {"addRule": ["disk_of_change"], "subfactions": ["change"]},
-                        {"addRule": [{"name": "Blessing of Excess", "id": "swift"}], "subfactions": ["excess"]},
-                        {"addRule": [{"name": "Blessing of Magic", "id": "ambush"}], "subfactions": ["change"]},
-                        {"subfactions": ["pestilence"], "addRule": [{"name": "Blessing of Pestilence", "id": "distracting"}]},
-                        {"addRule": [{"name": "Blessing of Deception", "id": "evasive"}], "subfactions": ["deception"]},
-                        {"addRule": [{"name": "Blessing of Wrath", "id": "furious"}], "subfactions": ["wrath"]}
+                        {"addRule": ["disk_of_magic"], "subfactions": ["magic", "change"]}
                     ],
                     "rules": [{"id": "leader_x", "x": "Infantry"}, {"id": "wounds", "x": 3}, {"id": "power", "x": 1}],
                     "min": 1,
@@ -156,27 +170,19 @@
         },
         "sorcerer_horse": {
             "name": "Sorcerer on Cursed Steed",
-            "description": "An exalted sorcerer, master of the arcane arts.",
+            "description": "A corrupted spellcaster riding a demonic beast, bending reality to their twisted visions.",
             "category": "hero",
             "models": [
                 {
                     "name": "Sorcerer on Cursed Steed",
                     "movement": 8,
                     "courage": 6,
-                    "shoot": 4,
+                    "shoot": 5,
                     "fight": 5,
                     "defense": 7,
-                    "reflexes": 5,
+                    "reflexes": 6,
                     "weapons": ["heavy_handweapon", "great_staff", {"id": "heavy_hooves_and_teeth", "count": 2}],
-                    "options": [
-                        {"replaceRule": {"id": "power", "x": 1}, "withRule": {"id": "power", "x": 2}},
-                        {"addRule": ["companion"]},
-                        {"addRule": [{"name": "Blessing of Excess", "id": "swift"}], "subfactions": ["excess"]},
-                        {"addRule": [{"name": "Blessing of Magic", "id": "ambush"}], "subfactions": ["change"]},
-                        {"subfactions": ["pestilence"], "addRule": [{"name": "Blessing of Pestilence", "id": "distracting"}]},
-                        {"addRule": [{"name": "Blessing of Deception", "id": "evasive"}], "subfactions": ["deception"]},
-                        {"addRule": [{"name": "Blessing of Wrath", "id": "furious"}], "subfactions": ["wrath"]}
-                    ],
+                    "options": [{"replaceRule": {"id": "power", "x": 1}, "withRule": {"id": "power", "x": 2}}, {"addRule": ["companion"]}],
                     "rules": [{"id": "leader_x", "x": "Infantry, Cavalry"}, {"id": "wounds", "x": 3}, {"id": "power", "x": 1}],
                     "min": 1,
                     "max": 1
@@ -187,7 +193,7 @@
         },
         "sorcerer_manticore": {
             "name": "Sorcerer on Manticore",
-            "description": "An exalted sorcerer, master of the arcane arts.",
+            "description": "A corrupted spellcaster riding ontop of a deadly manticore, bending reality to their twisted visions.",
             "category": "hero",
             "models": [
                 {
@@ -198,59 +204,9 @@
                     "fight": 6,
                     "defense": 9,
                     "reflexes": 6,
-                    "weapons": ["heavy_handweapon", "great_staff", {"id": "bashing_tail", "count": 4}, {"id": "fangs_and_claws", "count": 6}],
-                    "options": [
-                        {"replaceRule": {"id": "power", "x": 2}, "withRule": {"id": "power", "x": 3}},
-                        {"addRule": ["companion"]},
-                        {"addRule": [{"name": "Blessing of Excess", "id": "swift"}], "subfactions": ["excess"]},
-                        {"addRule": [{"name": "Blessing of Magic", "id": "ambush"}], "subfactions": ["change"]},
-                        {"subfactions": ["pestilence"], "addRule": [{"name": "Blessing of Pestilence", "id": "distracting"}]},
-                        {"addRule": [{"name": "Blessing of Deception", "id": "evasive"}], "subfactions": ["deception"]},
-                        {"addRule": [{"name": "Blessing of Wrath", "id": "furious"}], "subfactions": ["wrath"]}
-                    ],
+                    "weapons": [{"id": "fangs_and_claws", "count": 6}, {"id": "bashing_tail", "count": 4}, "heavy_handweapon", "great_staff"],
+                    "options": [{"replaceRule": {"id": "power", "x": 2}, "withRule": {"id": "power", "x": 3}}, {"addRule": ["companion"]}],
                     "rules": [{"id": "leader_x", "x": "Infantry, Cavalry"}, {"id": "power", "x": 2}, "fear", "fly", "damage_chart"],
-                    "min": 1,
-                    "max": 1
-                }
-            ],
-            "subfactions": ["none"],
-            "keywords": ["Beast", "Monster"]
-        },
-        "corrupted_lord_manticore": {
-            "name": "Corrupted Lord on Manticore",
-            "description": "A lord of the dark gods.",
-            "category": "hero",
-            "models": [
-                {
-                    "name": "Corrupted Lord on Manticore",
-                    "movement": 10,
-                    "courage": 7,
-                    "shoot": 6,
-                    "fight": 7,
-                    "defense": 9,
-                    "reflexes": 6,
-                    "weapons": [{"id": "heavy_great_weapon", "count": 3}, "leeching_blade", {"id": "bashing_tail", "count": 4}, {"id": "fangs_and_claws", "count": 6}],
-                    "options": [
-                        {
-                            "replaceWeapon": [{"id": "heavy_great_weapon", "count": 3}],
-                            "withWeapon": [
-                                {"id": "heavy_polearm", "count": 3},
-                                {"id": "heavy_flail", "count": 3},
-                                {"id": "heavy_great_weapon", "count": 4},
-                                [{"id": "heavy_polearm", "count": 2}, {"id": "heavy_great_weapon", "count": 2}],
-                                {"id": "grand_weapon", "count": 3}
-                            ]
-                        },
-                        {"addRule": ["relic_shield"]},
-                        {"addRule": [[{"id": "power", "x": 2}]], "subfactions": ["change"]},
-                        {"replaceRule": [{"id": "corrupted_tactics", "x": 2}], "withRule": [{"id": "corrupted_tactics", "x": 3}]},
-                        {"addRule": [{"name": "Blessing of Excess", "id": "swift"}], "subfactions": ["excess"]},
-                        {"addRule": [{"name": "Blessing of Magic", "id": "ambush"}], "subfactions": ["change"]},
-                        {"subfactions": ["pestilence"], "addRule": [{"name": "Blessing of Pestilence", "id": "distracting"}]},
-                        {"addRule": [{"name": "Blessing of Deception", "id": "evasive"}], "subfactions": ["deception"]},
-                        {"addRule": [{"name": "Blessing of Wrath", "id": "furious"}], "subfactions": ["wrath"]}
-                    ],
-                    "rules": [{"id": "leader_x", "x": "Infantry, Cavalry"}, {"id": "corrupted_tactics", "x": 1}, "fly", "fear", "damage_chart"],
                     "min": 1,
                     "max": 1
                 }
@@ -258,52 +214,9 @@
             "subfactions": ["none"],
             "keywords": ["Beast", "Cavalry", "Monster"]
         },
-        "corrupted_cultists": {
-            "name": "Corrupted Cultists",
-            "description": "Fanatical masses serving the Corrupted Gods.",
-            "category": "core",
-            "models": [
-                {
-                    "name": "Corrupted Cultist",
-                    "movement": 6,
-                    "courage": 5,
-                    "shoot": 4,
-                    "fight": 5,
-                    "defense": 5,
-                    "reflexes": 5,
-                    "weapons": [{"id": "heavy_handweapon", "count": 2}],
-                    "options": [
-                        {"replaceWeapon": [{"id": "heavy_handweapon", "count": 2}], "withWeapon": [["heavy_handweapon", "shield"]], "modelLimit": "all"},
-                        {
-                            "replaceWeapon": [{"id": "heavy_handweapon", "count": 2}],
-                            "withWeapon": [["poison_short_bow", {"id": "handweapon", "count": 2}]],
-                            "modelLimit": "all",
-                            "subfactions": ["excess"]
-                        },
-                        {"replaceWeapon": [{"id": "heavy_handweapon", "count": 2}], "withWeapon": [{"id": "heavy_polearm", "count": 2}], "modelLimit": "3/10"},
-                        {"addRule": ["artifact"], "modelLimit": "1/10"},
-                        {"addRule": ["companion"], "modelLimit": "1/10"}
-                    ],
-                    "min": 10,
-                    "max": 30
-                }
-            ],
-            "subfactions": ["none"],
-            "options": [
-                {"addRule": [["champion", {"id": "ward", "x": 1}]], "modelLimit": 1, "subfactions": ["wrath", "excess", "pestilence", "deception", "none"]},
-                {"addRule": [["champion", {"id": "power", "x": 1}]], "modelLimit": 1, "subfactions": ["change"]},
-                {"addRule": ["banner"], "modelLimit": 1},
-                {"addRule": ["musician"], "modelLimit": 1},
-                {"modelLimit": "all", "addRule": [{"name": "Blessing of Excess", "id": "swift"}], "subfactions": ["excess"]},
-                {"modelLimit": "all", "addRule": [{"name": "Blessing of Magic", "id": "ambush"}], "subfactions": ["change"]},
-                {"modelLimit": "all", "subfactions": ["pestilence"], "addRule": [{"name": "Blessing of Pestilence", "id": "distracting"}]},
-                {"modelLimit": "all", "addRule": [{"name": "Blessing of Deception", "id": "evasive"}], "subfactions": ["deception"]},
-                {"modelLimit": "all", "addRule": [{"name": "Blessing of Wrath", "id": "furious"}], "subfactions": ["wrath"]}
-            ]
-        },
         "corrupted_warriors": {
             "name": "Corrupted Warriors",
-            "description": "Warriors who serve the Corrupted Gods.",
+            "description": "A regiment of corrupted warriors who march into battle to gain the favours of their dark gods.",
             "category": "core",
             "models": [
                 {
@@ -316,20 +229,15 @@
                     "reflexes": 6,
                     "weapons": [{"id": "heavy_handweapon", "count": 2}, "shield"],
                     "options": [
+                        {"addWeapon": ["magic_bolt"], "modelLimit": "all", "subfactions": ["magic", "change"]},
                         {
                             "replaceWeapon": [{"id": "heavy_handweapon", "count": 2}, "shield"],
-                            "withWeapon": [{"id": "heavy_handweapon", "count": 3}, {"id": "heavy_great_weapon", "count": 2}, [{"id": "polearm", "count": 2}, "shield"]],
+                            "withWeapon": [{"id": "heavy_handweapon", "count": 3}, {"id": "grand_weapon", "count": 2}, [{"id": "polearm", "count": 2}, "shield"]],
                             "modelLimit": "all"
-                        },
-                        {
-                            "replaceWeapon": [{"id": "heavy_handweapon", "count": 2}, "shield"],
-                            "withWeapon": [[{"id": "heavy_handweapon", "count": 2}, "spiked_heavy_buckler"]],
-                            "modelLimit": "all",
-                            "subfactions": ["wrath"]
                         }
                     ],
                     "min": 5,
-                    "max": 15
+                    "max": 20
                 }
             ],
             "subfactions": ["none"],
@@ -337,16 +245,12 @@
                 {"addRule": ["champion"], "modelLimit": 1},
                 {"addRule": ["banner"], "modelLimit": 1},
                 {"addRule": ["musician"], "modelLimit": 1},
-                {"modelLimit": "all", "addRule": [{"name": "Blessing of Excess", "id": "swift"}], "subfactions": ["excess"]},
-                {"modelLimit": "all", "addRule": [{"name": "Blessing of Magic", "id": "ambush"}], "subfactions": ["change"]},
-                {"modelLimit": "all", "subfactions": ["pestilence"], "addRule": [{"name": "Blessing of Pestilence", "id": "distracting"}]},
-                {"modelLimit": "all", "addRule": [{"name": "Blessing of Deception", "id": "evasive"}], "subfactions": ["deception"]},
-                {"modelLimit": "all", "addRule": [{"name": "Blessing of Wrath", "id": "furious"}], "subfactions": ["wrath"]}
+                {"addRule": [{"id": "power", "x": 1}], "modelLimit": 1, "subfactions": ["magic", "change"]}
             ]
         },
         "corrupted_barbarians": {
             "name": "Corrupted Barbarians",
-            "description": "Frenzied Warriors serving the Corrupted Gods.",
+            "description": "Frenzied Warriors who rush into battle to appease their dark gods.",
             "category": "core",
             "models": [
                 {
@@ -358,22 +262,43 @@
                     "defense": 4,
                     "reflexes": 5,
                     "weapons": ["handweapon", "shield"],
-                    "options": [{"replaceWeapon": ["handweapon", "shield"], "withWeapon": [{"id": "handweapon", "count": 3}, ["flail", "shield"]], "modelLimit": "all", "subfactions": ["none"]}],
+                    "options": [
+                        {"addWeapon": ["magic_bolt"], "modelLimit": "all", "subfactions": ["change", "magic"]},
+                        {"replaceWeapon": ["handweapon", "shield"], "withWeapon": ["great_weapon", "heavy_flail", {"id": "handweapon", "count": 2}, ["light_flail", "shield"]]},
+                        {"replaceWeapon": ["handweapon", "shield"], "withWeapon": [["poison_short_bow", "light_handweapon"]], "subfactions": ["excess"]},
+                        {"replaceWeapon": ["handweapon", "shield"], "withWeapon": ["polearm"], "modelLimit": "3/10", "subfactions": ["change", "magic"]},
+                        {"addRule": ["artifact"], "modelLimit": "1/10", "subfactions": ["change", "magic"]},
+                        {"addRule": ["companion"], "modelLimit": "1/10", "subfactions": ["change", "magic"]}
+                    ],
                     "min": 10,
                     "max": 30
                 }
             ],
             "subfactions": ["none"],
-            "options": [
-                {"addRule": ["champion"], "modelLimit": 1},
-                {"addRule": ["banner"], "modelLimit": 1},
-                {"addRule": ["musician"], "modelLimit": 1},
-                {"modelLimit": "all", "addRule": [{"name": "Blessing of Excess", "id": "swift"}], "subfactions": ["excess"]},
-                {"modelLimit": "all", "addRule": [{"name": "Blessing of Magic", "id": "ambush"}], "subfactions": ["change"]},
-                {"modelLimit": "all", "subfactions": ["pestilence"], "addRule": [{"name": "Blessing of Pestilence", "id": "distracting"}]},
-                {"modelLimit": "all", "addRule": [{"name": "Blessing of Deception", "id": "evasive"}], "subfactions": ["deception"]},
-                {"modelLimit": "all", "addRule": [{"name": "Blessing of Wrath", "id": "furious"}], "subfactions": ["wrath"]}
-            ]
+            "options": [{"addRule": ["champion"], "modelLimit": 1}, {"addRule": ["banner"], "modelLimit": 1}, {"addRule": ["musician"], "modelLimit": 1}]
+        },
+        "barbarian_outriders": {
+            "name": "Barbarian Outriders",
+            "description": "Barbarians who ride atop crazed beasts into battle, trampling their foes under their hooves and steel.",
+            "category": "elite",
+            "models": [
+                {
+                    "name": "Barbarian Outrider",
+                    "movement": 8,
+                    "courage": 5,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 5,
+                    "reflexes": 5,
+                    "weapons": [{"id": "handweapon", "count": 2}, "shield", {"id": "heavy_hooves_and_teeth", "count": 2}],
+                    "options": [{"replaceWeapon": [{"id": "handweapon", "count": 2}, "shield"], "withWeapon": [["heavy_spear", "heavy_javelin"], {"id": "flail", "count": 2}], "modelLimit": "all"}],
+                    "min": 5,
+                    "max": 20
+                }
+            ],
+            "subfactions": ["none"],
+            "options": [{"addRule": ["champion"], "modelLimit": 1}, {"addRule": ["banner"], "modelLimit": 1}, {"addRule": ["musician"], "modelLimit": 1}],
+            "keywords": ["Cavalry"]
         },
         "corrupted_knights": {
             "name": "Corrupted Knights",
@@ -391,150 +316,15 @@
                     "reflexes": 5,
                     "weapons": [{"id": "lance", "count": 2}, {"id": "heavy_hooves_and_teeth", "count": 2}, "heavy_shield"],
                     "min": 3,
-                    "max": 6,
+                    "max": 15,
                     "options": [
-                        {
-                            "replaceWeapon": [{"id": "lance", "count": 2}],
-                            "withWeapon": [{"id": "heavy_great_weapon", "count": 2}, {"id": "heavy_polearm", "count": 2}, {"id": "heavy_flail", "count": 2}],
-                            "subfactions": ["none"]
-                        }
+                        {"replaceWeapon": [{"id": "lance", "count": 2}], "withWeapon": [{"id": "grand_weapon", "count": 2}, {"id": "heavy_polearm", "count": 2}, {"id": "heavy_flail", "count": 2}]}
                     ]
                 }
             ],
             "subfactions": ["none"],
-            "options": [
-                {"addRule": ["champion"], "modelLimit": 1},
-                {"addRule": ["banner"], "modelLimit": 1},
-                {"addRule": ["musician"], "modelLimit": 1},
-                {"modelLimit": "all", "addRule": [{"name": "Blessing of Excess", "id": "swift"}], "subfactions": ["excess"]},
-                {"modelLimit": "all", "addRule": [{"name": "Blessing of Magic", "id": "ambush"}], "subfactions": ["change"]},
-                {"modelLimit": "all", "subfactions": ["pestilence"], "addRule": [{"name": "Blessing of Pestilence", "id": "distracting"}]},
-                {"modelLimit": "all", "addRule": [{"name": "Blessing of Deception", "id": "evasive"}], "subfactions": ["deception"]},
-                {"modelLimit": "all", "addRule": [{"name": "Blessing of Wrath", "id": "furious"}], "subfactions": ["wrath"]}
-            ],
+            "options": [{"addRule": ["champion"], "modelLimit": 1}, {"addRule": ["banner"], "modelLimit": 1}, {"addRule": ["musician"], "modelLimit": 1}],
             "keywords": ["Cavalry"]
-        },
-        "corrupted_outriders": {
-            "name": "Barbarian Outriders",
-            "description": "Mounted Barbarians, ready to spill blood.",
-            "category": "elite",
-            "models": [
-                {
-                    "options": [{"replaceWeapon": [{"id": "handweapon", "count": 2}, "shield"], "withWeapon": [["heavy_spear", "barbarian_javelin"]], "modelLimit": "all"}],
-                    "name": "Corrupted Outrider",
-                    "movement": 8,
-                    "courage": 5,
-                    "shoot": 5,
-                    "fight": 5,
-                    "defense": 5,
-                    "reflexes": 5,
-                    "weapons": [{"id": "handweapon", "count": 2}, {"id": "heavy_hooves_and_teeth", "count": 2}, "shield"],
-                    "min": 5,
-                    "max": 10
-                }
-            ],
-            "subfactions": ["none"],
-            "options": [
-                {"addRule": ["champion"], "modelLimit": 1},
-                {"addRule": ["banner"], "modelLimit": 1},
-                {"addRule": ["musician"], "modelLimit": 1},
-                {"modelLimit": "all", "addRule": [{"name": "Blessing of Excess", "id": "swift"}], "subfactions": ["excess"]},
-                {"modelLimit": "all", "addRule": [{"name": "Blessing of Magic", "id": "ambush"}], "subfactions": ["change"]},
-                {"modelLimit": "all", "subfactions": ["pestilence"], "addRule": [{"name": "Blessing of Pestilence", "id": "distracting"}]},
-                {"modelLimit": "all", "addRule": [{"name": "Blessing of Deception", "id": "evasive"}], "subfactions": ["deception"]},
-                {"modelLimit": "all", "addRule": [{"name": "Blessing of Wrath", "id": "furious"}], "subfactions": ["wrath"]}
-            ],
-            "keywords": ["Cavalry"]
-        },
-        "banner_bearer": {
-            "name": "Corrupted Lord with Accursed Banner",
-            "description": "A chosen banner bearer of the dark gods.",
-            "min": 1,
-            "max": 1,
-            "category": "elite",
-            "models": [
-                {
-                    "name": "Corrupted Lord with Accursed Banner",
-                    "movement": 6,
-                    "courage": 7,
-                    "shoot": 5,
-                    "fight": 6,
-                    "defense": 7,
-                    "reflexes": 6,
-                    "weapons": [{"id": "heavy_handweapon", "count": 4}],
-                    "rules": [{"id": "wounds", "x": 3}, "support", "banner_of_hate"],
-                    "min": 1,
-                    "max": 1,
-                    "options": [
-                        {"replaceRule": ["banner_of_hate"], "withRule": ["banner_of_wrath"], "subfactions": ["wrath"]},
-                        {"replaceRule": ["banner_of_hate"], "withRule": ["banner_of_pain"], "subfactions": ["excess"]},
-                        {"replaceRule": ["banner_of_hate"], "withRule": ["banner_of_fear"], "subfactions": ["change", "deception"]},
-                        {"replaceRule": ["banner_of_hate"], "withRule": ["banner_of_vitality"], "subfactions": ["pestilence"]},
-                        {"addRule": [{"name": "Blessing of Excess", "id": "swift"}], "subfactions": ["excess"]},
-                        {"addRule": [{"name": "Blessing of Magic", "id": "ambush"}], "subfactions": ["change"]},
-                        {"subfactions": ["pestilence"], "addRule": [{"name": "Blessing of Pestilence", "id": "distracting"}]},
-                        {"addRule": [{"name": "Blessing of Deception", "id": "evasive"}], "subfactions": ["deception"]},
-                        {"addRule": [{"name": "Blessing of Wrath", "id": "furious"}], "subfactions": ["wrath"]}
-                    ]
-                }
-            ],
-            "subfactions": ["none", "wrath", "excess", "pestilence", "change", "deception"],
-            "keywords": ["Hero", "Infantry"]
-        },
-        "chosen": {
-            "name": "Corrupted Chosen",
-            "description": "Blessed by their dark gods, these warriors set out to slay the mightiest heroes.",
-            "category": "elite",
-            "models": [
-                {
-                    "options": [
-                        {
-                            "replaceWeapon": [{"id": "heavy_great_weapon", "count": 4}],
-                            "withWeapon": [
-                                {"id": "heavy_lethal_great_weapon", "count": 4},
-                                {"id": "heavy_great_weapon", "count": 5},
-                                {"id": "great_polearm", "count": 4},
-                                {"id": "heavy_flail", "count": 4}
-                            ],
-                            "subfactions": ["none"]
-                        },
-                        {
-                            "subfactions": ["wrath"],
-                            "replaceWeapon": [{"id": "heavy_great_weapon", "count": 4}],
-                            "withWeapon": [[{"id": "heavy_great_weapon", "count": 3}, {"id": "spiked_heavy_buckler", "count": 2}]]
-                        },
-                        {
-                            "replaceWeapon": [{"id": "heavy_great_weapon", "count": 4}],
-                            "withWeapon": [[{"id": "heavy_great_weapon", "count": 2}, {"id": "barbed_whip", "count": 2}]],
-                            "subfactions": ["excess"],
-                            "modelLimit": 1
-                        },
-                        {"addRule": ["shield"]}
-                    ],
-                    "name": "Corrupted Chosen",
-                    "movement": 6,
-                    "courage": 6,
-                    "shoot": 5,
-                    "fight": 6,
-                    "defense": 7,
-                    "reflexes": 6,
-                    "weapons": [{"id": "heavy_great_weapon", "count": 4}],
-                    "min": 3,
-                    "max": 6
-                }
-            ],
-            "subfactions": ["none", "wrath", "excess", "pestilence", "change", "deception"],
-            "rules": ["assassin"],
-            "options": [
-                {"addRule": ["champion"], "modelLimit": 1},
-                {"addRule": ["banner"], "modelLimit": 1},
-                {"addRule": ["musician"], "modelLimit": 1},
-                {"modelLimit": "all", "addRule": [{"name": "Blessing of Excess", "id": "swift"}], "subfactions": ["excess"]},
-                {"modelLimit": "all", "addRule": [{"name": "Blessing of Magic", "id": "ambush"}], "subfactions": ["change"]},
-                {"modelLimit": "all", "subfactions": ["pestilence"], "addRule": [{"name": "Blessing of Pestilence", "id": "distracting"}]},
-                {"modelLimit": "all", "addRule": [{"name": "Blessing of Deception", "id": "evasive"}], "subfactions": ["deception"]},
-                {"modelLimit": "all", "addRule": [{"name": "Blessing of Wrath", "id": "furious"}], "subfactions": ["wrath"]}
-            ]
         },
         "chosen_knights": {
             "name": "Chosen Knights",
@@ -544,16 +334,10 @@
                 {
                     "options": [
                         {
-                            "replaceWeapon": [{"id": "heavy_great_weapon", "count": 4}],
-                            "withWeapon": [
-                                {"id": "grand_weapon", "count": 3},
-                                {"id": "heavy_great_weapon", "count": 5},
-                                {"id": "great_polearm", "count": 4},
-                                {"id": "heavy_flail", "count": 4},
-                                {"id": "great_lance", "count": 3}
-                            ]
+                            "replaceWeapon": [{"id": "grand_weapon", "count": 4}],
+                            "withWeapon": [{"id": "grand_weapon", "count": 5}, {"id": "great_polearm", "count": 4}, {"id": "heavy_flail", "count": 4}, {"id": "great_lance", "count": 3}]
                         },
-                        {"addRule": ["tower_shield"]}
+                        {"addRule": ["enchanted_shield"]}
                     ],
                     "name": "Chosen Knight",
                     "movement": 8,
@@ -562,51 +346,44 @@
                     "fight": 6,
                     "defense": 7,
                     "reflexes": 6,
-                    "weapons": [{"id": "heavy_hooves_and_teeth", "count": 2}, {"id": "heavy_great_weapon", "count": 4}],
+                    "weapons": [{"id": "heavy_hooves_and_teeth", "count": 2}, {"id": "grand_weapon", "count": 4}],
                     "min": 3,
-                    "max": 6
+                    "max": 12
                 }
             ],
             "subfactions": ["none"],
             "rules": ["assassin", {"id": "wounds", "x": 3}, "fear"],
-            "options": [
-                {"addRule": ["champion"], "modelLimit": 1},
-                {"addRule": ["banner"], "modelLimit": 1},
-                {"addRule": ["musician"], "modelLimit": 1},
-                {"modelLimit": "all", "addRule": [{"name": "Blessing of Excess", "id": "swift"}], "subfactions": ["excess"]},
-                {"modelLimit": "all", "addRule": [{"name": "Blessing of Magic", "id": "ambush"}], "subfactions": ["change"]},
-                {"modelLimit": "all", "subfactions": ["pestilence"], "addRule": [{"name": "Blessing of Pestilence", "id": "distracting"}]},
-                {"modelLimit": "all", "addRule": [{"name": "Blessing of Deception", "id": "evasive"}], "subfactions": ["deception"]},
-                {"modelLimit": "all", "addRule": [{"name": "Blessing of Wrath", "id": "furious"}], "subfactions": ["wrath"]}
-            ],
+            "options": [{"addRule": ["champion"], "modelLimit": 1}, {"addRule": ["banner"], "modelLimit": 1}, {"addRule": ["musician"], "modelLimit": 1}],
             "keywords": ["Cavalry"]
         },
-        "exalted_sorcerer_disk": {
-            "name": "Exalted Sorcerer on Arcane Disk",
-            "description": "An exalted sorcerer, master of the arcane arts.",
-            "category": "hero",
+        "chosen": {
+            "name": "Corrupted Chosen",
+            "description": "Blessed by their dark gods, these warriors set out to slay the mightiest heroes.",
+            "category": "elite",
             "models": [
                 {
-                    "name": "Exalted Sorcerer on Arcane Disk",
-                    "movement": 8,
+                    "name": "Corrupted Chosen",
+                    "movement": 6,
                     "courage": 6,
-                    "shoot": 4,
-                    "fight": 5,
+                    "shoot": 5,
+                    "fight": 6,
                     "defense": 7,
-                    "reflexes": 5,
-                    "weapons": ["heavy_handweapon", "great_staff"],
+                    "reflexes": 6,
+                    "weapons": [{"id": "grand_weapon", "count": 4}],
                     "options": [
-                        {"replaceRule": {"id": "power", "x": 2}, "withRule": {"id": "power", "x": 3}},
-                        {"addRule": ["companion"]},
-                        {"addRule": [{"name": "Blessing of Magic", "id": "ambush"}]}
+                        {
+                            "replaceWeapon": [{"id": "grand_weapon", "count": 4}],
+                            "withWeapon": [{"id": "heavy_lethal_great_weapon", "count": 4}, {"id": "grand_weapon", "count": 5}, {"id": "great_polearm", "count": 4}, {"id": "heavy_flail", "count": 4}]
+                        },
+                        {"addRule": ["shield"]}
                     ],
-                    "rules": [{"id": "leader_x", "x": "Infantry, Cavalry"}, {"id": "wounds", "x": 3}, {"id": "power", "x": 2}, "hover"],
-                    "min": 1,
-                    "max": 1
+                    "min": 3,
+                    "max": 15
                 }
             ],
-            "subfactions": ["change"],
-            "keywords": ["Cavalry"]
+            "subfactions": ["none"],
+            "rules": ["assassin"],
+            "options": [{"addRule": ["champion"], "modelLimit": 1}, {"addRule": ["banner"], "modelLimit": 1}, {"addRule": ["musician"], "modelLimit": 1}]
         },
         "manticore": {
             "name": "Manticore",
@@ -630,32 +407,171 @@
             "subfactions": ["none"],
             "keywords": ["Beast", "Monster"]
         },
-        "excess_outrider": {
-            "name": "Cultist Outriders",
-            "description": "Cultists of Excess riding on Steeds blessed with unnatural swiftness.",
+        "excess_outriders": {
+            "name": "Excess Outriders",
+            "description": "The cultists of excess ride demonic mounts that have been blessed with unnatural swiftness.",
             "category": "elite",
             "models": [
                 {
-                    "options": [{"replaceWeapon": ["heavy_polearm"], "withWeapon": [[{"id": "poison_short_bow", "count": 2}, "handweapon"]], "modelLimit": "all"}],
-                    "name": "Cultist Outrider",
+                    "options": [{"replaceWeapon": ["heavy_polearm"], "withWeapon": [[{"id": "poison_short_bow", "count": 2}, "light_handweapon"], "heavy_lance"], "modelLimit": "all"}],
+                    "name": "Excess Outrider",
                     "movement": 9,
                     "courage": 5,
-                    "shoot": 4,
+                    "shoot": 5,
                     "fight": 5,
                     "defense": 5,
                     "reflexes": 5,
                     "weapons": [{"id": "heavy_hooves_and_teeth", "count": 2}, "heavy_polearm"],
                     "min": 5,
-                    "max": 10,
+                    "max": 20,
                     "rules": ["swift"]
                 }
             ],
             "subfactions": ["excess"],
             "options": [{"addRule": ["champion"], "modelLimit": 1}, {"addRule": ["banner"], "modelLimit": 1}, {"addRule": ["musician"], "modelLimit": 1}],
             "keywords": ["Cavalry"]
+        },
+        "exalted_sorcerer_disk": {
+            "name": "Exalted Sorcerer on Arcane Disk",
+            "description": "A spellcaster on top of a floating disk, who has mastered the reality-shifting magic of the old gods.",
+            "category": "hero",
+            "models": [
+                {
+                    "name": "Exalted Sorcerer on Arcane Disk",
+                    "movement": 8,
+                    "courage": 6,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 7,
+                    "reflexes": 6,
+                    "weapons": ["heavy_handweapon", "great_staff"],
+                    "options": [{"replaceRule": {"id": "power", "x": 2}, "withRule": {"id": "power", "x": 3}}, {"addRule": ["companion"]}],
+                    "rules": [{"id": "leader_x", "x": "Infantry, Cavalry"}, {"id": "wounds", "x": 3}, {"id": "power", "x": 2}, "hover"],
+                    "min": 1,
+                    "max": 1
+                }
+            ],
+            "subfactions": ["magic", "change"],
+            "keywords": ["Cavalry"]
+        },
+        "pestilence_warriors": {
+            "name": "Pestilence Warriors",
+            "description": "A regiment of corrupted warriors who have been blessed by the god of pestilence.",
+            "category": "core",
+            "models": [
+                {
+                    "name": "Pestilence Warrior",
+                    "movement": 5,
+                    "courage": 6,
+                    "shoot": 5,
+                    "fight": 6,
+                    "defense": 7,
+                    "reflexes": 6,
+                    "weapons": [{"id": "pestilence_great_weapon", "count": 3}],
+                    "options": [
+                        {
+                            "replaceWeapon": [{"id": "pestilence_great_weapon", "count": 3}],
+                            "withWeapon": [{"id": "pestilence_heavy_handweapon", "count": 4}, {"id": "pestilence_great_flail", "count": 3}, {"id": "pestilence_polearm", "count": 3}]
+                        },
+                        {"addRule": ["heavy_shield"]}
+                    ],
+                    "min": 3,
+                    "max": 15,
+                    "rules": [{"id": "wounds", "x": 2}]
+                }
+            ],
+            "subfactions": ["pestilence"],
+            "options": [{"addRule": ["champion"], "modelLimit": 1}, {"addRule": ["banner"], "modelLimit": 1}, {"addRule": ["musician"], "modelLimit": 1}]
+        },
+        "corrupted_berzerkers": {
+            "name": "Corrupted Berzerkers",
+            "description": "A regiment of mindless brutes blessed with eternal bloodlust, killing for their god of wrath.",
+            "category": "core",
+            "models": [
+                {
+                    "name": "Corrupted Berzerker",
+                    "movement": 6,
+                    "courage": 6,
+                    "shoot": 5,
+                    "fight": 7,
+                    "defense": 7,
+                    "reflexes": 6,
+                    "weapons": [{"id": "heavy_handweapon", "count": 4}],
+                    "options": [{"replaceWeapon": [{"id": "heavy_handweapon", "count": 4}], "withWeapon": [{"id": "great_weapon", "count": 4}]}, {"addWeapon": ["bladed_gauntlet"]}],
+                    "min": 3,
+                    "max": 15,
+                    "rules": ["furious"]
+                }
+            ],
+            "subfactions": ["wrath"],
+            "options": [{"addRule": ["champion"], "modelLimit": 1}, {"addRule": ["banner"], "modelLimit": 1}, {"addRule": ["musician"], "modelLimit": 1}]
+        },
+        "excess_warriors": {
+            "name": "Excess Warriors",
+            "description": "A regiment of sadistic warriors who march into battle in gleaming armour.",
+            "category": "core",
+            "models": [
+                {
+                    "name": "Excess Warrior",
+                    "movement": 6,
+                    "courage": 6,
+                    "shoot": 5,
+                    "fight": 6,
+                    "defense": 7,
+                    "reflexes": 6,
+                    "weapons": [{"id": "heavy_handweapon", "count": 4}],
+                    "options": [
+                        {"replaceWeapon": [{"id": "heavy_handweapon", "count": 4}], "withWeapon": [{"id": "grand_weapon", "count": 4}, {"id": "flail", "count": 4}, {"id": "barbed_whip", "count": 4}]},
+                        {"addWeapon": ["bladed_gauntlet"]}
+                    ],
+                    "min": 3,
+                    "max": 15,
+                    "rules": ["swift"]
+                }
+            ],
+            "subfactions": ["excess"],
+            "options": [
+                {"addRule": ["champion"], "modelLimit": 1},
+                {"addRule": ["banner"], "modelLimit": 1},
+                {"addRule": ["musician"], "modelLimit": 1},
+                {"addRule": [{"id": "power", "x": 1}], "modelLimit": 1, "subfactions": ["magic", "change"]}
+            ]
+        },
+        "enchanted_knights": {
+            "name": "Enchanted Knights",
+            "description": "Knights who have acquired forbidden knowledge and transmutated their steeds into arcane disks.",
+            "category": "elite",
+            "models": [
+                {
+                    "rules": [{"id": "wounds", "x": 2}, "fear", "hover"],
+                    "name": "Enchanted Knight",
+                    "movement": 8,
+                    "courage": 6,
+                    "shoot": 5,
+                    "fight": 6,
+                    "defense": 7,
+                    "reflexes": 5,
+                    "weapons": [{"id": "lance", "count": 2}, "heavy_shield", "magic_bolt"],
+                    "min": 3,
+                    "max": 15,
+                    "options": [
+                        {"replaceWeapon": [{"id": "lance", "count": 2}], "withWeapon": [{"id": "grand_weapon", "count": 2}, {"id": "heavy_polearm", "count": 2}, {"id": "heavy_flail", "count": 2}]}
+                    ]
+                }
+            ],
+            "subfactions": ["change", "magic"],
+            "options": [{"addRule": ["champion"], "modelLimit": 1}, {"addRule": ["banner"], "modelLimit": 1}, {"addRule": ["musician"], "modelLimit": 1}],
+            "keywords": ["Cavalry"]
         }
     },
-    "weapons": {},
+    "weapons": {
+        "pestilence_great_weapon": {"name": "Pestilent Great Weapon", "attacks": 1, "ap": 3, "short": "Melee", "rules": ["pestilence"]},
+        "pestilence_heavy_handweapon": {"name": "Pestilent Heavy Hand Weapon", "attacks": 1, "ap": 2, "short": "Melee", "rules": ["pestilence"]},
+        "pestilence_great_flail": {"name": "Pestilent Great Flail", "attacks": 1, "ap": 5, "short": "Melee", "rules": [{"id": "reach", "x": 1}, "cumbersome", "pestilence"]},
+        "pestilence_polearm": {"name": "Pestilent Polearm", "attacks": 1, "ap": 2, "short": "Melee", "rules": [{"id": "reach", "x": 1}, "pestilence"]},
+        "bladed_gauntlet": {"name": "Bladed Gauntlet", "attacks": 1, "short": "Melee", "rules": ["parry"]},
+        "light_flail": {"name": "Light Flail", "attacks": 1, "ap": 2, "short": "Melee", "rules": [{"id": "reach", "x": 1}, "cumbersome"]}
+    },
     "rules": {
         "corrupted_tactics": {
             "name": "Corrupted Tactics",
@@ -670,11 +586,8 @@
             "description": "This model increases its Movement by 2\". This unit may ignore difficult terrain and obstacles of height 2\" or less when moving.",
             "points": 5
         },
-        "banner_of_fear": {"name": "Banner of Fear", "description": "Enemy units within 6\" get -1 Courage.", "points": 10},
-        "banner_of_wrath": {"name": "Banner of Wrath", "description": "Once per round, a friendly _Infantry_ unit within 6\" may gain +1 AP on all Melee weapons.", "points": 10},
-        "banner_of_pain": {"name": "Banner of Excess", "description": "Once per round, a friendly _Infantry_ unit within 6\" may gain +1 AP on all Shooting weapons.", "points": 10},
-        "banner_of_hate": {"name": "Banner of Hate", "description": "Friendly units within 6\" get +1 Courage.", "points": 10},
-        "banner_of_vitality": {"name": "Banner of Pestilence", "description": "Once per round, a friendly _Infantry_ unit within 6\" may gain +1 Save.", "points": 10}
+        "chaotic_standard": {"name": "Chaotic Standard", "description": "Once per round, a friendly _Infantry_ unit within 6\" may gain +1 AP on all Melee or all Shooting weapons.", "points": 10},
+        "accursed_banner": {"name": "Accursed Banner", "description": "Friendly units within 6\" get +1 Courage and enemy units within 6\" get -1 Courage.", "points": 10}
     },
     "strategies": [
         {
@@ -703,78 +616,40 @@
         }
     ],
     "relics": [],
+    "powerCategories": {"magic": {"name": "Magic"}, "pestilence": {"name": "Pestilence"}, "excess": {"name": "Excess"}},
     "powers": {
-        "unnatural_strength": {
-            "name": "Unnatural Strength",
-            "description": "Target friendly unit within 12\" gets +1 Strength until the end of the round. This power may be cast unlimited times.",
-            "charge": 6,
-            "subfactions": ["none"]
-        },
-        "pain": {
-            "name": "Word of Pain",
-            "description": "Target enemy model within 12\" takes 1 automatic hit with AP(3). This power may be cast unlimited times.",
-            "charge": 6,
-            "subfactions": ["none"]
-        },
-        "tricksters_gambit": {
-            "name": "Tricksters Gambit",
-            "description": "Target friendly unit within 12\" gets -1 to be hit the next time it is attacked. This power may be cast unlimited times.",
-            "charge": 6,
-            "subfactions": ["deception"]
-        },
-        "shadowstep": {
-            "name": "Shadowstep",
-            "description": "Target friendly unit within 12\" may immediately make a free move action, ignoring terrain or other models. This power may only be cast once per turn.",
+        "arcane_bolt": {
+            "subfactions": ["magic"],
+            "name": "Arcane Bolt",
+            "description": "Target enemy unit within 24\" takes 1 hit with AP(4). This power may be cast unlimited times per turn.",
             "charge": 7,
-            "subfactions": ["deception"]
+            "category": "magic"
         },
-        "bolt_of_change": {
-            "name": "Bolt of Change",
-            "description": "Target enemy unit within 18\" takes 1 hit with AP(7). This power may only be cast once per turn.",
-            "charge": 7,
-            "subfactions": ["change"]
+        "inferno": {
+            "subfactions": ["magic"],
+            "name": "Inferno",
+            "description": "Target enemy unit within 12\" take 3 hits with AP(3). This power may be cast unlimited times per turn.",
+            "charge": 5,
+            "category": "magic"
         },
-        "turn_of_fate": {
-            "name": "Turn of Fate",
-            "description": "Target friendly unit within 12\" gets -1 to be hit the next time it is attacked. This power may be cast unlimited times.",
+        "arcane_barrage": {
+            "subfactions": ["magic"],
+            "name": "Arcane Barrage",
+            "description": "Target enemy unit within 12\" take 5 hits with AP(1). This power may be cast unlimited times per turn.",
             "charge": 6,
-            "subfactions": ["change"]
+            "category": "magic"
         },
-        "virulent_disease": {
-            "name": "Virulent Disease",
-            "description": "Target enemy unit within 12\" and another enemy unit within 3\" of that unit take 3 hits with AP(1) each. This power may be cast unlimited times.",
-            "charge": 6,
-            "subfactions": ["pestilence"]
-        },
-        "swarm": {
-            "name": "Swarm of Flies",
-            "description": "Target enemy unit within 12\" gets -1 Accuracy until the end of the round. This power may be cast unlimited times.",
-            "charge": 6,
-            "subfactions": ["pestilence"]
-        },
-        "boiling_blood": {
-            "name": "Boiling Blood",
-            "description": "Target enemy unit within 12\" takes 3 hits with AP(3). This power may only be cast once per turn.",
-            "charge": 6,
-            "subfactions": ["wrath"]
-        },
-        "marked_for_death": {
-            "name": "Marked for Death",
-            "description": "Target enemy unit within 12\" must immediately make a free charge action against another enemy unit. This power may only be cast once per turn.",
-            "charge": 8,
-            "subfactions": ["wrath"]
-        },
-        "flash_of_speed": {
-            "name": "Flash of Speed",
-            "description": "Target friendly unit within 12\" may immediately make a free move action. This power may only be cast once per turn.",
-            "charge": 7,
-            "subfactions": ["excess"]
-        },
-        "pain_and_power": {
-            "name": "Pain and Power",
-            "description": "Target friendly unit within 12\". Until the end of the round, each time that unit rolls a 1 or 2 on a save roll, the attacking unit takes 1 hit with AP(3). This power may be cast unlimited times.",
-            "charge": 7,
-            "subfactions": ["excess"]
+        "balefire": {"name": "Balefire", "description": "Target enemy unit within 24\" take 3 hits with AP(1).", "charge": 7},
+        "hex": {"name": "Hex", "description": "Target enemy unit within 12\" must re-roll one die of your choice on its next Save test.", "charge": 5},
+        "sap_strength": {"name": "Sap Strength", "description": "Target enemy unit within 18\" takes 3 hits with AP(1) and has -1 Strength until the end of the turn.", "charge": 6},
+        "deadly_miasma": {"subfactions": ["pestilence"], "name": "Deadly Miasma", "description": "Target enemy unit within 18\" take 6 hits with AP(2).", "charge": 6, "category": "pestilence"},
+        "unholy_vitality": {"subfactions": ["pestilence"], "name": "Unholy Vitality", "description": "Target friendly unit within 12\" heals 1 lost wound.", "charge": 7, "category": "pestilence"},
+        "spreading_plague": {
+            "subfactions": ["pestilence"],
+            "name": "Spreading Plague",
+            "description": "Roll a d10 for every enemy unit within 12\". On a 3 or less that unit takes 4 hits with AP(1).",
+            "charge": 5,
+            "category": "pestilence"
         }
     }
 }
