@@ -114,8 +114,7 @@
                     "color": "#547588",
                     "description": "Warriors of unbridled fury, filled with an eternal bloodlust and always looking for ever greater foes to still it."
                 },
-                "excess": {"name": "Excess", "id": "excess", "color": "#547588", "description": "Sadistic and twisted Warriors, always seeking for new ways of ecstasy."},
-                "deception": {"name": "Deception", "id": "deception", "color": "#6a0001", "description": "Agents of chaos that undermine enemy forces and crumble them from within."}
+                "excess": {"name": "Excess", "id": "excess", "color": "#547588", "description": "Sadistic and twisted Warriors, always seeking for new ways of ecstasy."}
             }
         },
         "haunting_ghosts": {
