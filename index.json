@@ -32,7 +32,7 @@
     },
     "factions": {
         "scorned": {
-            "version": "0.1",
+            "version": "1.0",
             "name": "The Scorned",
             "id": "scorned",
             "url": "scorned.json",
