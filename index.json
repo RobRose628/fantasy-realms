@@ -76,7 +76,7 @@
             "color": "#801111",
             "alliance": "death",
             "description": "Vampire Lords are necromancers who have learned to imbue themselves with necrotic power.  They wield their undead hordes like a weapon, to cut away those who would stand in their way.",
-            "subfactions": {
+            "hidden_subfactions": {
                 "bone": {"name": "Bone", "id": "bone", "color": "#90305d", "description": "Raising endless armies of skeletal soldiers to do their bidding."},
                 "blood": {"name": "Blood", "id": "blood", "color": "#547588", "description": "Fledgling vampires are eager to drink and don't have the patience for just biting their enemies."},
                 "dread": {
