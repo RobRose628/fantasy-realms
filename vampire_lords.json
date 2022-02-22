@@ -317,7 +317,7 @@
                     "courage": 6,
                     "shoot": 4,
                     "fight": 6,
-                    "defense": 5,
+                    "defense": 6,
                     "reflexes": 6,
                     "weapons": [{"id": "heavy_handweapon", "count": 2}, "shield"],
                     "min": 5,
