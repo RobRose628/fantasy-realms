@@ -318,7 +318,7 @@
                     "shoot": 4,
                     "fight": 6,
                     "defense": 5,
-                    "reflexes": 5,
+                    "reflexes": 6,
                     "weapons": [{"id": "heavy_handweapon", "count": 2}, "shield"],
                     "min": 5,
                     "max": 10,
