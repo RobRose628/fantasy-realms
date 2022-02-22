@@ -38,7 +38,7 @@
             "url": "scorned.json",
             "color": "#580816",
             "description": "Once a mighty civilization that served the gods, the Scorned now use ancient rituals and powerful armies to see them reborn.",
-            "alliance": "chaos"
+            "alliance": "doom"
         },
         "storm_wardens": {
             "version": "1.0",
@@ -56,7 +56,7 @@
             "id": "ogre_mercenaries",
             "url": "ogre_mercenaries.json",
             "color": "#954535",
-            "alliance": "destruction",
+            "alliance": "mercenaries",
             "description": "Once the scourge of the lands, the ogres have learned that they keep their bellies fuller by hiring themselves out as mercenaries than by killing people who can cook for them."
         },
         "greatogre_raiders": {
@@ -93,7 +93,7 @@
             "id": "corrupted_legions",
             "url": "corrupted_legions.json",
             "color": "#343a40",
-            "alliance": "chaos",
+            "alliance": "doom",
             "description": "The Corrupted Legions prove that even dead gods can be mightier than mortals.  Wearing powerful cursed armour and wielding weapons with ancient enchantments, they seek the ressurection of their dark masters.",
             "subfactions": {
                 "change": {
@@ -190,7 +190,7 @@
             "id": "beastmen_horde",
             "url": "beastmen_horde.json",
             "color": "#954535",
-            "alliance": "chaos",
+            "alliance": "doom",
             "description": "The Beastmen seek nothing less than the destruction of civilization and the pointless rules it brings.  They enlist great war-beasts and horrible creatures to their aid.",
             "subfactions": {
                 "change": {
@@ -238,7 +238,7 @@
             "id": "lizardmen",
             "url": "lizardmen.json",
             "color": "#087194",
-            "alliance": "order",
+            "alliance": "destruction",
             "description": "A race of relentless jungle-dwelling lizards who who believe they are the rightful inheritors to the world."
         },
         "vermin_colonies": {
@@ -247,7 +247,7 @@
             "id": "vermin_colonies",
             "url": "vermin_colonies.json",
             "color": "#3D3636",
-            "alliance": "chaos",
+            "alliance": "doom",
             "description": "A race of humanoid rat creatures. These beings live in large underground colonies, rarely venturing above ground except for when they launch their terrifying assaults."
         },
         "corrupted_dwarves": {
@@ -256,7 +256,7 @@
             "id": "corrupted_dwarves",
             "url": "corrupted_dwarves.json",
             "color": "#3d3354",
-            "alliance": "chaos",
+            "alliance": "doom",
             "description": "Twisted by the whispers of dead gods, the Corrupted Dwarves have learned to put chaotic magic into their machines.  They fight as much at the whims of their dark masters as their own choice.",
             "subfactions": {
                 "change": {
@@ -285,7 +285,7 @@
             "name": "Merchant Dwarves",
             "id": "merchant_dwarves",
             "url": "merchant_dwarves.json",
-            "alliance": "order",
+            "alliance": "mercenaries",
             "description": "Famous for their gold-lust, the Merchant Dwarves hire themselves out to any force that can afford them.  Their powerful technology and airships make them a dangerous foe.",
             "color": "#343a40",
             "secondary_color": "#3d3354"
@@ -296,7 +296,7 @@
             "id": "dark_elves",
             "url": "dark_elves.json",
             "color": "#4e2894",
-            "alliance": "evil",
+            "alliance": "doom",
             "description": "Cursed by vile forces beyond mortal comprehension, the once-proud Shadow Elves have become twisted parodies of their kin that lurch from the darkness into the fray."
         },
         "wood_elves": {
@@ -726,8 +726,8 @@
         "death": {"name": "Bringers of Death"},
         "destruction": {"name": "Forces of Destruction"},
         "order": {"name": "Keepers of Order"},
-        "chaos": {"name": "Instruments of Chaos"},
-        "evil": {"name": "Puppets of Evil"}
+        "doom": {"name": "Instruments of Doom"},
+        "mercenaries": {"name": "Mercenaries"}
     },
     "powerCategories": {
         "fire": {"name": "Fire"},
