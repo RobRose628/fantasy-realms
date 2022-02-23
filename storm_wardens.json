@@ -1,2001 +1,815 @@
 {
-   "author": "guitarninja#5707",
-   "color": "#D4AF37",
-   "id": "storm_wardens",
-   "name": "Storm Wardens",
-   "powers": {
-      "eye_o_t_storm": {
-         "charge": 6,
-         "description": "Target enemy unit within 12\" has -1\" movement and adds 1 to hit rolls against it.",
-         "name": "Eye of the Storm"
-      },
-      "hurricane_armor": {
-         "charge": 7,
-         "description": "Target a friendly unit within 12\". Until the end of the round, each time that unit rolls a 1 or 2 on a save roll, the attacking unit takes 1 hit with AP(3). This power may be cast unlimited times.",
-         "name": "Hurricane Armor"
-      },
-      "thunder_strike": {
-         "charge": 5,
-         "description": "Target enemy unit within 12\" takes an automatic hit with AP(3) and Lethal.",
-         "name": "Thunderbolt"
-      }
-   },
-   "relics": [],
-   "rules": {
-      "eternal_tactics": {
-         "description": "When this unit is activated, choose up to X friendly _Infantry_ units within 6\". This unit and those units may re-roll failed Strength tests of 9+ until the end of the round.",
-         "inputs": [
-            "x"
-         ],
-         "name": "Eternal Tactics",
-         "points": [
-            "rule.x",
-            {
-               "multiply": 10
-            }
-         ]
-      },
-      "lightning_field": {
-         "description": "Roll a D10 each time this unit is hit by a Shooting attack. On each roll of a 1 or 2 an attack is prevented.",
-         "name": "Lightning Field",
-         "points": 2
-      },
-      "soul_lantern": {
-         "description": "Once per round, a friendly _Infantry_ unit within 6\" gains +1 AP on all Melee weapons.",
-         "name": "Soul Lantern",
-         "points": 10
-      }
-   },
-   "strategies": [
-      {
-         "cost": 2,
-         "description": "Use this strategy when one of your units is targeted by an attack. Roll a die for each hit, on a 3 or less that hit is prevented.",
-         "flavor": "The Storm Wardens wear enchanted armor, absorbing the force of enemy attacks, rendering them harmless",
-         "name": "Stormshroud Armor",
-         "phase": "activation"
-      },
-      {
-         "cost": "1/per",
-         "description": "Up to half of any force's units, one point for each may be placed in _Ambush Reserves_ instead of deployed on the field.",
-         "flavor": "Raining down from the sky like thunderstrikes, the Storm Wardens use magical portals to strike from behind enemy lines.",
-         "name": "Stormstrike Portals",
-         "phase": "pre_game"
-      },
-      {
-         "cost": 1,
-         "description": "Use when a unit is targeted by a Fight action. If that unit has not yet activated, it may perform a Defensive Stance reaction without testing Initiative.",
-         "flavor": "Any foe foolish enough to strike a Storm Warden will feel the wrath of a thousand storms.",
-         "name": "Counter Attack",
-         "phase": "activation"
-      }
-   ],
-   "units": {
-      "celestial_beasts": {
-         "category": "core",
-         "description": "",
-         "keywords": [
-            "Beast",
-            "Infantry"
-         ],
-         "models": [
-            {
-               "courage": 4,
-               "defense": 5,
-               "fight": 6,
-               "max": 20,
-               "min": 5,
-               "movement": 7,
-               "name": "Celestial Beast",
-               "options": [
-                  {
-                     "addRule": [
-                        "champion"
-                     ],
-                     "modelLimit": 1
-                  }
-               ],
-               "reflexes": 5,
-               "shoot": 6,
-               "weapons": [
-                  {
-                     "count": 2,
-                     "id": "claws"
-                  }
-               ]
-            }
-         ],
-         "name": "Celestial Beasts"
-      },
-      "celestial_lord": {
-         "category": "hero",
-         "description": "A warrior mage, blessed in the eye of a storm with magical weapons.",
-         "models": [
-            {
-               "courage": 7,
-               "defense": 7,
-               "fight": 6,
-               "max": 1,
-               "min": 1,
-               "movement": 6,
-               "name": "Celestial Lord",
-               "options": [
-                  {
-                     "replaceWeapon": [
+    "author": "guitarninja#5707",
+    "color": "#D4AF37",
+    "id": "storm_wardens",
+    "name": "Storm Wardens",
+    "units": {
+        "celestial_lord": {
+            "name": "Celestial Lord",
+            "category": "hero",
+            "description": "A warrior mage, blessed in the eye of a storm with magical weapons.",
+            "models": [
+                {
+                    "name": "Celestial Lord",
+                    "movement": 6,
+                    "fight": 6,
+                    "shoot": 6,
+                    "defense": 7,
+                    "courage": 7,
+                    "reflexes": 6,
+                    "max": 1,
+                    "min": 1,
+                    "weapons": [{"count": 4, "id": "great_weapon"}],
+                    "options": [
+                        {"addWeapon": ["spirit_flask"], "limit": 3},
                         {
-                           "count": 4,
-                           "id": "great_weapon"
-                        }
-                     ],
-                     "withWeapon": [
-                        {
-                           "count": 4,
-                           "id": "great_hammer"
+                            "replaceWeapon": [{"count": 4, "id": "great_weapon"}],
+                            "withWeapon": [
+                                {"count": 4, "id": "great_hammer"},
+                                {"count": 4, "id": "grand_hammer"},
+                                [{"count": 2, "id": "great_hammer"}, {"count": 2, "id": "great_axe"}],
+                                {"count": 4, "id": "grand_axe"},
+                                [{"count": 2, "id": "great_hammer"}, {"count": 2, "id": "great_weapon"}],
+                                {"count": 4, "id": "great_axe"},
+                                {"count": 4, "id": "grand_weapon"},
+                                {"count": 4, "id": "great_polearm"}
+                            ]
                         },
+                        {"addRule": ["enchanted_shield", {"id": "icon", "x": "Infantry"}]},
+                        {"replaceRule": [{"id": "eternal_tactics", "x": 1}], "withRule": [{"id": "eternal_tactics", "x": 2}]},
+                        {"addRule": {"id": "power", "x": 1}}
+                    ],
+                    "rules": [{"id": "wounds", "x": 3}, "leader", {"id": "eternal_tactics", "x": 1}]
+                }
+            ]
+        },
+        "celestial_lord_lizard": {
+            "name": "Celestial Lord on Dragon-Lizard",
+            "category": "hero",
+            "description": "A warrior mage, blessed in the eye of a storm with magical weapons.",
+            "models": [
+                {
+                    "name": "Celestial Lord on Dragon-Lizard",
+                    "movement": 8,
+                    "fight": 6,
+                    "shoot": 6,
+                    "defense": 7,
+                    "courage": 7,
+                    "reflexes": 6,
+                    "max": 1,
+                    "min": 1,
+                    "weapons": [{"count": 2, "id": "great_hammer"}, {"count": 3, "id": "lightning_breath"}, {"count": 3, "id": "beak_and_claws"}],
+                    "options": [
+                        {"addWeapon": ["spirit_flask"], "limit": 3},
+                        {"replaceWeapon": [{"count": 2, "id": "great_hammer"}], "withWeapon": [{"count": 2, "id": "grand_hammer"}, {"count": 2, "id": "great_polearm"}]},
+                        {"addRule": ["tower_shield", {"id": "icon", "x": "Infantry, Cavalry"}]},
+                        {"replaceRule": [{"id": "eternal_tactics", "x": 1}], "withRule": [{"id": "eternal_tactics", "x": 2}]},
+                        {"addRule": {"id": "power", "x": 1}}
+                    ],
+                    "rules": [{"id": "wounds", "x": 4}, {"id": "leader_x", "x": "Infantry, Cavalry"}, {"id": "eternal_tactics", "x": 1}]
+                }
+            ],
+            "keywords": ["Cavalry", "Monster"]
+        },
+        "celestial_lord_dragon": {
+            "name": "Celestial Lord on Starborn Drake",
+            "category": "hero",
+            "description": "A warrior mage, blessed in the eye of a storm with magical weapons.",
+            "models": [
+                {
+                    "name": "Celestial Lord on Starborn Drake",
+                    "movement": 10,
+                    "fight": 7,
+                    "shoot": 7,
+                    "defense": 13,
+                    "courage": 7,
+                    "reflexes": 6,
+                    "max": 1,
+                    "min": 1,
+                    "weapons": [{"count": 3, "id": "great_polearm"}, {"count": 4, "id": "lightning_breath"}, {"count": 3, "id": "fangs_and_claws"}, "bashing_tail"],
+                    "options": [
+                        {"addWeapon": ["spirit_flask"], "limit": 3},
+                        {"replaceWeapon": [{"count": 3, "id": "great_polearm"}], "withWeapon": [{"count": 3, "id": "grand_hammer"}]},
+                        {"addRule": ["relic_shield", {"id": "icon", "x": "Infantry, Cavalry"}]},
+                        {"replaceRule": [{"id": "eternal_tactics", "x": 1}], "withRule": [{"id": "eternal_tactics", "x": 2}]},
+                        {"addRule": {"id": "power", "x": 1}}
+                    ],
+                    "rules": ["damage_chart", "fly", {"id": "eternal_tactics", "x": 1}, {"id": "leader_x", "x": "Infantry, Cavalry, Monster"}]
+                }
+            ],
+            "keywords": ["Cavalry", "Monster"]
+        },
+        "celestial_lord_chariot": {
+            "name": "Celestial Lord on Stormforged Chariot",
+            "category": "hero",
+            "description": "A warrior mage driving a heavy chariot, blessed in the eye of a storm with magical weapons.",
+            "models": [
+                {
+                    "name": "Celestial Lord on Stormforged Chariot",
+                    "movement": 12,
+                    "fight": 6,
+                    "shoot": 6,
+                    "defense": 10,
+                    "courage": 7,
+                    "reflexes": 6,
+                    "max": 1,
+                    "min": 1,
+                    "weapons": [{"id": "great_weapon", "count": 2}, {"id": "beak_and_claws", "count": 4}],
+                    "options": [
+                        {"addWeapon": ["spirit_flask"], "limit": 3},
                         {
-                           "count": 4,
-                           "id": "grand_hammer"
+                            "replaceWeapon": [{"count": 2, "id": "great_weapon"}],
+                            "withWeapon": [
+                                {"count": 2, "id": "great_hammer"},
+                                {"count": 2, "id": "grand_hammer"},
+                                ["great_hammer", "great_axe"],
+                                {"count": 2, "id": "grand_axe"},
+                                ["great_hammer", "great_weapon"],
+                                {"count": 2, "id": "great_axe"},
+                                {"count": 2, "id": "grand_weapon"},
+                                {"count": 2, "id": "great_polearm"}
+                            ]
                         },
-                        [
-                           {
-                              "count": 2,
-                              "id": "great_hammer"
-                           },
-                           {
-                              "count": 2,
-                              "id": "great_axe"
-                           }
-                        ],
+                        {"addRule": ["relic_shield", {"id": "icon", "x": "Cavalry, Chariot"}]},
+                        {"replaceRule": [{"id": "knight_tactics", "x": 1}], "withRule": [{"id": "knight_tactics", "x": 2}]},
+                        {"addRule": {"id": "power", "x": 1}}
+                    ],
+                    "rules": [{"id": "knight_tactics", "x": 1}, {"id": "leader_x", "x": "Cavalry, Chariot"}, "damage_chart", {"id": "heavy_impact", "x": 3}]
+                }
+            ],
+            "keywords": ["Beast", "Chariot"]
+        },
+        "reliquary_lord": {
+            "name": "Reliquary Lord",
+            "category": "hero",
+            "description": "Shrouded in misteries, this warrior priest watches over the souls of the fallen.",
+            "models": [
+                {
+                    "name": "Reliquary Lord",
+                    "movement": 6,
+                    "fight": 6,
+                    "shoot": 6,
+                    "defense": 7,
+                    "courage": 7,
+                    "reflexes": 6,
+                    "max": 1,
+                    "min": 1,
+                    "weapons": [{"count": 3, "id": "great_mace"}],
+                    "options": [
+                        {"addWeapon": ["spirit_flask"], "limit": 3},
+                        {"replaceWeapon": [{"count": 3, "id": "great_mace"}], "withWeapon": [{"count": 3, "id": "grand_weapon"}, {"count": 3, "id": "grand_hammer"}]}
+                    ],
+                    "rules": [{"id": "wounds", "x": 3}, "leader", "battle_prayer"]
+                }
+            ]
+        },
+        "reliquary_lord_soul": {
+            "name": "Reliquary Lord with Soul Casket",
+            "category": "hero",
+            "description": "Shrouded in misteries, this warrior priest casts down the wrath of the stars to avenge the fallen.",
+            "models": [
+                {
+                    "name": "Reliquary Lord with Soul Casket",
+                    "movement": 6,
+                    "fight": 6,
+                    "shoot": 6,
+                    "defense": 7,
+                    "courage": 7,
+                    "reflexes": 6,
+                    "min": 1,
+                    "max": 1,
+                    "weapons": [{"count": 2, "id": "great_weapon"}, {"count": 2, "id": "staff"}],
+                    "options": [
+                        {"addWeapon": ["spirit_flask"], "limit": 3},
+                        {"replaceWeapon": [{"count": 2, "id": "great_weapon"}, {"count": 2, "id": "staff"}], "withWeapon": [{"count": 3, "id": "great_staff"}, {"count": 3, "id": "great_polearm"}]},
+                        {"replaceWeapon": [{"count": 2, "id": "staff"}], "withWeapon": ["starfall_banner"]}
+                    ],
+                    "rules": [{"id": "wounds", "x": 3}, "leader", "battle_prayer"]
+                }
+            ]
+        },
+        "lightning_mage": {
+            "name": "Stormcaller Mage",
+            "category": "hero",
+            "description": "A mighty lightning mage, capable of hailing down magical storms onto their foes.",
+            "models": [
+                {
+                    "name": "Stormcaller Mage",
+                    "movement": 6,
+                    "fight": 6,
+                    "shoot": 6,
+                    "defense": 7,
+                    "courage": 7,
+                    "reflexes": 6,
+                    "max": 1,
+                    "min": 1,
+                    "weapons": [{"count": 2, "id": "heavy_handweapon"}, {"count": 2, "id": "staff"}],
+                    "options": [
+                        {"addWeapon": ["spirit_flask"], "limit": 3},
+                        {"replaceWeapon": [{"count": 2, "id": "heavy_handweapon"}, {"count": 2, "id": "staff"}], "withWeapon": [{"count": 3, "id": "great_staff"}]},
+                        {"replaceRule": [{"id": "power", "x": 1}], "withRule": [{"id": "power", "x": 2}]}
+                    ],
+                    "rules": [{"id": "wounds", "x": 3}, "leader", {"id": "power", "x": 1}]
+                }
+            ]
+        },
+        "lightning_mage_on_celestial_beast": {
+            "name": "Stormcaller Mage on Greater Celestial Beast",
+            "category": "hero",
+            "description": "A mighty lightning mage on a celestial beast, charging into the fray with steel and spell.",
+            "models": [
+                {
+                    "name": "Stormcaller Mage on Greater Celestial Beast",
+                    "movement": 8,
+                    "fight": 6,
+                    "shoot": 6,
+                    "defense": 7,
+                    "courage": 7,
+                    "reflexes": 6,
+                    "max": 1,
+                    "min": 1,
+                    "weapons": [{"count": 2, "id": "beak_and_claws"}, {"count": 2, "id": "heavy_handweapon"}, {"count": 3, "id": "staff"}],
+                    "options": [
+                        {"addWeapon": ["spirit_flask"], "limit": 3},
+                        {"replaceWeapon": [{"count": 2, "id": "heavy_handweapon"}, {"count": 3, "id": "staff"}], "withWeapon": [{"count": 4, "id": "great_staff"}]}
+                    ],
+                    "rules": [{"id": "wounds", "x": 3}, {"id": "power", "x": 1}, {"id": "leader_x", "x": "Infantry, Cavalry"}, "scout"]
+                }
+            ],
+            "keywords": ["Beast", "Cavalry"]
+        },
+        "lightning_mage_on_gryhpon": {
+            "name": "Stormcaller Mage on Gryphon",
+            "category": "hero",
+            "description": "A mighty lightning mage on a hardy gryphon mount, swooping down on his foes.",
+            "models": [
+                {
+                    "name": "Stormcaller Mage on Gryphon",
+                    "movement": 10,
+                    "fight": 7,
+                    "shoot": 7,
+                    "defense": 8,
+                    "courage": 7,
+                    "reflexes": 6,
+                    "max": 1,
+                    "min": 1,
+                    "weapons": [{"count": 6, "id": "beak_and_claws"}, {"count": 2, "id": "heavy_handweapon"}, {"count": 3, "id": "staff"}],
+                    "options": [
+                        {"addWeapon": ["spirit_flask"], "limit": 3},
+                        {"replaceWeapon": [{"count": 2, "id": "heavy_handweapon"}, {"count": 3, "id": "staff"}], "withWeapon": [{"count": 4, "id": "great_staff"}]}
+                    ],
+                    "rules": [{"id": "wounds", "x": 4}, {"id": "power", "x": 1}, {"id": "leader_x", "x": "Infantry, Cavalry"}, "fly"]
+                }
+            ],
+            "keywords": ["Beast", "Cavalry", "Monster"]
+        },
+        "stormwing_lord": {
+            "name": "Stormwing Lord",
+            "category": "hero",
+            "description": "A mighty warrior mage, held aloft by enchanted wings and harnessing the powers of the elements.",
+            "models": [
+                {
+                    "name": "Stormwing Lord",
+                    "movement": 8,
+                    "fight": 6,
+                    "shoot": 6,
+                    "defense": 7,
+                    "courage": 7,
+                    "reflexes": 6,
+                    "min": 1,
+                    "max": 1,
+                    "options": [
+                        {"addWeapon": ["spirit_flask"], "limit": 3},
+                        {"addRule": ["soul_lantern"]},
+                        {"addWeapon": ["bird"]},
+                        {"replaceWeapon": [{"count": 3, "id": "heavy_long_bow"}], "withWeapon": [{"count": 4, "id": "great_weapon"}]},
+                        {"addRule": {"id": "power", "x": 1}}
+                    ],
+                    "rules": [{"id": "wounds", "x": 3}, "leader", "fly"],
+                    "weapons": [{"count": 3, "id": "heavy_long_bow"}, {"count": 2, "id": "handweapon"}]
+                }
+            ]
+        },
+        "lightning_mage_chariot": {
+            "name": "Stormcaller Mage on Stormforged Chariot",
+            "category": "hero",
+            "description": "A mighty lightning mage, capable of hailing down magical storms onto their foes.",
+            "models": [
+                {
+                    "name": "Stormcaller Mage on Stormforged Chariot",
+                    "movement": 12,
+                    "fight": 6,
+                    "shoot": 6,
+                    "defense": 10,
+                    "courage": 7,
+                    "reflexes": 6,
+                    "max": 1,
+                    "min": 1,
+                    "weapons": ["heavy_handweapon", "staff"],
+                    "options": [
+                        {"addWeapon": ["spirit_flask"], "limit": 3},
+                        {"replaceWeapon": ["heavy_handweapon", "staff"], "withWeapon": [{"count": 2, "id": "great_staff"}]},
+                        {"replaceRule": [{"id": "power", "x": 1}], "withRule": [{"id": "power", "x": 2}]}
+                    ],
+                    "rules": [{"id": "power", "x": 1}, {"id": "leader_x", "x": "Cavalry, Chariot"}, "damage_chart", {"id": "heavy_impact", "x": 3}]
+                }
+            ],
+            "keywords": ["Beast", "Chariot"]
+        },
+        "celestial_beasts": {
+            "name": "Celestial Beasts",
+            "category": "core",
+            "description": "Loyal companions from the Star realm, swift and wielding deadly claws.",
+            "models": [{"name": "Celestial Beast", "movement": 7, "fight": 6, "shoot": 6, "defense": 5, "courage": 4, "reflexes": 5, "min": 5, "max": 20, "weapons": [{"count": 2, "id": "claws"}]}],
+            "options": [{"addRule": ["champion"], "modelLimit": 1}],
+            "keywords": ["Beast", "Infantry"]
+        },
+        "stormforged_warriors": {
+            "name": "Stormforged Warriors",
+            "category": "core",
+            "description": "Mighty Warriors in heavy armor who crush their foes with the might of a storm.",
+            "models": [
+                {
+                    "name": "Stormforged Warrior",
+                    "movement": 6,
+                    "fight": 6,
+                    "shoot": 6,
+                    "defense": 7,
+                    "courage": 6,
+                    "reflexes": 6,
+                    "min": 5,
+                    "max": 30,
+                    "weapons": [{"id": "handweapon", "count": 2}, "shield"],
+                    "options": [
+                        {"addWeapon": ["spirit_flask"], "modelLimit": 3},
                         {
-                           "count": 4,
-                           "id": "grand_axe"
+                            "replaceWeapon": [{"count": 2, "id": "handweapon"}, "shield"],
+                            "withWeapon": [
+                                {"count": 3, "id": "mace"},
+                                {"count": 2, "id": "great_weapon"},
+                                [{"count": 2, "id": "spear"}, "shield"],
+                                {"count": 3, "id": "handweapon"},
+                                [{"count": 2, "id": "mace"}, "shield"]
+                            ]
                         },
-                        [
-                           {
-                              "count": 2,
-                              "id": "great_hammer"
-                           },
-                           {
-                              "count": 2,
-                              "id": "great_weapon"
-                           }
-                        ],
-                        {
-                           "count": 4,
-                           "id": "great_axe"
-                        },
-                        {
-                           "count": 4,
-                           "id": "grand_weapon"
-                        }
-                     ]
-                  },
-                  {
-                     "addRule": [
+                        {"modelLimit": "1/5", "replaceWeapon": [{"id": "handweapon", "count": 2}, "shield"], "withWeapon": ["grand_mace"]}
+                    ]
+                }
+            ],
+            "options": [{"addRule": ["champion"], "modelLimit": 1}, {"addRule": ["banner"], "modelLimit": 1}, {"addRule": ["musician"], "modelLimit": 1}]
+        },
+        "stormforged_archers": {
+            "name": "Stormforged Archers",
+            "category": "core",
+            "description": "Mighty Warriors in heavy armor who overwhelm their foes with a flurry of arrows.",
+            "models": [
+                {
+                    "name": "Stormforged Archer",
+                    "movement": 6,
+                    "fight": 6,
+                    "shoot": 6,
+                    "defense": 7,
+                    "courage": 6,
+                    "reflexes": 6,
+                    "min": 5,
+                    "max": 30,
+                    "weapons": ["heavy_long_bow", "handweapon"],
+                    "options": [
+                        {"addWeapon": ["spirit_flask"], "modelLimit": 3},
+                        {"replaceWeapon": ["heavy_long_bow", "handweapon"], "withWeapon": [["long_bow", {"count": 2, "id": "handweapon"}]]},
+                        {"modelLimit": "1/5", "replaceWeapon": ["heavy_long_bow"], "withWeapon": ["storm_bow"]},
+                        {"addRule": ["scout", "ambush"], "limit": 1, "modelLimit": "all"}
+                    ]
+                }
+            ],
+            "options": [{"addRule": ["champion"], "modelLimit": 1}, {"addRule": ["banner"], "modelLimit": 1}, {"addRule": ["musician"], "modelLimit": 1}]
+        },
+        "stormforged_crossbow": {
+            "name": "Stormforged Arbalestiers",
+            "category": "core",
+            "description": "Mighty Warriors in heavy armor who strike down on their foes like lightning.",
+            "models": [
+                {
+                    "name": "Stormforged Arbalester",
+                    "movement": 6,
+                    "fight": 6,
+                    "shoot": 6,
+                    "defense": 7,
+                    "courage": 6,
+                    "reflexes": 6,
+                    "weapons": ["repeater_crossbow", {"count": 2, "id": "handweapon"}],
+                    "options": [
+                        {"addWeapon": ["spirit_flask"], "modelLimit": 3},
+                        {"replaceWeapon": ["repeater_crossbow"], "withWeapon": ["heavy_crossbow"]},
+                        {"modelLimit": "1/5", "replaceWeapon": ["repeater_crossbow"], "withWeapon": ["storm_crossbow"]},
+                        {"addRule": ["scout", "ambush"], "limit": 1, "modelLimit": "all"}
+                    ],
+                    "min": 5,
+                    "max": 30
+                }
+            ],
+            "options": [{"addRule": ["champion"], "modelLimit": 1}, {"addRule": ["banner"], "modelLimit": 1}, {"addRule": ["musician"], "modelLimit": 1}]
+        },
+        "invokers": {
+            "name": "Invokers",
+            "category": "elite",
+            "description": "Warrior mages who channel the power of lightning to burn their enemies and block ranged attacks.",
+            "models": [
+                {
+                    "name": "Invoker",
+                    "movement": 6,
+                    "fight": 6,
+                    "shoot": 6,
+                    "defense": 7,
+                    "courage": 6,
+                    "reflexes": 6,
+                    "max": 15,
+                    "min": 3,
+                    "weapons": [{"count": 2, "id": "heavy_handweapon"}, {"count": 2, "id": "staff"}],
+                    "options": [
+                        {"addWeapon": ["spirit_flask"], "modelLimit": 3},
+                        {"replaceWeapon": [{"count": 2, "id": "heavy_handweapon"}, {"count": 2, "id": "staff"}], "withWeapon": [{"count": 3, "id": "great_staff"}]}
+                    ],
+                    "rules": ["lightning_field", {"id": "wounds", "x": 2}]
+                }
+            ],
+            "options": [{"addRule": [["champion", {"id": "power", "x": 1}]], "modelLimit": 1}, {"addRule": ["banner"], "modelLimit": 1}, {"addRule": ["musician"], "modelLimit": 1}]
+        },
+        "invokers_lizard": {
+            "name": "Invokers on Dragon-Lizards",
+            "category": "rare",
+            "description": "Warrior mages on dragon-lizards who channel the power of lightning to burn their enemies and block ranged attacks.",
+            "models": [
+                {
+                    "name": "Invoker on Dragon-Lizard",
+                    "movement": 8,
+                    "fight": 6,
+                    "shoot": 6,
+                    "defense": 7,
+                    "courage": 6,
+                    "reflexes": 6,
+                    "max": 15,
+                    "min": 3,
+                    "weapons": [{"count": 2, "id": "heavy_handweapon"}, {"count": 2, "id": "staff"}, {"count": 2, "id": "lightning_breath"}, {"count": 2, "id": "beak_and_claws"}],
+                    "options": [
+                        {"addWeapon": ["spirit_flask"], "modelLimit": 3},
+                        {"replaceWeapon": [{"count": 2, "id": "heavy_handweapon"}, {"count": 2, "id": "staff"}], "withWeapon": [{"count": 3, "id": "great_staff"}]}
+                    ],
+                    "rules": ["lightning_field", {"id": "wounds", "x": 3}]
+                }
+            ],
+            "options": [{"addRule": [["champion", {"id": "power", "x": 1}]], "modelLimit": 1}, {"addRule": ["banner"], "modelLimit": 1}, {"addRule": ["musician"], "modelLimit": 1}],
+            "keywords": ["Cavalry", "Monster"]
+        },
+        "invokers_celestial_beast": {
+            "name": "Invokers on Greater Celestial Beasts",
+            "category": "rare",
+            "description": "Warrior mages on celestial beasts who channel the power of lightning to burn their enemies and block ranged attacks.",
+            "models": [
+                {
+                    "name": "Invoker on Greater Celestial Beast",
+                    "movement": 8,
+                    "fight": 6,
+                    "shoot": 6,
+                    "defense": 7,
+                    "courage": 6,
+                    "reflexes": 6,
+                    "max": 15,
+                    "min": 3,
+                    "weapons": [{"count": 2, "id": "heavy_handweapon"}, {"count": 2, "id": "staff"}, {"count": 2, "id": "beak_and_claws"}],
+                    "options": [
+                        {"addWeapon": ["spirit_flask"], "modelLimit": 3},
+                        {"replaceWeapon": [{"count": 2, "id": "heavy_handweapon"}, {"count": 2, "id": "staff"}], "withWeapon": [{"count": 3, "id": "great_staff"}]}
+                    ],
+                    "rules": ["lightning_field", {"id": "wounds", "x": 3}, "scout"]
+                }
+            ],
+            "options": [{"addRule": [["champion", {"id": "power", "x": 1}]], "modelLimit": 1}, {"addRule": ["banner"], "modelLimit": 1}, {"addRule": ["musician"], "modelLimit": 1}],
+            "keywords": ["Beast", "Cavalry"]
+        },
+        "protectors": {
+            "name": "Protectors",
+            "category": "elite",
+            "description": "Veteran Warriors in heavy armor who infuse their great-weapons with elemental magic.",
+            "models": [
+                {
+                    "name": "Protector",
+                    "movement": 6,
+                    "fight": 6,
+                    "shoot": 6,
+                    "defense": 7,
+                    "courage": 6,
+                    "reflexes": 6,
+                    "min": 3,
+                    "max": 15,
+                    "weapons": [{"count": 3, "id": "great_mace"}],
+                    "options": [
+                        {"addWeapon": ["spirit_flask"], "modelLimit": 3},
+                        {"replaceWeapon": [{"count": 3, "id": "great_mace"}], "withWeapon": [{"count": 3, "id": "great_hammer"}, {"count": 3, "id": "great_axe"}]},
+                        {"modelLimit": "1/3", "replaceWeapon": [{"count": 3, "id": "great_mace"}], "withWeapon": [{"count": 3, "id": "grand_mace"}]},
+                        {"addRule": ["heavy_shield"], "modelLimit": "all"}
+                    ]
+                }
+            ],
+            "options": [{"addRule": ["champion"], "modelLimit": 1}, {"addRule": ["banner"], "modelLimit": 1}, {"addRule": ["musician"], "modelLimit": 1}],
+            "rules": [{"id": "wounds", "x": 2}, "fear", "lightning_field"]
+        },
+        "protectors_lizard": {
+            "name": "Protectors on Dragon-Lizards",
+            "category": "rare",
+            "description": "Veteran Warriors on dragon-lizards, smiting their foes with elemental attacks.",
+            "models": [
+                {
+                    "name": "Protector on Dragon-Lizard",
+                    "movement": 8,
+                    "fight": 6,
+                    "shoot": 6,
+                    "defense": 7,
+                    "courage": 6,
+                    "reflexes": 6,
+                    "max": 6,
+                    "min": 2,
+                    "weapons": [
+                        {"count": 2, "id": "repeater_crossbow"},
+                        {"count": 3, "id": "grand_weapon"},
+                        {"count": 2, "id": "fangs_and_claws"},
+                        {"count": 2, "id": "lightning_breath"},
                         "enchanted_shield"
-                     ]
-                  },
-                  {
-                     "addWeapon": [
-                        "spirit_flask"
-                     ],
-                     "limit": 3
-                  },
-                  {
-                     "replaceRule": [
+                    ],
+                    "options": [
+                        {"addWeapon": ["spirit_flask"], "modelLimit": 3},
                         {
-                           "id": "warrior_tactics",
-                           "x": 1
+                            "replaceWeapon": [{"count": 2, "id": "repeater_crossbow"}, {"count": 3, "id": "grand_weapon"}],
+                            "withWeapon": [{"count": 5, "id": "great_polearm"}, {"count": 4, "id": "grand_hammer"}]
                         }
-                     ],
-                     "withRule": [
+                    ]
+                }
+            ],
+            "keywords": ["Cavalry", "Monster"],
+            "rules": [{"id": "wounds", "x": 3}]
+        },
+        "heavy_protectors": {
+            "name": "Heavy Protectors",
+            "category": "rare",
+            "description": "Veteran Warrior in with the heaviest equipment, tasked with shattering the foe at all cost.",
+            "models": [
+                {
+                    "name": "Heavy Protector",
+                    "movement": 5,
+                    "fight": 7,
+                    "shoot": 6,
+                    "defense": 7,
+                    "courage": 6,
+                    "reflexes": 6,
+                    "min": 3,
+                    "max": 15,
+                    "options": [
+                        {"addWeapon": ["spirit_flask"], "modelLimit": 3},
+                        {"replaceWeapon": [{"id": "great_hammer", "x": 3}, "enchanted_shield"], "withWeapon": [{"id": "grand_hammer", "x": 3}]}
+                    ],
+                    "rules": [{"id": "wounds", "x": 2}, "ambush"],
+                    "weapons": [{"count": 3, "id": "great_hammer"}, "enchanted_shield"]
+                }
+            ],
+            "options": [{"addRule": ["champion"], "modelLimit": 1}, {"addRule": ["banner"], "modelLimit": 1}, {"addRule": ["musician"], "modelLimit": 1}]
+        },
+        "wardens": {
+            "name": "Wardens",
+            "category": "rare",
+            "description": "Veteran Warriors in heavy armor who have sworn to protect their mighty leaders.",
+            "models": [
+                {
+                    "name": "Warden",
+                    "movement": 6,
+                    "fight": 6,
+                    "shoot": 6,
+                    "defense": 7,
+                    "courage": 6,
+                    "reflexes": 6,
+                    "max": 12,
+                    "min": 3,
+                    "weapons": [{"id": "great_polearm", "count": 3}],
+                    "options": [{"addWeapon": ["spirit_flask"], "modelLimit": 3}],
+                    "rules": [{"id": "wounds", "x": 2}, {"id": "resilient", "x": 3}]
+                }
+            ],
+            "options": [{"addRule": ["champion"], "modelLimit": 1}, {"addRule": ["banner"], "modelLimit": 1}, {"addRule": ["musician"], "modelLimit": 1}]
+        },
+        "stormwings": {
+            "name": "Stormwings",
+            "category": "elite",
+            "description": "Warrior mages, held aloft by enchanted wings and harnessing the powers of the elements.",
+            "models": [
+                {
+                    "name": "Stormwing",
+                    "movement": 8,
+                    "fight": 6,
+                    "shoot": 6,
+                    "defense": 7,
+                    "courage": 6,
+                    "reflexes": 6,
+                    "max": 12,
+                    "min": 3,
+                    "weapons": [{"count": 2, "id": "throwing_hammer"}, "shield"],
+                    "options": [
+                        {"addWeapon": ["spirit_flask"], "modelLimit": 3},
+                        {"replaceWeapon": [{"count": 2, "id": "throwing_hammer"}, "shield"], "withWeapon": [[{"count": 2, "id": "heavy_javelin"}, "shield"], {"count": 3, "id": "throwing_hammer"}]},
                         {
-                           "id": "warrior_tactics",
-                           "x": 2
+                            "modelLimit": "1/3",
+                            "replaceWeapon": [{"count": 2, "id": "throwing_hammer"}, "shield"],
+                            "withWeapon": [{"count": 2, "id": "grand_hammer"}, ["storm_trident", "shield"], {"count": 2, "id": "great_hammer"}]
                         }
-                     ]
-                  }
-               ],
-               "reflexes": 6,
-               "rules": [
-                  {
-                     "id": "wounds",
-                     "x": 3
-                  },
-                  "leader",
-                  {
-                     "id": "warrior_tactics",
-                     "x": 1
-                  }
-               ],
-               "shoot": 6,
-               "weapons": [
-                  {
-                     "count": 4,
-                     "id": "great_weapon"
-                  }
-               ]
-            }
-         ],
-         "name": "Celestial Lord"
-      },
-      "celestial_lord_banner": {
-         "category": "elite",
-         "description": "",
-         "models": [
-            {
-               "courage": 7,
-               "defense": 7,
-               "fight": 6,
-               "max": 1,
-               "min": 1,
-               "movement": 6,
-               "name": "Celestial Lord with Stormforge Standard",
-               "options": [
-                  {
-                     "addWeapon": [
-                        "spirit_flask"
-                     ],
-                     "limit": 3
-                  }
-               ],
-               "reflexes": 6,
-               "rules": [
-                  {
-                     "id": "wounds",
-                     "x": 3
-                  },
-                  "support"
-               ],
-               "shoot": 6,
-               "weapons": [
-                  "stormforge_standard",
-                  {
-                     "count": 2,
-                     "id": "heavy_handweapon"
-                  }
-               ]
-            }
-         ],
-         "name": "Celestial Lord with Stormforge Standard"
-      },
-      "celestial_lord_dragon": {
-         "category": "hero",
-         "description": "A warrior mage, blessed in the eye of a storm with magical weapons.",
-         "keywords": [
-            "Monster",
-            "Cavalry"
-         ],
-         "models": [
-            {
-               "courage": 7,
-               "defense": 13,
-               "fight": 7,
-               "max": 1,
-               "min": 1,
-               "movement": 10,
-               "name": "Celestial Lord on Starborn Drake",
-               "options": [
-                  {
-                     "replaceWeapon": [
-                        {
-                           "count": 3,
-                           "id": "great_polearm"
-                        }
-                     ],
-                     "withWeapon": [
-                        {
-                           "count": 3,
-                           "id": "grand_hammer"
-                        }
-                     ]
-                  },
-                  {
-                     "addWeapon": [
-                        "spirit_flask"
-                     ],
-                     "limit": 3
-                  },
-                  {
-                     "replaceRule": [
-                        {
-                           "id": "warrior_tactics",
-                           "x": 1
-                        }
-                     ],
-                     "withRule": [
-                        {
-                           "id": "warrior_tactics",
-                           "x": 2
-                        }
-                     ]
-                  }
-               ],
-               "reflexes": 6,
-               "rules": [
-                  "damage_chart",
-                  "fly",
-                  {
-                     "id": "warrior_tactics",
-                     "x": 1
-                  },
-                  {
-                     "id": "leader_x",
-                     "x": "Infantry, Cavalry"
-                  }
-               ],
-               "shoot": 7,
-               "weapons": [
-                  {
-                     "count": 3,
-                     "id": "great_polearm"
-                  },
-                  "relic_shield",
-                  {
-                     "count": 4,
-                     "id": "lightning_breath"
-                  },
-                  {
-                     "count": 3,
-                     "id": "fangs_and_claws"
-                  },
-                  "bashing_tail"
-               ]
-            }
-         ],
-         "name": "Celestial Lord on Starborn Drake"
-      },
-      "celestial_lord_lizard": {
-         "category": "hero",
-         "description": "A warrior mage, blessed in the eye of a storm with magical weapons.",
-         "keywords": [
-            "Monster",
-            "Cavalry"
-         ],
-         "models": [
-            {
-               "courage": 7,
-               "defense": 7,
-               "fight": 6,
-               "max": 1,
-               "min": 1,
-               "movement": 8,
-               "name": "Celestial Lord on Dragon-Lizard",
-               "options": [
-                  {
-                     "replaceWeapon": [
-                        {
-                           "count": 2,
-                           "id": "great_hammer"
-                        }
-                     ],
-                     "withWeapon": [
-                        {
-                           "count": 2,
-                           "id": "grand_hammer"
-                        },
-                        {
-                           "count": 2,
-                           "id": "great_polearm"
-                        }
-                     ]
-                  },
-                  {
-                     "addWeapon": [
-                        "spirit_flask"
-                     ],
-                     "limit": 3
-                  },
-                  {
-                     "replaceRule": [
-                        {
-                           "id": "warrior_tactics",
-                           "x": 1
-                        }
-                     ],
-                     "withRule": [
-                        {
-                           "id": "warrior_tactics",
-                           "x": 2
-                        }
-                     ]
-                  }
-               ],
-               "reflexes": 6,
-               "rules": [
-                  {
-                     "id": "wounds",
-                     "x": 4
-                  },
-                  {
-                     "id": "leader_x",
-                     "x": "Infantry, Cavalry"
-                  },
-                  {
-                     "id": "warrior_tactics",
-                     "x": 1
-                  }
-               ],
-               "shoot": 6,
-               "weapons": [
-                  {
-                     "count": 2,
-                     "id": "great_hammer"
-                  },
-                  "tower_shield",
-                  {
-                     "count": 3,
-                     "id": "lightning_breath"
-                  },
-                  {
-                     "count": 3,
-                     "id": "beak_and_claws"
-                  }
-               ]
-            }
-         ],
-         "name": "Celestial Lord on Dragon-Lizard"
-      },
-      "demigryph_genitors": {
-         "category": "elite",
-         "description": "Skirmisher warrior mages riding demigryphs.",
-         "models": [
-            {
-               "courage": 6,
-               "defense": 6,
-               "fight": 6,
-               "max": 12,
-               "min": 3,
-               "movement": 12,
-               "name": "Demigryph Genitors",
-               "options": [
-                  {
-                     "replaceWeapon": [
-                        {
-                           "count": 3,
-                           "id": "heavy_handweapon"
-                        },
-                        {
-                           "count": 2,
-                           "id": "hand_xbow"
-                        }
-                     ],
-                     "withWeapon": [
-                        [
-                           {
-                              "count": 2,
-                              "id": "heavy_javelin"
-                           },
-                           {
-                              "count": 2,
-                              "id": "lance"
-                           }
-                        ]
-                     ]
-                  },
-                  {
-                     "addWeapon": [
-                        "spirit_flask"
-                     ],
-                     "modelLimit": 3
-                  }
-               ],
-               "reflexes": 6,
-               "shoot": 6,
-               "weapons": [
-                  {
-                     "count": 2,
-                     "id": "hand_xbow"
-                  },
-                  {
-                     "count": 3,
-                     "id": "heavy_handweapon"
-                  }
-               ]
-            }
-         ],
-         "name": "Demigryph Genitors"
-      },
-      "dragon_riders": {
-         "category": "rare",
-         "description": "Powerful warrior mages that have tamed ferocious dragons, bringing judgement from above to the forces of evil.",
-         "keywords": [
-            "Monster",
-            "Cavalry"
-         ],
-         "models": [
-            {
-               "courage": 7,
-               "defense": 10,
-               "fight": 6,
-               "max": 4,
-               "min": 1,
-               "movement": 10,
-               "name": "Dragon Guard",
-               "options": [
-                  {
-                     "replaceWeapon": [
-                        {
-                           "count": 3,
-                           "id": "great_polearm"
-                        }
-                     ],
-                     "withWeapon": [
-                        {
-                           "count": 3,
-                           "id": "grand_hammer"
-                        }
-                     ]
-                  },
-                  {
-                     "addWeapon": [
-                        "spirit_flask"
-                     ],
-                     "limit": 3
-                  }
-               ],
-               "reflexes": 6,
-               "rules": [
-                  "damage_chart",
-                  "fly"
-               ],
-               "shoot": 6,
-               "weapons": [
-                  {
-                     "count": 3,
-                     "id": "great_polearm"
-                  },
-                  "relic_shield",
-                  {
-                     "count": 2,
-                     "id": "lightning_breath"
-                  },
-                  {
-                     "count": 2,
-                     "id": "fangs_and_claws"
-                  },
-                  "bashing_tail"
-               ]
-            }
-         ],
-         "name": "Dragon Guard"
-      },
-      "heavy_protectors": {
-         "category": "rare",
-         "description": "Warrior mages in with the heaviest equipment, tasked with shattering the foe at all cost.",
-         "models": [
-            {
-               "courage": 6,
-               "defense": 7,
-               "fight": 7,
-               "max": 12,
-               "min": 3,
-               "movement": 5,
-               "name": "Heavy Protector",
-               "options": [
-                  {
-                     "addWeapon": [
-                        "spirit_flask"
-                     ],
-                     "modelLimit": 3
-                  },
-                  {
-                     "replaceWeapon": [
-                        {
-                           "id": "great_hammer",
-                           "x": 3
-                        },
-                        "enchanted_shield"
-                     ],
-                     "withWeapon": [
-                        {
-                           "id": "grand_hammer",
-                           "x": 3
-                        }
-                     ]
-                  }
-               ],
-               "reflexes": 6,
-               "rules": [
-                  {
-                     "id": "wounds",
-                     "x": 2
-                  }
-               ],
-               "shoot": 6,
-               "weapons": [
-                  {
-                     "count": 3,
-                     "id": "great_hammer"
-                  },
-                  "enchanted_shield"
-               ]
-            }
-         ],
-         "name": "Heavy Protectors",
-         "options": [
-            {
-               "addRule": [
-                  "champion"
-               ],
-               "modelLimit": 1
-            },
-            {
-               "addRule": [
-                  "banner"
-               ],
-               "modelLimit": 1
-            },
-            {
-               "addRule": [
-                  "musician"
-               ],
-               "modelLimit": 1
-            }
-         ]
-      },
-      "invokers": {
-         "category": "elite",
-         "description": "Warrior mages who channel the power of lightning to burn their enemies and block ranged attacks.",
-         "models": [
-            {
-               "courage": 6,
-               "defense": 7,
-               "fight": 6,
-               "max": 12,
-               "min": 3,
-               "movement": 6,
-               "name": "Invoker",
-               "options": [
-                  {
-                     "replaceWeapon": [
-                        {
-                           "count": 2,
-                           "id": "heavy_handweapon"
-                        },
-                        {
-                           "count": 2,
-                           "id": "staff"
-                        }
-                     ],
-                     "withWeapon": [
-                        {
-                           "count": 3,
-                           "id": "great_staff"
-                        }
-                     ]
-                  },
-                  {
-                     "addWeapon": [
-                        "spirit_flask"
-                     ],
-                     "modelLimit": 3
-                  }
-               ],
-               "reflexes": 6,
-               "rules": [
-                  "lightning_field",
-                  {
-                     "id": "wounds",
-                     "x": 2
-                  }
-               ],
-               "shoot": 6,
-               "weapons": [
-                  {
-                     "count": 2,
-                     "id": "heavy_handweapon"
-                  },
-                  {
-                     "count": 2,
-                     "id": "staff"
-                  }
-               ]
-            }
-         ],
-         "name": "Invokers",
-         "options": [
-            {
-               "addRule": [
-                  [
-                     "champion",
-                     {
-                        "id": "power",
-                        "x": 1
-                     }
-                  ]
-               ],
-               "modelLimit": 1
-            },
-            {
-               "addRule": [
-                  "banner"
-               ],
-               "modelLimit": 1
-            },
-            {
-               "addRule": [
-                  "musician"
-               ],
-               "modelLimit": 1
-            }
-         ]
-      },
-      "invokers_lizard": {
-         "category": "rare",
-         "description": "Warrior mages who channel the power of lightning to burn their enemies and block ranged attacks.",
-         "models": [
-            {
-               "courage": 6,
-               "defense": 7,
-               "fight": 6,
-               "max": 9,
-               "min": 3,
-               "movement": 8,
-               "name": "Invokers on Dragon-Lizards",
-               "options": [
-                  {
-                     "replaceWeapon": [
-                        {
-                           "count": 2,
-                           "id": "heavy_handweapon"
-                        },
-                        {
-                           "count": 2,
-                           "id": "staff"
-                        }
-                     ],
-                     "withWeapon": [
-                        {
-                           "count": 3,
-                           "id": "great_staff"
-                        }
-                     ]
-                  },
-                  {
-                     "addWeapon": [
-                        "spirit_flask"
-                     ],
-                     "modelLimit": 3
-                  }
-               ],
-               "reflexes": 6,
-               "rules": [
-                  "lightning_field",
-                  {
-                     "id": "wounds",
-                     "x": 3
-                  }
-               ],
-               "shoot": 6,
-               "weapons": [
-                  {
-                     "count": 2,
-                     "id": "heavy_handweapon"
-                  },
-                  {
-                     "count": 2,
-                     "id": "staff"
-                  },
-                  {
-                     "count": 2,
-                     "id": "lightning_breath"
-                  },
-                  {
-                     "count": 2,
-                     "id": "beak_and_claws"
-                  }
-               ]
-            }
-         ],
-         "name": "Invokers on Dragon-Lizards",
-         "options": [
-            {
-               "addRule": [
-                  [
-                     "champion",
-                     {
-                        "id": "power",
-                        "x": 1
-                     }
-                  ]
-               ],
-               "modelLimit": 1
-            }
-         ]
-      },
-      "lightning_mage": {
-         "category": "hero",
-         "description": "A mighty lightning mage, capable of hailing down magical storms onto their foes.",
-         "models": [
-            {
-               "courage": 7,
-               "defense": 7,
-               "fight": 6,
-               "max": 1,
-               "min": 1,
-               "movement": 6,
-               "name": "Stormcaller Mage",
-               "options": [
-                  {
-                     "replaceWeapon": [
-                        {
-                           "count": 2,
-                           "id": "heavy_handweapon"
-                        },
-                        {
-                           "count": 2,
-                           "id": "staff"
-                        }
-                     ],
-                     "withWeapon": [
-                        {
-                           "count": 3,
-                           "id": "great_staff"
-                        }
-                     ]
-                  },
-                  {
-                     "replaceRule": [
-                        {
-                           "id": "power",
-                           "x": 1
-                        }
-                     ],
-                     "withRule": [
-                        {
-                           "id": "power",
-                           "x": 2
-                        }
-                     ]
-                  },
-                  {
-                     "addWeapon": [
-                        "spirit_flask"
-                     ],
-                     "limit": 3
-                  }
-               ],
-               "reflexes": 6,
-               "rules": [
-                  {
-                     "id": "wounds",
-                     "x": 3
-                  },
-                  "leader",
-                  {
-                     "id": "power",
-                     "x": 1
-                  }
-               ],
-               "shoot": 6,
-               "weapons": [
-                  {
-                     "count": 2,
-                     "id": "heavy_handweapon"
-                  },
-                  {
-                     "count": 2,
-                     "id": "staff"
-                  }
-               ]
-            }
-         ],
-         "name": "Stormcaller Mage"
-      },
-      "lightning_mage_on_gryhpon": {
-         "category": "hero",
-         "description": "A mighty lightning mage on a hardy gryphon mount, swooping down on his foes.",
-         "keywords": [
-            "Beast",
-            "Cavalry"
-         ],
-         "models": [
-            {
-               "courage": 7,
-               "defense": 8,
-               "fight": 7,
-               "max": 1,
-               "min": 1,
-               "movement": 10,
-               "name": "Stormcaller Mage on Gryphon",
-               "options": [
-                  {
-                     "replaceWeapon": [
-                        {
-                           "count": 2,
-                           "id": "heavy_handweapon"
-                        },
-                        {
-                           "count": 3,
-                           "id": "staff"
-                        }
-                     ],
-                     "withWeapon": [
-                        {
-                           "count": 4,
-                           "id": "great_staff"
-                        }
-                     ]
-                  },
-                  {
-                     "addWeapon": [
-                        "spirit_flask"
-                     ],
-                     "limit": 3
-                  }
-               ],
-               "reflexes": 6,
-               "rules": [
-                  {
-                     "id": "wounds",
-                     "x": 4
-                  },
-                  {
-                     "id": "power",
-                     "x": 1
-                  },
-                  {
-                     "id": "leader_x",
-                     "x": "Infantry, Cavalry"
-                  },
-                  "fly"
-               ],
-               "shoot": 7,
-               "weapons": [
-                  {
-                     "count": 6,
-                     "id": "beak_and_claws"
-                  },
-                  {
-                     "count": 2,
-                     "id": "heavy_handweapon"
-                  },
-                  {
-                     "count": 3,
-                     "id": "staff"
-                  }
-               ]
-            }
-         ],
-         "name": "Stormcaller Mage on Gryphon"
-      },
-      "protectors": {
-         "category": "elite",
-         "description": "Warrior mages in heavy armor who infuse their great-weapons with elemental magic.",
-         "models": [
-            {
-               "courage": 6,
-               "defense": 7,
-               "fight": 6,
-               "max": 12,
-               "min": 3,
-               "movement": 6,
-               "name": "Protector",
-               "options": [
-                  {
-                     "replaceWeapon": [
-                        {
-                           "count": 3,
-                           "id": "great_mace"
-                        }
-                     ],
-                     "withWeapon": [
-                        {
-                           "count": 3,
-                           "id": "great_hammer"
-                        },
-                        {
-                           "count": 3,
-                           "id": "great_axe"
-                        }
-                     ]
-                  },
-                  {
-                     "modelLimit": "1/3",
-                     "replaceWeapon": [
-                        {
-                           "count": 3,
-                           "id": "great_mace"
-                        }
-                     ],
-                     "withWeapon": [
-                        {
-                           "count": 3,
-                           "id": "grand_mace"
-                        }
-                     ]
-                  },
-                  {
-                     "addRule": [
-                        "heavy_shield"
-                     ],
-                     "modelLimit": "all"
-                  },
-                  {
-                     "addWeapon": [
-                        "spirit_flask"
-                     ],
-                     "modelLimit": 3
-                  }
-               ],
-               "reflexes": 6,
-               "shoot": 6,
-               "weapons": [
-                  {
-                     "count": 3,
-                     "id": "great_mace"
-                  }
-               ]
-            }
-         ],
-         "name": "Protectors",
-         "options": [
-            {
-               "addRule": [
-                  "champion"
-               ],
-               "modelLimit": 1
-            },
-            {
-               "addRule": [
-                  "banner"
-               ],
-               "modelLimit": 1
-            },
-            {
-               "addRule": [
-                  "musician"
-               ],
-               "modelLimit": 1
-            }
-         ],
-         "rules": [
-            {
-               "id": "wounds",
-               "x": 2
-            },
-            "fear",
-            "lightning_field"
-         ]
-      },
-      "protectors_lizard": {
-         "category": "rare",
-         "description": "",
-         "keywords": [
-            "Monster",
-            "Cavalry"
-         ],
-         "models": [
-            {
-               "courage": 6,
-               "defense": 7,
-               "fight": 6,
-               "max": 6,
-               "min": 2,
-               "movement": 8,
-               "name": "Protector on Dragon-Lizard",
-               "options": [
-                  {
-                     "replaceWeapon": [
-                        {
-                           "count": 2,
-                           "id": "repeater_crossbow"
-                        },
-                        {
-                           "count": 3,
-                           "id": "grand_weapon"
-                        }
-                     ],
-                     "withWeapon": [
-                        {
-                           "count": 5,
-                           "id": "great_polearm"
-                        },
-                        {
-                           "count": 4,
-                           "id": "grand_hammer"
-                        }
-                     ]
-                  },
-                  {
-                     "addWeapon": [
-                        "spirit_flask"
-                     ],
-                     "modelLimit": 3
-                  }
-               ],
-               "reflexes": 6,
-               "shoot": 6,
-               "weapons": [
-                  {
-                     "count": 2,
-                     "id": "repeater_crossbow"
-                  },
-                  {
-                     "count": 3,
-                     "id": "grand_weapon"
-                  },
-                  {
-                     "count": 2,
-                     "id": "fangs_and_claws"
-                  },
-                  {
-                     "count": 2,
-                     "id": "lightning_breath"
-                  },
-                  "enchanted_shield"
-               ]
-            }
-         ],
-         "name": "Protectors on Dragon-Lizards",
-         "rules": [
-            {
-               "id": "wounds",
-               "x": 3
-            }
-         ]
-      },
-      "reliquary_lord": {
-         "category": "hero",
-         "description": "",
-         "models": [
-            {
-               "courage": 7,
-               "defense": 7,
-               "fight": 6,
-               "max": 1,
-               "min": 1,
-               "movement": 6,
-               "name": "Reliquary Lord",
-               "options": [
-                  {
-                     "replaceWeapon": [
-                        {
-                           "count": 3,
-                           "id": "great_mace"
-                        }
-                     ],
-                     "withWeapon": [
-                        {
-                           "count": 3,
-                           "id": "grand_weapon"
-                        },
-                        {
-                           "count": 3,
-                           "id": "grand_hammer"
-                        }
-                     ]
-                  },
-                  {
-                     "addWeapon": [
-                        "spirit_flask"
-                     ],
-                     "limit": 3
-                  }
-               ],
-               "reflexes": 6,
-               "rules": [
-                  {
-                     "id": "wounds",
-                     "x": 3
-                  },
-                  "leader",
-                  "battle_prayer"
-               ],
-               "shoot": 6,
-               "weapons": [
-                  {
-                     "count": 3,
-                     "id": "great_mace"
-                  }
-               ]
-            }
-         ],
-         "name": "Reliquary Lord"
-      },
-      "reliquary_lord_soul": {
-         "category": "hero",
-         "description": "",
-         "models": [
-            {
-               "courage": 7,
-               "defense": 7,
-               "fight": 6,
-               "max": 1,
-               "min": 1,
-               "movement": 6,
-               "name": "Reliquary Lord with Soul Casket",
-               "options": [
-                  {
-                     "replaceWeapon": [
-                        {
-                           "count": 2,
-                           "id": "great_weapon"
-                        },
-                        {
-                           "count": 2,
-                           "id": "staff"
-                        }
-                     ],
-                     "withWeapon": [
-                        {
-                           "count": 3,
-                           "id": "great_staff"
-                        },
-                        {
-                           "count": 3,
-                           "id": "great_polearm"
-                        }
-                     ]
-                  },
-                  {
-                     "replaceWeapon": [
-                        {
-                           "count": 2,
-                           "id": "staff"
-                        }
-                     ],
-                     "withWeapon": [
-                        "starfall_banner"
-                     ]
-                  },
-                  {
-                     "addWeapon": [
-                        "spirit_flask"
-                     ],
-                     "limit": 3
-                  }
-               ],
-               "reflexes": 6,
-               "rules": [
-                  {
-                     "id": "wounds",
-                     "x": 3
-                  },
-                  "leader",
-                  "battle_prayer"
-               ],
-               "shoot": 6,
-               "weapons": [
-                  {
-                     "count": 2,
-                     "id": "great_weapon"
-                  },
-                  {
-                     "count": 2,
-                     "id": "staff"
-                  }
-               ]
-            }
-         ],
-         "name": "Reliquary Lord with Soul Casket"
-      },
-      "storm_chariot": {
-         "category": "elite",
-         "description": "A powerful chariot driven by the Wardens to harry flanks and break formations.",
-         "keywords": [
-            "Chariot",
-            "Cavalry"
-         ],
-         "models": [
-            {
-               "courage": 7,
-               "defense": 7,
-               "fight": 6,
-               "max": 1,
-               "min": 1,
-               "movement": 12,
-               "name": "Storm Chariot",
-               "options": [
-                  {
-                     "addWeapon": [
-                        {
-                           "count": 2,
-                           "id": "heavy_lance"
-                        }
-                     ]
-                  },
-                  {
-                     "addWeapon": [
-                        "spirit_flask"
-                     ],
-                     "limit": 3
-                  }
-               ],
-               "reflexes": 6,
-               "rules": [
-                  {
-                     "id": "wounds",
-                     "x": 6
-                  }
-               ],
-               "shoot": 6,
-               "weapons": [
-                  {
-                     "count": 3,
-                     "id": "heavy_handweapon"
-                  },
-                  {
-                     "count": 2,
-                     "id": "storm_bow"
-                  },
-                  {
-                     "count": 3,
-                     "id": "beak_and_claws"
-                  }
-               ]
-            }
-         ],
-         "name": "Storm Chariot"
-      },
-      "stormforged_archers": {
-         "category": "core",
-         "description": "Warriors mages who use the elements to strengthen their bows.",
-         "models": [
-            {
-               "courage": 6,
-               "defense": 7,
-               "fight": 6,
-               "max": 25,
-               "min": 5,
-               "movement": 6,
-               "name": "Stormforged Archer",
-               "options": [
-                  {
-                     "replaceWeapon": [
-                        "heavy_long_bow",
-                        "handweapon"
-                     ],
-                     "withWeapon": [
-                        [
-                           "long_bow",
-                           {
-                              "count": 2,
-                              "id": "handweapon"
-                           }
-                        ]
-                     ]
-                  },
-                  {
-                     "modelLimit": "1/5",
-                     "replaceWeapon": [
-                        "heavy_long_bow"
-                     ],
-                     "withWeapon": [
-                        "storm_bow"
-                     ]
-                  },
-                  {
-                     "addWeapon": [
-                        "spirit_flask"
-                     ],
-                     "modelLimit": 3
-                  },
-                  {
-                     "addRule": [
-                        "scout",
-                        "ambush"
-                     ],
-                     "limit": 1,
-                     "modelLimit": "all"
-                  }
-               ],
-               "reflexes": 6,
-               "shoot": 6,
-               "weapons": [
-                  "heavy_long_bow",
-                  "handweapon"
-               ]
-            }
-         ],
-         "name": "Stormforged Archers",
-         "options": [
-            {
-               "addRule": [
-                  "champion"
-               ],
-               "modelLimit": 1
-            },
-            {
-               "addRule": [
-                  "banner"
-               ],
-               "modelLimit": 1
-            },
-            {
-               "addRule": [
-                  "musician"
-               ],
-               "modelLimit": 1
-            }
-         ]
-      },
-      "stormforged_hunters": {
-         "category": "core",
-         "description": "Warrior mages who use the elements to strengthen their crossbows.",
-         "models": [
-            {
-               "courage": 6,
-               "defense": 7,
-               "fight": 6,
-               "max": 25,
-               "min": 5,
-               "movement": 6,
-               "name": "Stormforged Arbalester",
-               "options": [
-                  {
-                     "replaceWeapon": [
-                        "repeater_crossbow"
-                     ],
-                     "withWeapon": [
-                        "heavy_crossbow"
-                     ]
-                  },
-                  {
-                     "modelLimit": "1/5",
-                     "replaceWeapon": [
-                        "repeater_crossbow"
-                     ],
-                     "withWeapon": [
-                        "storm_crossbow"
-                     ]
-                  },
-                  {
-                     "addWeapon": [
-                        "spirit_flask"
-                     ],
-                     "modelLimit": 3
-                  },
-                  {
-                     "addRule": [
-                        "scout",
-                        "ambush"
-                     ],
-                     "limit": 1,
-                     "modelLimit": "all"
-                  }
-               ],
-               "reflexes": 6,
-               "shoot": 6,
-               "weapons": [
-                  "repeater_crossbow",
-                  {
-                     "count": 2,
-                     "id": "handweapon"
-                  }
-               ]
-            }
-         ],
-         "name": "Stormforged Arbalestiers",
-         "options": [
-            {
-               "addRule": [
-                  "champion"
-               ],
-               "modelLimit": 1
-            },
-            {
-               "addRule": [
-                  "banner"
-               ],
-               "modelLimit": 1
-            },
-            {
-               "addRule": [
-                  "musician"
-               ],
-               "modelLimit": 1
-            }
-         ]
-      },
-      "stormforged_skirms": {
-         "category": "core",
-         "description": "Warrior mages fighting at the vanguard of the force.",
-         "models": [
-            {
-               "courage": 6,
-               "defense": 6,
-               "fight": 6,
-               "max": 25,
-               "min": 5,
-               "movement": 6,
-               "name": "Stormforged Warrior",
-               "options": [
-                  {
-                     "addWeapon": [
-                        "spirit_flask"
-                     ],
-                     "modelLimit": 3
-                  }
-               ],
-               "reflexes": 6,
-               "rules": [
-                  "scout"
-               ],
-               "shoot": 6,
-               "weapons": [
-                  {
-                     "count": 2,
-                     "id": "handweapon"
-                  },
-                  {
-                     "count": 2,
-                     "id": "hand_xbow"
-                  }
-               ]
-            }
-         ],
-         "name": "Stormforged Skirmishers",
-         "options": [
-            {
-               "addRule": [
-                  "champion"
-               ],
-               "modelLimit": 1
-            },
-            {
-               "addRule": [
-                  "banner"
-               ],
-               "modelLimit": 1
-            },
-            {
-               "addRule": [
-                  "musician"
-               ],
-               "modelLimit": 1
-            }
-         ]
-      },
-      "stormforged_warriors": {
-         "category": "core",
-         "description": "Warrior mages in heavy armor who use the power of lightning to strengthen their weapons.",
-         "models": [
-            {
-               "courage": 6,
-               "defense": 7,
-               "fight": 6,
-               "max": 25,
-               "min": 5,
-               "movement": 6,
-               "name": "Stormforged Warrior",
-               "options": [
-                  {
-                     "replaceWeapon": [
-                        {
-                           "count": 2,
-                           "id": "handweapon"
-                        },
-                        "shield"
-                     ],
-                     "withWeapon": [
-                        {
-                           "count": 3,
-                           "id": "mace"
-                        },
-                        {
-                           "count": 2,
-                           "id": "great_weapon"
-                        },
-                        [
-                           {
-                              "count": 2,
-                              "id": "spear"
-                           },
-                           "shield"
-                        ],
-                        {
-                           "count": 3,
-                           "id": "handweapon"
-                        },
-                        [
-                           {
-                              "count": 2,
-                              "id": "mace"
-                           },
-                           "shield"
-                        ]
-                     ]
-                  },
-                  {
-                     "modelLimit": "1/5",
-                     "replaceWeapon": [
-                        {
-                           "count": 2,
-                           "id": "handweapon"
-                        },
-                        "shield"
-                     ],
-                     "withWeapon": [
-                        "grand_mace"
-                     ]
-                  },
-                  {
-                     "addWeapon": [
-                        "spirit_flask"
-                     ],
-                     "modelLimit": 3
-                  }
-               ],
-               "reflexes": 6,
-               "shoot": 6,
-               "weapons": [
-                  {
-                     "count": 2,
-                     "id": "handweapon"
-                  },
-                  "shield"
-               ]
-            }
-         ],
-         "name": "Stormforged Warriors",
-         "options": [
-            {
-               "addRule": [
-                  "champion"
-               ],
-               "modelLimit": 1
-            },
-            {
-               "addRule": [
-                  "banner"
-               ],
-               "modelLimit": 1
-            },
-            {
-               "addRule": [
-                  "musician"
-               ],
-               "modelLimit": 1
-            }
-         ]
-      },
-      "stormwing_lord": {
-         "category": "hero",
-         "description": "A warrior mage leader, held aloft by enchanted wings and harnessing the powers of the elements.",
-         "models": [
-            {
-               "courage": 7,
-               "defense": 7,
-               "fight": 6,
-               "max": 1,
-               "min": 1,
-               "movement": 8,
-               "name": "Stormwing Lord",
-               "options": [
-                  {
-                     "replaceWeapon": [
-                        {
-                           "count": 3,
-                           "id": "heavy_long_bow"
-                        }
-                     ],
-                     "withWeapon": [
-                        [
-                           {
-                              "count": 4,
-                              "id": "great_weapon"
-                           }
-                        ]
-                     ]
-                  },
-                  {
-                     "addWeapon": [
-                        "bird"
-                     ]
-                  },
-                  {
-                     "addWeapon": [
-                        "spirit_flask"
-                     ],
-                     "limit": 3
-                  }
-               ],
-               "reflexes": 6,
-               "rules": [
-                  {
-                     "id": "wounds",
-                     "x": 3
-                  },
-                  "leader",
-                  "fly",
-                  "battle_prayer"
-               ],
-               "shoot": 6,
-               "weapons": [
-                  {
-                     "count": 3,
-                     "id": "heavy_long_bow"
-                  },
-                  {
-                     "count": 3,
-                     "id": "handweapon"
-                  }
-               ]
-            }
-         ],
-         "name": "Stormwing Lord"
-      },
-      "stormwings": {
-         "category": "elite",
-         "description": "Warrior mages, held aloft by enchanted wings and harnessing the powers of the elements.",
-         "models": [
-            {
-               "courage": 6,
-               "defense": 7,
-               "fight": 6,
-               "max": 12,
-               "min": 3,
-               "movement": 8,
-               "name": "Stormwing",
-               "options": [
-                  {
-                     "replaceWeapon": [
-                        {
-                           "count": 2,
-                           "id": "throwing_hammer"
-                        },
-                        "shield"
-                     ],
-                     "withWeapon": [
-                        [
-                           {
-                              "count": 2,
-                              "id": "heavy_javelin"
-                           },
-                           "shield"
-                        ],
-                        {
-                           "count": 3,
-                           "id": "throwing_hammer"
-                        }
-                     ]
-                  },
-                  {
-                     "modelLimit": "1/3",
-                     "replaceWeapon": [
-                        {
-                           "count": 2,
-                           "id": "throwing_hammer"
-                        },
-                        "shield"
-                     ],
-                     "withWeapon": [
-                        {
-                           "count": 2,
-                           "id": "grand_hammer"
-                        },
-                        [
-                           "storm_trident",
-                           "shield"
-                        ],
-                        {
-                           "count": 2,
-                           "id": "great_hammer"
-                        }
-                     ]
-                  },
-                  {
-                     "addWeapon": [
-                        "spirit_flask"
-                     ],
-                     "modelLimit": 3
-                  }
-               ],
-               "reflexes": 6,
-               "shoot": 6,
-               "weapons": [
-                  {
-                     "count": 2,
-                     "id": "throwing_hammer"
-                  },
-                  "shield"
-               ]
-            }
-         ],
-         "name": "Stormwings",
-         "rules": [
-            "fly"
-         ]
-      },
-      "wardens": {
-         "category": "rare",
-         "description": "Warrior mages in heavy armor who have sworn to protect their mighty leaders.",
-         "models": [
-            {
-               "courage": 6,
-               "defense": 7,
-               "fight": 6,
-               "max": 12,
-               "min": 3,
-               "movement": 6,
-               "name": "Warden",
-               "options": [
-                  {
-                     "addWeapon": [
-                        "spirit_flask"
-                     ],
-                     "modelLimit": 3
-                  }
-               ],
-               "reflexes": 6,
-               "rules": [
-                  {
-                     "id": "wounds",
-                     "x": 2
-                  },
-                  {
-                     "id": "resilient",
-                     "x": 3
-                  }
-               ],
-               "shoot": 6,
-               "weapons": [
-                  {
-                     "count": 3,
-                     "id": "great_polearm"
-                  }
-               ]
-            }
-         ],
-         "name": "Wardens",
-         "options": [
-            {
-               "addRule": [
-                  "champion"
-               ],
-               "modelLimit": 1
-            },
-            {
-               "addRule": [
-                  "banner"
-               ],
-               "modelLimit": 1
-            },
-            {
-               "addRule": [
-                  "musician"
-               ],
-               "modelLimit": 1
-            }
-         ]
-      }
-   },
-   "weapons": {
-      "bird": {
-         "name": "Celestial Eagle",
-         "profiles": [
-            {
-               "ap": 2,
-               "attacks": 1,
-               "name": "Claws",
-               "rules": [
-                  "rending"
-               ],
-               "short": "Melee"
-            },
-            {
-               "ap": 2,
-               "attacks": 1,
-               "medium": 24,
-               "name": "Beak",
-               "rules": [
-                  "rending"
-               ],
-               "short": 12
-            }
-         ]
-      },
-      "hand_xbow": {
-         "ap": 2,
-         "attacks": 1,
-         "medium": 18,
-         "name": "Lightning Handbow",
-         "rules": [
-            "assault"
-         ],
-         "short": 9
-      },
-      "sonic_boom": {
-         "ap": 2,
-         "attacks": 2,
-         "medium": 18,
-         "name": "Sonic Boom",
-         "short": 9
-      },
-      "spirit_flask": {
-         "ap": 3,
-         "attacks": 1,
-         "name": "Spirit Flask",
-         "rules": [
-            {
-               "id": "blast",
-               "x": 2
-            },
-            {
-               "id": "ammo",
-               "x": 1
-            },
-            "lethal"
-         ],
-         "short": 6
-      },
-      "starfall_banner": {
-         "ap": 6,
-         "attacks": 1,
-         "name": "Starfall Banner",
-         "rules": [
-            {
-               "id": "ammo",
-               "x": 1
-            },
-            {
-               "id": "blast",
-               "x": 3
-            },
-            "scatter"
-         ],
-         "short": 24
-      },
-      "storm_bow": {
-         "ap": 3,
-         "attacks": 1,
-         "medium": 30,
-         "name": "Thunderbolt-Longbow",
-         "rules": [
-            "lethal"
-         ],
-         "short": 15
-      },
-      "storm_crossbow": {
-         "ap": 3,
-         "attacks": 1,
-         "medium": 24,
-         "name": "Thunderbolt-Crossbow",
-         "rules": [
-            "lethal"
-         ],
-         "short": 12
-      },
-      "storm_greatweapon": {
-         "ap": 3,
-         "attacks": 1,
-         "name": "Thunderbolt-Greatweapon",
-         "rules": [
-            "lethal"
-         ],
-         "short": "Melee"
-      },
-      "storm_trident": {
-         "ap": 3,
-         "attacks": 1,
-         "medium": 12,
-         "name": "Stormstrike Trident",
-         "rules": [
-            "assault",
-            "lethal"
-         ],
-         "short": 6
-      },
-      "stormforge_standard": {
-         "attacks": 0,
-         "name": "Stormforge Standard",
-         "rules": [
-            {
-               "id": "icon",
-               "x": "Infantry"
-            }
-         ],
-         "short": "Melee"
-      },
-      "throwing_hammer": {
-         "ap": 2,
-         "attacks": 1,
-         "name": "Throwing Hammer",
-         "rules": [
-            "assault"
-         ],
-         "short": 6
-      }
-   }
+                    ]
+                }
+            ],
+            "rules": ["fly"]
+        },
+        "storm_chariot": {
+            "name": "Stormforged Chariot",
+            "category": "elite",
+            "description": "A powerful chariot driven by Wardens to harry flanks and break formations.",
+            "models": [
+                {
+                    "name": "Crew on Stormforged Chariot",
+                    "movement": 12,
+                    "fight": 6,
+                    "shoot": 6,
+                    "defense": 10,
+                    "courage": 7,
+                    "reflexes": 6,
+                    "max": 1,
+                    "min": 1,
+                    "weapons": ["storm_bow", "heavy_handweapon", {"id": "beak_and_claws", "count": 4}],
+                    "options": [{"addWeapon": ["spirit_flask"], "limit": 3}, {"addWeapon": ["great_polearm"]}, {"addRule": ["banner"]}],
+                    "rules": ["damage_chart", {"id": "heavy_impact", "x": 3}]
+                }
+            ],
+            "keywords": ["Beast", "Chariot"]
+        },
+        "dragon_riders": {
+            "name": "Dragon Guard",
+            "category": "rare",
+            "description": "Powerful warrior mages that have tamed ferocious starborn drakes, bringing judgement from above to the forces of evil.",
+            "models": [
+                {
+                    "name": "Dragon Guard",
+                    "movement": 10,
+                    "fight": 6,
+                    "shoot": 6,
+                    "defense": 13,
+                    "courage": 7,
+                    "reflexes": 6,
+                    "max": 5,
+                    "min": 1,
+                    "weapons": [{"count": 3, "id": "great_polearm"}, "relic_shield", {"count": 2, "id": "lightning_breath"}, {"count": 2, "id": "fangs_and_claws"}, "bashing_tail"],
+                    "options": [{"addWeapon": ["spirit_flask"], "limit": 3}, {"replaceWeapon": [{"count": 3, "id": "great_polearm"}], "withWeapon": [{"count": 3, "id": "grand_hammer"}]}],
+                    "rules": ["damage_chart", "fly"]
+                }
+            ],
+            "keywords": ["Cavalry", "Monster"]
+        },
+        "celestial_beast_skirmishers": {
+            "name": "Skirmishers on Greater Celestial Beasts",
+            "category": "elite",
+            "description": "Swift warrior mages who can cover their enemies in hails of bolts whilst evading their attacks.",
+            "models": [
+                {
+                    "name": "Skirmishers on Greater Celestial Beasts",
+                    "movement": 8,
+                    "fight": 6,
+                    "shoot": 6,
+                    "defense": 7,
+                    "courage": 6,
+                    "reflexes": 6,
+                    "min": 3,
+                    "max": 15,
+                    "weapons": ["heavy_handweapon", {"id": "repeater_crossbow", "count": 2}, {"id": "beak_and_claws", "count": 2}],
+                    "options": [{"addWeapon": ["spirit_flask"], "modelLimit": 3}, {"replaceWeapon": [{"id": "repeater_crossbow", "count": 1}], "withWeapon": ["heavy_javelin"]}],
+                    "rules": ["scout"]
+                }
+            ],
+            "keywords": ["Beast", "Cavalry"]
+        },
+        "celestial_beast_protectors": {
+            "name": "Protectors on Greater Celestial Beasts",
+            "category": "rare",
+            "description": "Personal Honorguard on celestial beasts, striking their enemies with elemental weapons.",
+            "models": [
+                {
+                    "name": "Protector on Greater Celestial Beast",
+                    "movement": 8,
+                    "fight": 6,
+                    "shoot": 6,
+                    "defense": 7,
+                    "courage": 6,
+                    "reflexes": 6,
+                    "max": 12,
+                    "min": 3,
+                    "weapons": [{"id": "great_lance", "count": 3}, {"id": "beak_and_claws", "count": 2}],
+                    "options": [{"addWeapon": ["spirit_flask"], "modelLimit": 3}, {"addRule": ["heavy_shield"], "modelLimit": "all"}],
+                    "rules": [{"id": "wounds", "x": 2}, "scout", "lightning_field"]
+                }
+            ],
+            "keywords": ["Beast", "Cavalry"]
+        },
+        "star_drake": {
+            "name": "Starborn Drake",
+            "category": "rare",
+            "description": "A ferocious dragon of astral descent, burning their enemies to ashes.",
+            "models": [
+                {
+                    "name": "Starborn Drake",
+                    "movement": 10,
+                    "fight": 7,
+                    "shoot": 7,
+                    "defense": 13,
+                    "courage": 7,
+                    "reflexes": 6,
+                    "max": 1,
+                    "min": 1,
+                    "weapons": [{"count": 4, "id": "lightning_breath"}, {"count": 3, "id": "fangs_and_claws"}, "bashing_tail"],
+                    "rules": ["damage_chart", "fly"]
+                }
+            ],
+            "keywords": ["Monster"]
+        },
+        "star_drake_hero": {
+            "name": "Ascended Starborn Drake",
+            "category": "hero",
+            "description": "A wise and ancient dragon of astral descent, leading an army into battle.",
+            "models": [
+                {
+                    "name": "Ascended Starborn Drake",
+                    "movement": 10,
+                    "fight": 7,
+                    "shoot": 7,
+                    "defense": 13,
+                    "courage": 7,
+                    "reflexes": 6,
+                    "max": 1,
+                    "min": 1,
+                    "weapons": [{"count": 4, "id": "lightning_breath"}, {"count": 3, "id": "fangs_and_claws"}, "bashing_tail"],
+                    "rules": ["damage_chart", "fly", {"id": "leader_x", "x": "Monster"}, {"id": "power", "x": 1}]
+                }
+            ],
+            "keywords": ["Monster"]
+        }
+    },
+    "powers": {
+        "eye_of_the_storm": {"name": "Eye of the Storm", "charge": 6, "description": "Target enemy unit within 12\" has -1\" movement and adds 1 to hit rolls against it."},
+        "hurricane_armor": {
+            "name": "Hurricane Armor",
+            "charge": 7,
+            "description": "Target a friendly unit within 12\". Until the end of the round, each time that unit rolls a 1 or 2 on a save roll, the attacking unit takes 1 hit with AP(3). This power may be cast unlimited times."
+        },
+        "thunder_strike": {"name": "Thunderbolt", "charge": 5, "description": "Target enemy unit within 12\" takes an automatic hit with AP(3) and Lethal."}
+    },
+    "relics": [],
+    "rules": {
+        "eternal_tactics": {
+            "description": "When this unit is activated, up to X friendly _Infantry_ units within 6\" and this unit receive one of the following bonuses until the end of the round: \n * Re-roll failed Accuracy tests of 9+ \n * Re-roll failed Strength tests of 9+",
+            "inputs": ["x"],
+            "name": "Eternal Tactics",
+            "points": ["rule.x", {"multiply": 10}]
+        },
+        "lightning_field": {"description": "Roll a D10 each time this unit is hit by a Shooting attack. On each roll of a 1 or 2 one attack is prevented.", "name": "Lightning Field", "points": 2},
+        "soul_lantern": {"description": "Once per round, a friendly _Infantry_ unit within 6\" gains +1 AP on all Melee weapons.", "name": "Soul Lantern", "points": 10}
+    },
+    "strategies": [
+        {
+            "cost": 2,
+            "description": "Use this strategy when one of your units is targeted by an attack. Roll a die for each hit, on a 3 or less that hit is prevented.",
+            "flavor": "The Storm Wardens wear enchanted armor, absorbing the force of enemy attacks, rendering them harmless",
+            "name": "Stormshroud Armor",
+            "phase": "activation"
+        },
+        {
+            "cost": "1/per",
+            "description": "Up to half of any force's units, one point for each may be placed in _Ambush Reserves_ instead of deployed on the field.",
+            "flavor": "Raining down from the sky like thunderstrikes, the Storm Wardens use magical portals to strike from behind enemy lines.",
+            "name": "Stormstrike Portals",
+            "phase": "pre_game"
+        },
+        {
+            "cost": 1,
+            "description": "Use when a unit is targeted by a Fight action. If that unit has not yet activated, it may perform a Defensive Stance reaction without testing Initiative.",
+            "flavor": "Any foe foolish enough to strike a Storm Warden will feel the wrath of a thousand storms.",
+            "name": "Counter Attack",
+            "phase": "activation"
+        }
+    ],
+    "weapons": {
+        "bird": {
+            "name": "Celestial Eagle",
+            "profiles": [{"ap": 2, "attacks": 1, "name": "Claws", "rules": ["rending"], "short": "Melee"}, {"ap": 2, "attacks": 1, "medium": 24, "name": "Beak", "rules": ["rending"], "short": 12}]
+        },
+        "sonic_boom": {"name": "Sonic Boom", "attacks": 2, "ap": 2, "medium": 18, "short": 9},
+        "spirit_flask": {"ap": 3, "attacks": 1, "name": "Spirit Flask", "rules": [{"id": "blast", "x": 2}, {"id": "ammo", "x": 1}, "lethal"], "short": 6},
+        "starfall_banner": {"ap": 6, "attacks": 1, "name": "Starfall Banner", "rules": [{"id": "ammo", "x": 1}, {"id": "blast", "x": 3}, "scatter"], "short": 24},
+        "storm_bow": {"ap": 3, "attacks": 1, "medium": 30, "name": "Thunderbolt-Longbow", "rules": ["lethal"], "short": 15},
+        "storm_crossbow": {"ap": 3, "attacks": 1, "medium": 24, "name": "Thunderbolt-Crossbow", "rules": ["lethal"], "short": 12},
+        "storm_greatweapon": {"ap": 3, "attacks": 1, "name": "Thunderbolt-Greatweapon", "rules": ["lethal"], "short": "Melee"},
+        "storm_trident": {"ap": 3, "attacks": 1, "medium": 12, "name": "Stormstrike Trident", "rules": ["assault", "lethal"], "short": 6},
+        "throwing_hammer": {"ap": 2, "attacks": 1, "name": "Throwing Hammer", "rules": ["assault"], "short": 6}
+    }
 }
