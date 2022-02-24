@@ -573,8 +573,8 @@
     },
     "artifact": {"name": "Cursed Artifact", "description": "Once per turn, for every model with this rule, add +1 to a cast roll of a friendly Power model within 6“ of this unit.", "points": 5},
     "companion": {"name": "Arcane Companion", "description": "Once per turn when a power within 24“ of this model gets dispelled, deal 1 hit with AP(2) to the caster.", "points": 5},
-    "disk_of_change": {
-      "name": "Disk of Change",
+    "disk_of_magic": {
+      "name": "Disk of Magic",
       "description": "This model increases its Movement by 2\". This unit may ignore difficult terrain and obstacles of height 2\" or less when moving.",
       "points": 5
     },
