@@ -530,7 +530,7 @@
       "keywords": ["Cavalry"]
     },
     "pestilence_warriors": {
-      "name": "Foetid Lords",
+      "name": "Pestilence Warriors",
       "description": "A regiment of corrupted warriors who have been blessed by the god of pestilence.",
       "category": "core",
       "models": [
