@@ -141,7 +141,7 @@
                     "min": 3,
                     "max": 9,
                     "rules": ["fly", {"id": "wounds", "x": 2}],
-                    "options": [{"replaceWeapon": "javelin", "withweapon": "bolas"}]
+                    "options": [{"replaceWeapon": "javelin", "withWeapon": "bolas"}]
                 }
             ]
         },
