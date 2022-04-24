@@ -325,7 +325,16 @@
       "color": "#0f3923",
       "alliance": "destruction",
       "description": "The forces of nature rarely leave anyone alive to tell of their existence when they venture out into civilization to reclaim it."
-    }
+    },
+    "abyss_daemons": {
+      "version": "0.1",
+      "name": "Abyssal Daemons",
+      "id": "abyssal_daemons",
+      "url": "daemons.json",
+      "color": "#990000",
+      "alliance": "chaos",
+      "description": "Daemons come screaming from the abyss, independent of the dead gods."
+  }
   },
   "weapons": {
     "grand_hammer": {"name": "Grand Hammer", "attacks": 1, "short": "Melee", "ap": 6, "rules": ["cumbersome", "lethal"]},

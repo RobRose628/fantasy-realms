@@ -1,0 +1,133 @@
+{
+"id": "abyss_daemons",
+"name": "Daemons of the Abyss",
+"author": "Valgaav#9072",
+
+"units": {
+"Abyssal_Guard": {
+"name": "Abyssal Guard",
+"description": "Those who find or earn powerful weapons and armour can find their way into the Abyssal Guard",
+"category": "Elite",
+"models": [
+{
+"name": "Abyssal Guard",
+"movement": 6,
+"courage": 6,
+"shoot": 4,
+"fight": 6,
+"defense": 7,
+"reflexes": 5,
+"weapons": [
+{"id": "handweapon", "count": 2},
+"shield"
+],
+"min": 10,
+"max": 20,
+"rules": [],
+"options": [
+{"replaceWeapon": [
+"shield", {"id": "handweapon", "count": "2"}
+],
+"withWeapon": [
+{"id": "greatweapon", "count": 2}
+]
+}]
+}
+]
+},
+"Flame_bearers": {
+"name": "Flame Bearers",
+"description": "Flame-tossing daemons from the abyss.",
+"category": "Elite",
+"models": [
+{
+"name": "Flame Bearers",
+"movement": 6,
+"courage": 5,
+"shoot": 5,
+"fight": 4,
+"defense": 5,
+"reflexes": 5,
+"weapons": [ "heavy_handweapon", "firebolts"],
+"min": 10,
+"max": 20
+}
+]
+},
+"Lesser_Abyssals": {
+"name": "Lesser Abyssals",
+"description": "Foot soldiers and fallen souls of the abyssal forces",
+"category": "core",
+"models": [ {
+"name": "Lower Abyssals",
+"movement": 6,
+"courage": 5,
+"shoot": 4,
+"fight": 5,
+"defense": 6,
+"reflexes": 5,
+"weapons": ["shield", "handweapon"],
+"options": [ {"replaceWeapon": 
+["shield", "handweapon"],
+"withWeapon":
+["heavy_handweapon"]
+} ],
+"min": 10,
+"max": 30
+} ]
+},
+"Gargoyles": {
+"name": "Gargoyles",
+"description": "Vicious flying predators of the Abyss",
+"category": "core",
+"models": [ {
+"name": "Gargoyles",
+"movement": 12,
+"courage": 5,
+"shoot": 4,
+"fight": 5,
+"defense": 6,
+"reflexes": 6,
+"weapons": "fangs_and_teeth",
+"rules": ["fly", "fear"],
+"min": 10,
+"max": 10
+} ]
+
+},
+"Infernal_Champion": {
+"name": "Infernal Champion",
+"description": "A powerful leader of daemonic forces",
+"category": "Hero",
+"models": [ {
+"name": "Infernal Champion",
+"movement": 6,
+"courage": 7,
+"shoot": 4,
+"fight": 6,
+"defense": 7,
+"reflexes": 6,
+"weapons": [{"id": "heavy_axe", "count": 5}, "firebolts"],
+"rules": ["leader", {"id": "wounds", "x": 3}, {"id": "daemon_melee_tactics", "x": 1}],
+"options": [
+{"replaceRule": {"id": "daemon_melee_tactics", "x": 1}, "withRule": {"id": "daemon_melee_tactics", "x": 2}},
+{"addRule": "wings"}
+],
+"min": 1,
+"max": 1
+}
+]
+},
+"weapons": {
+"firebolts": {"name": "Firebolt", "attacks": 1, "short": 9, "medium": 18, "ap": 1, "rules": ["assault", "flame"]}
+},
+"rules": {
+    "daemon_melee_tactics":{
+           "name": "Daemon Melee Tactics",
+    "inputs": ["x"],
+    "description": "When this unit is activated, choose up to X friendly _Infantry_ units within 6\".  Those units re-roll all failed Strength tests until the end of the round.",
+    "points": ["rule.x", {"multiply": 10}]
+}
+}
+}
+}
