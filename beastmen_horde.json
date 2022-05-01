@@ -3,7 +3,6 @@
     "id": "beastmen_horde",
     "author": "Valgaav#9736",
     "color": "#954535",
-    "alliance": "chaos",
     "units": {
         "minotaur_lord": {
             "name": "Minotaur Lord",
