@@ -1,18 +1,20 @@
 {
     "name": "Vermin Colonies",
     "id": "vermin_colonies",
-    "author": "Xekon#8266",
+    "author": "Xekon#8266, Nightingale#7918",
+    "description": "These cunning and treacherous Vermin assemble into warhosts containing, vast swarms, pestilent magic, mutated beasts and doom-tech.",
     "color": "#3D3636",
     "units": {
         "warlord": {
             "name": "Vermin Warlord",
             "description": "",
             "category": "hero",
+            "keywords": ["Infantry"],
             "models": [
                 {
                     "name": "Vermin Warlord",
                     "movement": 7,
-                    "courage": 7,
+                    "courage": 4,
                     "shoot": 5,
                     "fight": 6,
                     "defense": 7,
@@ -20,16 +22,13 @@
                     "weapons": [{"id": "great_weapon", "count": 3}],
                     "min": 1,
                     "max": 1,
-                    "rules": [{"id": "wounds", "x": 3}, "leader", {"id": "ratmen_tactics", "x": 1}],
+                    "rules": [{"id": "wounds", "x": 3}, "leader", {"id": "vermin_tactics", "x": 1}],
                     "options": [
                         {
                             "replaceWeapon": [{"id": "great_weapon", "count": 3}],
                             "withWeapon": [{"id": "heavy_polearm", "count": 3}, {"id": "great_weapon", "count": 4}, {"id": "grand_weapon", "count": 3}]
                         },
-                        {
-                            "replaceRule": [{"id": "ratmen_tactics", "x": 1}],
-                            "withRule": [{"id": "ratmen_tactics", "x": 2}]
-                        },
+                        {"replaceRule": [{"id": "vermin_tactics", "x": 1}], "withRule": [{"id": "vermin_tactics", "x": 2}]},
                         {"addRule": ["enchanted_shield", "runic_armor"], "limit": 1}
                     ]
                 }
@@ -37,13 +36,14 @@
         },
         "the_big_rat_that_makes_ALL_the_rules": {
             "name": "Supreme Verminlord",
-            "description": "The biggest rats, who make all the rules",
+            "description": "The biggest rats, who make all the rules. They pay hommage only to the Great Vermin",
             "category": "hero",
+            "keywords": ["Monster"],
             "models": [
                 {
                     "name": "Supreme Verminlord",
                     "movement": 12,
-                    "courage": 7,
+                    "courage": 8,
                     "shoot": 6,
                     "fight": 6,
                     "defense": 12,
@@ -58,8 +58,8 @@
                             "withWeapon": [
                                 [{"id": "huge_stiletto", "count": 6}, {"id": "squeaker_shuriken", "count": 1}],
                                 {"id": "verminlord_kama", "count": 10},
-                                [{"id": "massive_spear", "count": 6}, {"id": "spikey_fist", "count": 2}]
-                            
+                                [{"id": "massive_spear", "count": 6}, {"id": "spiky_fist", "count": 2}]
+
                             ]},
                             {
                             "replaceRule": [{"id": "power", "x": 2}],
@@ -69,55 +69,16 @@
                 }
             ]
         },
-        "vermin_warriors": {
-            "name": "Vermin Warriors",
-            "description": "",
-            "category": "core",
-            "models": [
-                {
-                    "name": "Vermin Warrior",
-                    "movement": 7,
-                    "courage": 4,
-                    "shoot": 5,
-                    "fight": 5,
-                    "defense": 5,
-                    "reflexes": 5,
-                    "weapons": ["handweapon", "shield"],
-                    "min": 10,
-                    "max": 30,
-                    "options": [{"replaceWeapon": ["handweapon"], "withWeapon": ["spear", "sling"], "modelLimit": "all"}]
-                }
-            ]
-        },
-        "vermin_elites": {
-            "name": "Vermin Elites",
-            "description": "",
-            "category": "core",
-            "models": [
-                {
-                    "name": "Vermin Elite",
-                    "movement": 7,
-                    "courage": 5,
-                    "shoot": 5,
-                    "fight": 5,
-                    "defense": 6,
-                    "reflexes": 5,
-                    "weapons": [{"id": "heavy_polearm", "count": 2}],
-                    "options": [{"addWeapon": ["shield"]}],
-                    "min": 5,
-                    "max": 20
-                }
-            ]
-        },
         "prophet": {
             "name": "Vermin Prophet",
-            "description": "",
+            "description": "A mad prophet of the Great Vermin who wields devastating magic.",
             "category": "hero",
+            "keywords": ["Infantry"],
             "models": [
                 {
                     "name": "Vermin Prophet",
                     "movement": 7,
-                    "courage": 6,
+                    "courage": 4,
                     "shoot": 5,
                     "fight": 5,
                     "defense": 6,
@@ -129,47 +90,377 @@
                 }
             ]
         },
+        "prophet_on_great_palanquin": {
+            "name": "Vermin Prophet on Great Palanquin",
+            "description": "Atop this cumbersome contraption, the Vermin Prophet preaches the teachings of the Great Vermin.",
+            "category": "hero",
+            "keywords": ["Warmachine"],
+            "models": [
+                {
+                    "name": "Vermin Prophet on Great Palanquin",
+                    "movement": 5,
+                    "courage": 4,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 10,
+                    "reflexes": 4,
+                    "weapons": ["light_handweapon", "great_staff"],
+                    "min": 1,
+                    "max": 1,
+                    "rules": ["damage_chart", "leader", {"id": "power", "x": 2}, "sermon_of_great_vermin", "verminous_cacophony"]
+                }
+            ]
+        },
         "engineer": {
             "name": "Vermin Engineer",
-            "description": "",
+            "description": "These powerful technomancers wield unstable creations of magic and metal.",
             "category": "hero",
             "models": [
                 {
                     "name": "Vermin Engineer",
                     "movement": 7,
-                    "courage": 6,
+                    "courage": 4,
                     "shoot": 5,
                     "fight": 5,
                     "defense": 6,
                     "reflexes": 6,
-                    "weapons": ["heavy_pistol", "polearm"],
+                    "weapons": [
+                        "heavy_pistol",
+                        "polearm"
+                    ],
                     "min": 1,
                     "max": 1,
-                    "rules": [{"id": "wounds", "x": 3}, "leader", {"id": "power", "x": 1}, "runic_armor"],
+                    "rules": [{"id": "wounds", "x": 3}, "leader", {"id": "power", "x": 1}, "engineer"],
                     "options": [{"replaceWeapon": ["heavy_pistol"], "withWeapon": ["rocket_launcher", "handgun", "repeater_handgun"]}]
+                }
+            ]
+        },
+        "vermin_warriors": {
+            "name": "Vermin Warriors",
+            "description": "A swarm can provide a nice meat-shield for the Vermin leaders.",
+            "category": "core",
+            "keywords": ["Infantry"],
+            "models": [
+                {
+                    "name": "Vermin Warrior",
+                    "movement": 7,
+                    "courage": 2,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 5,
+                    "reflexes": 5,
+                    "weapons": ["handweapon", "shield"],
+                    "min": 10,
+                    "max": 30,
+                    "options": [
+                        {"replaceWeapon": ["handweapon"], "withWeapon": ["spear", "sling"], "modelLimit": "all"},
+                        {"addRule": ["champion"], "modelLimit": 1},
+                        {"addRule": ["banner"], "modelLimit": 1},
+                        {"addRule": ["musician"], "modelLimit": 1}
+                    ]
+                }
+            ]
+        },
+        "vermin_elites": {
+            "name": "Vermin Elites",
+            "description": "Very few Vermin survive the internal treachery of the Colonies, but those that do have a chance to become heavily armored elites.",
+            "category": "core",
+            "keywords": ["Infantry"],
+            "models": [
+                {
+                    "name": "Vermin Elite",
+                    "movement": 7,
+                    "courage": 3,
+                    "shoot": 6,
+                    "fight": 6,
+                    "defense": 6,
+                    "reflexes": 5,
+                    "weapons": [{"id": "heavy_polearm", "count": 2}],
+                    "options": [{"addWeapon": ["shield"], "modelLimit": "all"}, {"addRule": ["champion"], "modelLimit": 1}, {"addRule": ["banner"], "modelLimit": 1}, {"addRule": ["musician"], "modelLimit": 1}],
+                    "min": 5,
+                    "max": 20
+                }
+            ]
+        },
+        "doom_adepts": {
+            "name": "Doom-Adepts",
+            "description": "These gas-masked Vermin cackle as they unleash noxious fumes upon their foes.",
+            "category": "core",
+            "keywords": ["Infantry"],
+            "models": [
+                {
+                    "name": "Doom-Adepts",
+                    "movement": 7,
+                    "courage": 2,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 5,
+                    "reflexes": 5,
+                    "weapons": ["light_handweapon", "doom_smoke_bomb"],
+                    "min": 5,
+                    "max": 20
+                }
+            ]
+        },
+        "plague_fanatics": {
+            "name": "Plague Fanatics",
+            "description": "These fanatical Vermin dive headlong into the enemy ranks without regard for their own lives. They're one desire is to spread the blessed disease of the Great Vermin.",
+            "category": "core",
+            "keywords": ["Infantry"],
+            "models": [
+                {
+                    "name": "Plague Fanatics",
+                    "movement": 7,
+                    "courage": 3,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 4,
+                    "reflexes": 5,
+                    "weapons": [{"id": "pestilence_handweapon", "count":  2}],
+                    "rules": ["fanatical", "furious"],
+                    "options": [
+                        {"replaceWeapon": {"id": "pestilence_handweapon", "count":  2}, "withWeapon":  {"id": "pestilence_heavy_flail", "count": 2}},
+                        {"addRule": ["champion"], "modelLimit": 1},
+                        {"addRule": ["banner"], "modelLimit": 1},
+                        {"addRule": ["musician"], "modelLimit": 1}
+                    ],
+                    "min": 5,
+                    "max": 20
+                }
+            ]
+        },
+        "doom_weapon_team": {
+            "name": "Doom-Weapon Team",
+            "description": "An engineer's unstable doom-weapons take several unfortunate Vermin to operate",
+            "min": 1,
+            "max": 3,
+            "category": "elite",
+            "keywords": ["Infantry"],
+            "models": [
+                {
+                    "name": "Doom-Weapon Team",
+                    "movement": 7,
+                    "courage": 2,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 5,
+                    "reflexes": 4,
+                    "rules": [{"id": "wounds", "x": 2}],
+                    "weapons": ["light_handweapon","flamethrower"],
+                    "options": [{"replaceWeapon": ["flamethrower"], "withWeapon": [["sniper_rifle", "shield"], "gatling_gun", "mortar"]}],
+                    "min": 1,
+                    "max": 1
+                }
+            ]
+        },
+        "shredder_bike": {
+            "name": "Shredder Bike",
+            "description": "This large front wheel of this bike is covered in whirling blades. Those unfortunate enough to be run over by it are reduced to a bloody pulp.",
+            "min": 1,
+            "max": 1,
+            "category": "elite",
+            "keywords": ["Vehicle"],
+            "models": [
+                {
+                    "name": "Shredder Bike",
+                    "movement": 12,
+                    "courage": 5,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 6,
+                    "reflexes": 7,
+                    "rules": [{"id":"wounds",  "x": 2}, {"id": "heavy_impact", "x": 2}],
+                    "weapons": ["bladed_wheels"],
+                    "min": 1,
+                    "max": 1
+                }
+            ]
+        },
+        "lightning_cannon": {
+            "name": "Doom-Lightning Cannon",
+            "description": "The pinnacle of Vermin engineering: a massive doom-lighting generator strapped to a rickety wood frame.",
+            "min": 1,
+            "max": 1,
+            "category": "rare",
+            "keywords": ["Warmachine", "Artillery"],
+            "models": [
+                {
+                    "name": "Doom-Lightning Cannon",
+                    "movement": 4,
+                    "courage": 2,
+                    "shoot": 6,
+                    "fight": "-",
+                    "defense": 7,
+                    "reflexes": 4,
+                    "min": 1,
+                    "max": 1,
+                    "weapons": ["doom_lightning_cannon"],
+                    "rules": ["damage_chart"]
+                }
+            ]
+        },
+        "doom_engine": {
+            "name": "Doom-Engine",
+            "description": "This vehicle screams across the battlefield slicing enemies with its wicked spikes and finishing off the rest with arcs of doom-lightning. These deranged machines will sometimes be ridden by a maniacal engineer.",
+            "min": 1,
+            "max": 1,
+            "category": "rare",
+            "keywords": ["Vehicle", "Warmachine"],
+            "models": [
+                {
+                    "name": "Doom-Engine",
+                    "movement": 12,
+                    "courage": 5,
+                    "shoot": 6,
+                    "fight": 6,
+                    "defense": 7,
+                    "reflexes": 7,
+                    "rules": ["damage_chart", {"id": "heavy_impact", "x": 3}],
+                    "weapons": ["doom_arc_generator", "bladed_wheels"],
+                    "options": [{"addRule": [[{"id": "leader_x", "x": "Vehicle"}, {"id": "power", "x": 1}]]}],
+                    "min": 1,
+                    "max": 1
+                }
+            ]
+        },
+        "verminous_abomination": {
+            "name": "Verminous Abomination",
+            "description": "This vile amalgamation of flesh and doom-technology lurches across the battlefield, burying everything in it's path under its monstrous bulk",
+            "category": "rare",
+            "keywords": ["Monster"],
+            "models": [
+                {
+                    "name": "Verminous Abomination",
+                    "movement": 7,
+                    "courage": 4,
+                    "shoot": 6,
+                    "fight": 6,
+                    "defense": 10,
+                    "reflexes": 5,
+                    "rules": ["damage_chart", "monstrous_regeneration", "fear", "verminous_cacophony", {"id": "heavy_impact", "x": 3}],
+                    "weapons": [{"id":  "giant_vermin_claws", "count":  8}],
+                    "min": 1,
+                    "max": 1
                 }
             ]
         }
     },
     "weapons": {
-    "sling": {"name": "Sling", "attacks": 1, "short": 9, "medium": 18, "rules": ["assault"]},
-    "giant_vermin_claws": {"name": "Giant Vermin Claws", "attacks": 1, "short": "Melee", "ap": 3, "rules": ["rending"]},
-    "huge_stiletto": {"name": "Huge Stiletto", "attacks": 1, "short": "Melee", "ap": 7, "rules": ["rending"]},
-    "squeaker_shuriken": {"name": "Squeaker Shuriken", "attacks": 1, "short": 6, "medium": 12, "ap": 4},
-    "verminlord_kama": {"name": "Grand Kama", "attacks": 1, "short": "Melee", "ap": 3},
-    "massive_spear": {"name": "Massive Spear", "attacks": 1, "short": "Melee", "ap": 5, "rules": [{"id": "reach", "x": 2}]},
-    "spikey_fist": {"name": "Spikey Fist", "attacks": 1, "short": "Melee", "ap": 6}
-},
+        "sling": {
+            "name": "Sling",
+            "attacks": 1,
+            "short": 9,
+            "medium": 18,
+            "rules": ["assault"]
+        },
+        "giant_vermin_claws": {
+            "name": "Giant Vermin Claws",
+            "attacks": 1,
+            "short": "Melee",
+            "ap": 3,
+            "rules": ["rending"]
+        },
+        "huge_stiletto": {
+            "name": "Huge Stiletto",
+            "attacks": 1,
+            "short": "Melee",
+            "ap": 7,
+            "rules": ["rending"]
+        },
+        "squeaker_shuriken": {
+            "name": "Squeaker Shuriken",
+            "attacks": 1,
+            "short": 6,
+            "medium": 12,
+            "ap": 4
+        },
+        "verminlord_kama": {
+            "name": "Grand Kama",
+            "attacks": 1,
+            "short": "Melee",
+            "ap": 3
+        },
+        "massive_spear": {
+            "name": "Massive Spear",
+            "attacks": 1,
+            "short": "Melee",
+            "ap": 5,
+            "rules": [{"id": "reach", "x": 2}]
+        },
+        "spiky_fist": {
+            "name": "Spiky Fist",
+            "attacks": 1,
+            "short": "Melee",
+            "ap": 6
+        },
+        "doom_lightning_cannon": {
+            "name": "Doom-Lightning Cannon",
+            "short": 24,
+            "medium": 48,
+            "ap": 7,
+            "attacks": 1,
+            "rules": [{"id": "blast", "x": 3}, "heavy", "overcharge"]
+        },
+        "doom_arc_generator": {
+            "name": "Doom-Arc Generator",
+            "short": 6,
+            "medium": 12,
+            "ap": 3,
+            "attacks": 3,
+            "rules": ["overcharge", {"id": "blast", "x": 3}]
+        },
+        "bladed_wheels": {
+            "name": "Blade Covered Wheels",
+            "short": "Melee",
+            "ap": 3,
+            "attacks": 4,
+            "rules": ["overcharge"]
+        },
+        "doom_smoke_bomb": {
+            "name": "Doom-Smoke Bomb",
+            "short": 6,
+            "ap": 3,
+            "attacks": 1,
+            "rules": ["poison", "smoke", "assault"]
+        }
+    },
     "rules": {
-        "ratmen_tactics": {
+        "vermin_tactics": {
             "name": "Vermin Tactics",
             "inputs": ["x"],
             "description": "When this unit is activated, choose up to X friendly _Infantry_ units within 6\" to receive one of the following bonuses until the end of the round: \n * Re-roll failed Accuracy tests of 9+ \n * Re-roll failed Strength tests of 9+",
             "points": ["rule.x", {"multiply": 10}]
         },
-        "runic_armor": {"name": "Runic Armor", "description": "Roll a D10 each time this model is hit. On a 3 or less, that hit is ignored. ", "points": 6}
+        "sermon_of_great_vermin": {
+            "name": "Sermon of the Great Vermin",
+            "flavor": "Unholy sermons of the Great Vermin drive its followers into fanatical frenzies.",
+            "description": "Vermin units within 18\" receive +2 Courage for all break tests and do not gain shock from close combat.",
+            "points": 20
+        },
+        "verminous_cacophony": {
+            "name": "Verminous Cacophony",
+            "flavor": "The incessant chittering and clangor cause enemies to easily lose focus.",
+            "description": "Enemy units within 18\" add 1 to their Power rolls.",
+            "points": 10
+        },
+        "runic_armor": {
+            "name": "Runic Armor",
+            "description": "Roll a D10 each time this model is hit. On a 3 or less, that hit is ignored. ",
+            "points": 6
+        }
     },
-    "powers": {},
+    "powers": {
+        "doom_lightning": {
+            "name": "Doom-Lightning Bolt",
+            "description": "Target enemy unit within 18\" takes 1 AP(8) hit. If the Power roll fails, this unit suffers 2 shock",
+            "charge": 5
+        },
+        "doom_lightning_storm": {
+            "name": "Doom-Lightning Storm",
+            "description": "3 target enemy units within 18\" take 1 AP(8) hit. If the Power roll fails, this unit suffers 2 shock",
+            "charge": 7
+        }
+    },
     "strategies": [],
     "relics": []
 }
