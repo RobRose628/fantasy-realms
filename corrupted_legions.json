@@ -426,7 +426,7 @@
           "options": [
             {
               "replaceWeapon": [{"id": "grand_weapon", "count": 4}],
-              "withWeapon": [{"id": "heavy_lethal_great_weapon", "count": 4}, {"id": "grand_weapon", "count": 5}, {"id": "great_polearm", "count": 4}, {"id": "heavy_flail", "count": 4}]
+              "withWeapon": [{"id": "lethal_grand_weapon", "count": 4}, {"id": "grand_weapon", "count": 5}, {"id": "great_polearm", "count": 4}, {"id": "heavy_flail", "count": 4}]
             },
             {"addRule": ["shield"]}
           ],

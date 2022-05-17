@@ -29,14 +29,14 @@
                             "withWeapon": [{"id": "heavy_polearm", "count": 3}, {"id": "great_weapon", "count": 4}, {"id": "grand_weapon", "count": 3}]
                         },
                         {"replaceRule": [{"id": "vermin_tactics", "x": 1}], "withRule": [{"id": "vermin_tactics", "x": 2}]},
-                        {"addRule": ["enchanted_shield", "runic_armor"], "limit": 1}
+                        {"addRule": ["enchanted_shield"], "limit": 1}
                     ]
                 }
             ]
         },
         "the_big_rat_that_makes_ALL_the_rules": {
             "name": "Supreme Verminlord",
-            "description": "The biggest rats, who make all the rules. They pay hommage only to the Great Vermin",
+            "description": "The biggest rats, who make all the rules.",
             "category": "hero",
             "keywords": ["Monster"],
             "models": [
@@ -57,13 +57,13 @@
                             "replaceWeapon": [{"id": "giant_vermin_claws", "count": 4}],
                             "withWeapon": [
                                 [{"id": "huge_stiletto", "count": 6}, {"id": "squeaker_shuriken", "count": 1}],
-                                {"id": "verminlord_kama", "count": 10},
-                                [{"id": "massive_spear", "count": 6}, {"id": "spiky_fist", "count": 2}]
-
+                                {"id": "pestilence_grand_kama", "count": 10},
+                                [{"id": "massive_spear", "count": 6}, {"id": "spiky_fist", "count": 2}],
+                                [{"id": "massive_spear", "count": 6}, {"id": "magic_bolt", "count": 2}]
                             ]},
                             {
                             "replaceRule": [{"id": "power", "x": 2}],
-                            "withRule": [{"id": "power", "x": 3}]
+                            "withRule": [{"id": "power", "x": 3}, "curse"]
                         }
                     ]
                 }
@@ -180,6 +180,27 @@
                 }
             ]
         },
+        "shadow_lord": {
+            "name": "Shadow Lord",
+            "description": "A master assassin who wields shadows to appear from nowhere.",
+            "category": "hero",
+            "keywords": ["Infantry"],
+            "models": [
+                {
+                    "name": "Shadow Lord",
+                    "movement": 7,
+                    "courage": 6,
+                    "shoot": 6,
+                    "fight": 6,
+                    "defense": 5,
+                    "reflexes": 7,
+                    "weapons": [{"id": "dripping_shuriken", "count":  2}, {"id": "dripping_blade", "count":  4}, "smoke_grenade"],
+                    "rules": [{"id": "wounds", "x": 3}, "support", "ambush", "assassin"],
+                    "min": 1,
+                    "max": 1
+                }
+            ]
+        },
         "plague_deacon": {
             "name": "Plague Deacon",
             "description": "These deacons recite pestilent scripture to unleash horrid plagues upon their foes.",
@@ -190,7 +211,7 @@
                     "name": "Plague Deacon",
                     "movement": 7,
                     "courage": 6,
-                    "shoot": 6,
+                    "shoot": 5,
                     "fight": 6,
                     "defense": 4,
                     "reflexes": 6,
@@ -211,7 +232,7 @@
                     "name": "Plague Deacon on Pestilence Engine",
                     "movement": 7,
                     "courage": 6,
-                    "shoot": 6,
+                    "shoot": 5,
                     "fight": 6,
                     "defense": 10,
                     "reflexes": 4,
@@ -291,14 +312,14 @@
         },
         "plague_fanatics": {
             "name": "Plague Fanatics",
-            "description": "These fanatical Vermin dive headlong into the enemy ranks without regard for their own lives. They're one desire is to spread vermin plagues.",
+            "description": "These fanatical Vermin dive headlong into the enemy ranks without regard for their own lives. Their one desire is to spread vermin plagues.",
             "category": "core",
             "keywords": ["Infantry"],
             "models": [
                 {
                     "name": "Plague Fanatic",
                     "movement": 7,
-                    "courage": 4,
+                    "courage": 5,
                     "shoot": 5,
                     "fight": 5,
                     "defense": 4,
@@ -310,6 +331,30 @@
                         {"addRule": ["champion"], "modelLimit": 1},
                         {"addRule": ["banner"], "modelLimit": 1},
                         {"addRule": ["musician"], "modelLimit": 1}
+                    ],
+                    "min": 5,
+                    "max": 20
+                }
+            ]
+        },
+        "shadow_blades": {
+            "name": "Shadow-blades",
+            "description": "",
+            "category": "core",
+            "keywords": ["Infantry"],
+            "models": [
+                {
+                    "name": "Shadow-blade",
+                    "movement": 7,
+                    "courage": 5,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 5,
+                    "reflexes": 6,
+                    "weapons": [{"id": "poison_knife", "count":  2},"smoke_grenade"],
+                    "rules": ["ambush", "support"],
+                    "options": [
+                        {"replaceWeapon": {"id": "poison_knife", "count":  2}, "withWeapon":  [[{"id": "barbed_net", "count": 1}, {"id": "poison_knife", "count":  1}]]}
                     ],
                     "min": 5,
                     "max": 20
@@ -347,7 +392,7 @@
                     "name": "Vermin Beast",
                     "movement": 10,
                     "courage": 4,
-                    "shoot": 5,
+                    "shoot": "-",
                     "fight": 5,
                     "defense": 5,
                     "reflexes": 5,
@@ -376,6 +421,39 @@
                     "rules": [{"id": "wounds", "x": 2}],
                     "weapons": [{"id": "giant_vermin_claws", "count": 2}],
                     "options": [{"addWeapon":"lethal_flamethrower","limit": 1, "modelLimit": "1/2"}]
+                }
+            ]
+        },
+        "vermin_doom_brutes": {
+            "name": "Vermin Doom-Brutes",
+            "description": "Vermin engineers have strapped powerful doom-weaponry to their hulking frames.",
+            "category": "elite",
+            "keywords": ["Beast"],
+            "models": [
+                {
+                    "name": "Vermin Doom-Brute",
+                    "movement": 10,
+                    "shoot": 5,
+                    "fight": 6,
+                    "defense": 7,
+                    "courage": 5,
+                    "reflexes": 6,
+                    "min": 3,
+                    "max": 9,
+                    "rules": [{"id": "wounds", "x": 2}],
+                    "weapons": [{"id": "giant_vermin_claws", "count": 2}],
+                    "options": [
+                        {
+                            "replaceWeapon": [{"id": "giant_vermin_claws", "count": 2}],
+                            "withWeapon": [
+                                [{"id": "lethal_flamethrower", "count": 2}, {"id": "clubbing_fists", "count": "2"}],
+                                [{"id": "volley_gun", "count": 2}, {"id": "clubbing_fists", "count": "2"}],
+                                [{"id": "poison_mortar", "count": 2}, {"id": "clubbing_fists", "count": "2"}],
+                                [{"id":  "doom_drill", "count":  2}]
+                            ]
+                        },
+                        {"addRule": "heavy_armor"}
+                    ]
                 }
             ]
         },
@@ -414,9 +492,9 @@
                     "shoot": 5,
                     "fight": 5,
                     "defense": 5,
-                    "reflexes": 4,
-                    "rules": [{"id": "wounds", "x": 2}, "paired_ambush", "support"],
-                    "weapons": ["mining_drill"],
+                    "reflexes": 5,
+                    "rules": [{"id": "wounds", "x": 2}, "support"],
+                    "weapons": ["doom_drill"],
                     "min": 1,
                     "max": 3
                 }
@@ -534,15 +612,16 @@
         "squeaker_shuriken": {
             "name": "Squeaker Shuriken",
             "attacks": 1,
-            "short": 6,
-            "medium": 12,
+            "short": 9,
+            "medium": 18,
             "ap": 4
         },
-        "verminlord_kama": {
-            "name": "Grand Kama",
+        "pestilence_grand_kama": {
+            "name": "Pestilence Grand Kama",
             "attacks": 1,
             "short": "Melee",
-            "ap": 3
+            "ap": 3,
+            "rules": ["pestilence"]
         },
         "massive_spear": {
             "name": "Massive Spear",
@@ -592,6 +671,27 @@
             "ap": 5,
             "attacks": 6,
             "rules": ["pestilence"]
+        },
+        "doom_drill": {
+            "name": "Doom Drill",
+            "short": "Melee",
+            "ap": 3,
+            "attacks": 1,
+            "rules": ["paired_ambush"]
+        },
+        "dripping_shuriken": {
+            "name": "Dripping Shuriken",
+            "short": 9,
+            "ap": 1,
+            "attacks": 1,
+            "rules": ["lethal", "poison", "assault"]
+        },
+        "dripping_blade": {
+            "name": "Dripping Blade",
+            "short": "Melee",
+            "ap": 2,
+            "attacks": 1,
+            "rules": ["lethal", "poison"]
         }
     },
     "rules": {
@@ -612,14 +712,34 @@
             "description": "Enemy units within 18\" add 1 to their Power rolls.",
             "points": 10
         },
-        "runic_armor": {
+        "legend_runic_armor": {
             "name": "Runic Armor",
             "description": "Roll a D10 each time this model is hit. On a 3 or less, that hit is ignored. ",
-            "points": 6
+            "points": 5
         },
         "paired_ambush": {
             "name": "Paired Ambush",
             "description": "This unit and a paired _Infantry_ unit may be placed in _Ambush Reserves_ before the game begins. When this unit arrives from _Ambush_, setup the paired unit within 3\" of it.",
+            "points": 10
+        },
+        "legend_reckless_caster": {
+            "name": "Reckless Caster",
+            "description": "Before casting a Power, this unit may choose to consume cast it recklessly. If it does so, subtract 2 from the Power role. If the Power roll fails, this unit suffers 2 shock.",
+            "points": 15
+        },
+        "legend_shard_of_shadow": {
+            "name": "Shard of Pure Shadow",
+            "description": "Enemy units suffer -1 Accuracy and -1 Strength when attacking this unit.",
+            "points": 10
+        },
+        "legend_festering_curse": {
+            "name": "Festering Curse",
+            "description": "The effects of the Weakness and Brittle Bones curses inflicted by this unit do not end. Units cannot be affected by the same curse twice.",
+            "points": 10
+        },
+        "legend_mutation_serum": {
+            "name": "Mutation Serum",
+            "description": "Once per game during this unit's activation, you may inject the mutation serum into a _Beast_ or _Monster_ unit. If you do so that unit may re-roll failed Strength rolls for the rest of the battle. However, it suffers 1 shock at the end of each activation.",
             "points": 10
         }
     },
@@ -632,18 +752,62 @@
         },
         "doom_lightning": {
             "name": "Doom-lightning",
-            "description": "Target enemy unit within 18\" takes 1 AP(8) hit. If the casting roll was 1-2 target 3 enemy units. If the Power roll fails, this unit suffers 2 shock",
+            "description": "Target enemy unit within 18\" takes 1 AP(8) hit. If the casting roll was 1-2 target 3 enemy units. If the Power roll fails, this unit suffers 2 shock.",
             "charge": 6,
             "category": "doom"
         },
         "more_more_more_doom": {
             "name": "More-more-more DOOM!",
-            "description": "Target friendly unit within 12“ gains +2 Accuracy and +2 AP until the end of the activation phase. It then suffers 2 shock",
+            "description": "Target friendly unit within 12“ gains +2 Accuracy and +2 AP until the end of the activation phase. It then suffers 2 shock.",
             "charge": 7,
             "category": "doom"
         }
     },
     "powerCategories": {"doom": {"name": "Doom"}},
-    "strategies": [],
-    "relics": []
+    "strategies": [
+        {
+            "name": "Hit and Run",
+            "phase": "activation",
+            "description": "Use after one of your _Infantry_ or _Vehicle_ units performs a Shoot or Fight action. You may immediately take a free move action.",
+            "flavor": "Being less hardy than other races, Vermin have perfected dashing in and out of the fray.",
+            "cost": 1
+        }
+    ],
+    "relics": {
+        "runic_armor": {
+            "name": "Runic Armor",
+            "rule": "legend_runic_armor",
+            "description": "Upgrade one Leader model with Runic Armor.",
+            "flavor": "Esoteric runes of warding are etched into this armor, giving its user unnatural defenses.",
+            "points": 5
+        },
+        "reckless_caster": {
+            "name": "Reckless Caster",
+            "rule": "legend_reckless_caster",
+            "description": "Upgrade one Power model with Reckless Caster.",
+            "flavor": "Although most Vermin are concerned with self-preservation, this vermin basks in the unbridled power of DOOM!",
+            "points": 15
+        },
+        "shadow_lord": {
+            "name": "Shard of Pure Shadow",
+            "rule": "legend_shard_of_shadow",
+            "description": "Upgrade one Leader or Support model with Shard of Pure Shadow.",
+            "flavor": "Coalesced shadow cloaks its user in impenetrable darkness.",
+            "points": 10
+        },
+        "festering_curse": {
+            "name": "Festering Curse",
+            "rule": "legend_festering_curse",
+            "description": "Upgrade one Curse model with Festering Curse.",
+            "flavor": "The plagues summoned by this unholy priest do not let up easily.",
+            "points": 10
+        },
+        "mutation_serum": {
+            "name": "Mutation Serum",
+            "rule": "legend_mutation_serum",
+            "description": "Upgrade one Leader model with Mutation Serum.",
+            "flavor": "This master mutator carries around a powerful serum that swells the ferocity and power of beasts.",
+            "points": 10
+        }
+    }
 }

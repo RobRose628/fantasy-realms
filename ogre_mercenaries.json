@@ -22,7 +22,7 @@
                     "min": 1,
                     "max": 1,
                     "rules": [{"id": "wounds", "x": 4}, {"id": "merc_tactics", "x": 1}, "leader"],
-                    "weapons": [{"id": "heavy_pistol", "count": 2}, {"id": "capn_weapon", "count": 3}, {"id": "heavy_great_weapon", "count": 2}],
+                    "weapons": [{"id": "heavy_pistol", "count": 2}, {"id": "capn_weapon", "count": 3}, {"id": "grand_weapon", "count": 2}],
                     "options": [{"replaceRule": [{"id": "merc_tactics", "x": 1}], "withRule": [{"id": "merc_tactics", "x": 2}]}]
                 }
             ]
@@ -43,7 +43,7 @@
                     "min": 1,
                     "max": 1,
                     "rules": [{"id": "wounds", "x": 3}, {"id": "power", "x": 1}, "support"],
-                    "weapons": [{"id": "heavy_great_weapon", "count": 6}],
+                    "weapons": [{"id": "grand_weapon", "count": 6}],
                     "options": [{"replaceRule": [{"id": "power", "x": 1}], "withRule": [{"id": "power", "x": 2}]}]
                 }
             ]
@@ -111,7 +111,7 @@
             "Description": "The old guard of a mercenary company, who have long since earned their place",
             "category": "elite",
             "options": [
-                {"replaceWeapon": [{"id": "heavy_great_weapon", "count": 4}], "withWeapon": [[{"id": "heavy_great_weapon", "count": 3}, "ironfist"]]},
+                {"replaceWeapon": [{"id": "grand_weapon", "count": 4}], "withWeapon": [[{"id": "grand_weapon", "count": 3}, "ironfist"]]},
                 {"addRule": ["banner"], "modelLimit": 1},
                 {"addRule": ["musician"], "modelLimit": 1}
             ],
@@ -127,7 +127,7 @@
                     "min": 1,
                     "max": 1,
                     "rules": [{"id": "wounds", "x": 2}],
-                    "weapons": [{"id": "heavy_great_weapon", "count": 4}]
+                    "weapons": [{"id": "grand_weapon", "count": 4}]
                 },
                 {
                     "name": "Ogre Veteran",
@@ -140,7 +140,7 @@
                     "min": 2,
                     "max": 8,
                     "rules": [{"id": "wounds", "x": 2}],
-                    "weapons": [{"id": "heavy_great_weapon", "count": 4}]
+                    "weapons": [{"id": "grand_weapon", "count": 4}]
                 }
             ]
         },
@@ -161,7 +161,7 @@
                     "courage": 6,
                     "min": 1,
                     "max": 1,
-                    "weapons": [{"id": "ogre_fists", "count": 2}, "boomstick"]
+                    "weapons": [{"id": "clubbing_fists", "count": 2}, "boomstick"]
                 },
                 {
                     "name": "Ogre Artillerist",
@@ -173,7 +173,7 @@
                     "courage": 6,
                     "min": 2,
                     "max": 8,
-                    "weapons": [{"id": "ogre_fists", "count": 2}, "boomstick"]
+                    "weapons": [{"id": "clubbing_fists", "count": 2}, "boomstick"]
                 }
             ]
         },
@@ -312,7 +312,7 @@
                     "courage": 6,
                     "min": 1,
                     "max": 1,
-                    "weapons": ["ogre_cannon", {"id": "ogre_fists", "count": 3}, {"id": "mournfang_tusks", "count": 2}],
+                    "weapons": ["ogre_cannon", {"id": "clubbing_fists", "count": 3}, {"id": "mournfang_tusks", "count": 2}],
                     "rules": ["damage_chart"]
                 }
             ]
@@ -321,7 +321,6 @@
     "weapons": {
         "ogre_bite": {"name": "Ogre Bite", "attacks": 1, "ap": 2, "short": "Melee"},
         "capn_weapon": {"name": "Captain's Peacekeeper", "attacks": 1, "ap": 5, "short": "Melee"},
-        "ogre_fists": {"name": "Ogre Fists", "attacks": 1, "ap": 3, "short": "Melee"},
         "mournfang_tusks": {"name": "Cavalry Tusks", "attacks": 1, "ap": 3, "rules": ["lance"], "short": "Melee"},
         "boomstick": {"name": "Boomstick", "attacks": 3, "ap": 3, "short": 6, "medium": 12},
         "ironfist": {"name": "Ironfist", "attacks": 1, "ap": 1, "short": "Melee", "rules": ["buckler"]},

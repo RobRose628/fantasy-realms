@@ -582,7 +582,7 @@
 					"reflexes" : 6,
 					"weapons" : [
 						{
-							"id" : "heavy_great_weapon",
+							"id" : "grand_weapon",
 							"count" : 3
 						},
 						"relic_shield",
@@ -612,14 +612,14 @@
 						{
 							"replaceWeapon" : [
 								{
-									"id" : "heavy_great_weapon",
+									"id" : "grand_weapon",
 									"count" : 3
 								},
 								"relic_shield"
 							],
 							"withWeapon" : [
 								{
-									"id" : "heavy_great_weapon",
+									"id" : "grand_weapon",
 									"count" : 5
 								},
 								[
@@ -710,7 +710,7 @@
 							],
 							"withWeapon" : [
 								{
-									"id" : "heavy_great_weapon",
+									"id" : "grand_weapon",
 									"count" : 3
 								},
 								[
@@ -841,7 +841,7 @@
 					"reflexes" : 6,
 					"weapons" : [
 						{
-							"id" : "heavy_great_weapon",
+							"id" : "grand_weapon",
 							"count" : 4
 						},
 						"enchanted_shield",
@@ -876,7 +876,7 @@
 						{
 							"replaceWeapon" : [
 								{
-									"id" : "heavy_great_weapon",
+									"id" : "grand_weapon",
 									"count" : 4
 								}
 							],
@@ -1653,7 +1653,7 @@
 						{
 							"replaceWeapon" : [
 								{
-									"id" : "heavy_great_weapon",
+									"id" : "grand_weapon",
 									"count" : 5
 								}
 							],
@@ -1679,7 +1679,7 @@
 						},
 						"tower_shield",
 						{
-							"id" : "heavy_great_weapon",
+							"id" : "grand_weapon",
 							"count" : 5
 						}
 					],
@@ -1721,7 +1721,7 @@
 						{
 							"replaceWeapon" : [
 								{
-									"id" : "heavy_great_weapon",
+									"id" : "grand_weapon",
 									"count" : 5
 								}
 							],
@@ -1759,7 +1759,7 @@
 							"count" : 2
 						},
 						{
-							"id" : "heavy_great_weapon",
+							"id" : "grand_weapon",
 							"count" : 5
 						},
 						"enchanted_shield"
@@ -1801,7 +1801,7 @@
 						{
 							"replaceWeapon" : [
 								{
-									"id" : "heavy_great_weapon",
+									"id" : "grand_weapon",
 									"count" : 5
 								}
 							],
@@ -1826,7 +1826,7 @@
 					"reflexes" : 6,
 					"weapons" : [
 						{
-							"id" : "heavy_great_weapon",
+							"id" : "grand_weapon",
 							"count" : 5
 						},
 						"enchanted_shield"

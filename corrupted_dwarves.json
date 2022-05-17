@@ -17,11 +17,11 @@
                     "defense": 7,
                     "reflexes": 6,
                     "rules": ["leader", {"id": "wounds", "x": 3}, {"id": "power", "x": 1}, {"id": "demon_tactics", "x": 1}],
-                    "weapons": [{"id": "heavy_great_weapon", "count": 2}, "frag_grenade"],
+                    "weapons": [{"id": "grand_weapon", "count": 2}, "frag_grenade"],
                     "min": 1,
                     "max": 1,
                     "options": [
-                        {"replaceWeapon": [{"id": "heavy_great_weapon", "count": 2}], "withWeapon": ["blazing_staff"]},
+                        {"replaceWeapon": [{"id": "grand_weapon", "count": 2}], "withWeapon": ["blazing_staff"]},
                         {"addWeapon": "heavy_pistol"},
                         {"replaceRule": [{"id": "power", "x": 1}], "withRule": [{"id": "power", "x": 2}]},
                         {"replaceRule": [{"id": "demon_tactics", "x": 1}], "withRule": [{"id": "demon_tactics", "x": 2}]}
@@ -66,11 +66,11 @@
                     "defense": 7,
                     "reflexes": 6,
                     "rules": [{"id": "leader_x", "x": "Infantry, Soul-bound"}, {"id": "wounds", "x": 3}, {"id": "ranger_tactics", "x": 1}],
-                    "weapons": [{"id": "heavy_great_weapon", "count": 4}, "heavy_pistol"],
+                    "weapons": [{"id": "grand_weapon", "count": 4}, "heavy_pistol"],
                     "min": 1,
                     "max": 1,
                     "options": [
-                        {"replaceWeapon": [{"id": "heavy_great_weapon", "count": 4}], "withWeapon": [{"id": "heavy_polearm", "count": 4}]},
+                        {"replaceWeapon": [{"id": "grand_weapon", "count": 4}], "withWeapon": [{"id": "heavy_polearm", "count": 4}]},
                         {"addWeapon": "enchanted_shield"},
                         {"replaceRule": [{"id": "ranger_tactics", "x": 1}], "withRule": [{"id": "ranger_tactics", "x": 2}]}
                     ]
@@ -115,7 +115,7 @@
                     "fight": 5,
                     "defense": 6,
                     "reflexes": 5,
-                    "weapons": [{"id": "heavy_great_weapon", "count": 3}, "spiked_enchanted_shield", {"id": "heavy_hooves_and_teeth", "count": 2}],
+                    "weapons": [{"id": "grand_weapon", "count": 3}, "spiked_enchanted_shield", {"id": "heavy_hooves_and_teeth", "count": 2}],
                     "min": 3,
                     "max": 6,
                     "rules": [{"id": "wounds", "x": 3}]
@@ -137,9 +137,9 @@
                     "fight": 6,
                     "defense": 7,
                     "reflexes": 6,
-                    "weapons": [{"id": "heavy_great_weapon", "count": 3}, "spiked_tower_shield", {"id": "heavy_hooves_and_teeth", "count": 2}],
+                    "weapons": [{"id": "great_weapon", "count": 3}, "spiked_tower_shield", {"id": "heavy_hooves_and_teeth", "count": 2}],
                     "options": [
-                        {"replaceWeapon": [{"id": "heavy_great_weapon", "count": 3}, "spiked_tower_shield"], "withWeapon": [{"id": "grand_weapon", "count": 3}]},
+                        {"replaceWeapon": [{"id": "great_weapon", "count": 3}, "spiked_tower_shield"], "withWeapon": [{"id": "grand_weapon", "count": 3}]},
                         {"replaceRule": [{"id": "siegebreaker_tactics", "x": 1}], "withRule": [{"id": "siegebreaker_tactics", "x": 2}]}
                     ],
                     "min": 1,
@@ -156,7 +156,7 @@
             "category": "elite",
             "models": [
                 {
-                    "options": [{"replaceWeapon": ["heavy_handweapon", "spiked_shield"], "withWeapon": [{"id": "heavy_great_weapon", "count": 2}], "modelLimit": "all"}],
+                    "options": [{"replaceWeapon": ["heavy_handweapon", "spiked_shield"], "withWeapon": [{"id": "grand_weapon", "count": 2}], "modelLimit": "all"}],
                     "name": "Black Soul",
                     "movement": 5,
                     "courage": 5,
@@ -230,7 +230,7 @@
                     "fight": 7,
                     "defense": 7,
                     "reflexes": 5,
-                    "weapons": [{"id": "flame_breath", "count": 2}, {"id": "heavy_great_weapon", "count": 4}],
+                    "weapons": [{"id": "flame_breath", "count": 2}, {"id": "grand_weapon", "count": 4}],
                     "min": 3,
                     "max": 6,
                     "rules": [{"id": "wounds", "x": 3}]

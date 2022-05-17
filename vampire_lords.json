@@ -38,9 +38,9 @@
                     "fight": 6,
                     "defense": 12,
                     "reflexes": 6,
-                    "weapons": [{"id": "heavy_great_weapon", "count": 4}, {"id": "feral_claws", "count": 4}, {"id": "necrotic_breath", "count": 2}],
+                    "weapons": [{"id": "grand_weapon", "count": 4}, {"id": "feral_claws", "count": 4}, {"id": "necrotic_breath", "count": 2}],
                     "options": [
-                        {"replaceWeapon": [{"id": "heavy_great_weapon", "count": 4}], "withWeapon": [{"id": "heavy_lance", "count": 4}]},
+                        {"replaceWeapon": [{"id": "grand_weapon", "count": 4}], "withWeapon": [{"id": "heavy_lance", "count": 4}]},
                         {"addRule": ["relic_shield"]},
                         {"addRule": [{"id": "power", "x": 1}, {"id": "power", "x": 2}]},
                         {"replaceRule": [{"id": "knight_tactics", "x": 1}], "withRule": [{"id": "knight_tactics", "x": 2}]}
