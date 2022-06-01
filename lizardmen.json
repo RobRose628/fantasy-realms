@@ -106,7 +106,7 @@
             "name": "Gecko Warriors",
             "description": "Small in stature but large in numbers, the gecko warriors swarm forth",
             "category": "core",
-            "keywords": ["Infantry", "Gecko"],
+            "keywords": ["Infantry", "Gecko", "Skirmishers"],
             "models": [
                 {
                     "options": [{"replaceWeapon": ["handweapon", "shield"], "withWeapon": [["handweapon", "blowpipe"], ["blowpipe", "light_handweapon", "shield"], ["javelin", "light_handweapon", "shield"]]}, {"addRule": ["champion"], "modelLimit": 1}],
@@ -145,18 +145,18 @@
                 }
             ]
         },
-        "giant_dino": {
-            "name": "Giant Dinosaur",
+        "giant_allosaurus": {
+            "name": "Giant Allosaurus",
             "description": "It's hard to believe you're inferior when this thing is on your side!",
             "category": "rare",
             "keywords": ["Monster"],
             "models": [
                 {
-                    "name": "Giant Dinosaur",
+                    "name": "Giant Allosaurus",
                     "movement": 10,
                     "courage": 6,
                     "shoot": 4,
-                    "fight": 5,
+                    "fight": 6,
                     "defense": 13,
                     "reflexes": 5,
                     "weapons": [{"id": "armored_tail", "count": 1}, {"id": "gargantuan_jaws", "count": 3}, {"id": "raking_claws", "count": 6}],
@@ -165,16 +165,136 @@
                     "max": 1
                 }
             ]
+        },
+        "anklyosaurus": {
+            "name": "Anklyosaurus",
+            "description": "A slow moving tank of a dinosaur that is hard to push off objectives.",
+            "category": "rare",
+            "keywords": ["Monster"],
+            "models": [
+                {
+                    "name": "Anklyosaurus",
+                    "movement": 5,
+                    "courage": 6,
+                    "shoot": 4,
+                    "fight": 5,
+                    "defense": 13,
+                    "reflexes": 5,
+                    "weapons": [{"id": "armored_tail", "count": 2},"crushing_maw"],
+                    "rules": ["damage_chart", "titanic"],
+                    "min": 1,
+                    "max": 1
+                }
+            ]
+        },
+        "anklyosaurus_with_star_focus": {
+            "name": "Anklyosaurus with Star Focus",
+            "description": "A slow moving tank of a dinosaur carrying a Star Focus. Operated by Gecko Specialists, this crystal collects and focuses the power of the stars to unleash a beam of energy at their enemies",
+            "category": "rare",
+            "keywords": ["Monster", "Warmachine"],
+            "models": [
+                {
+                    "name": "Anklyosaurus with Star Focus",
+                    "movement": 5,
+                    "courage": 6,
+                    "shoot": 6,
+                    "fight": 5,
+                    "defense": 13,
+                    "reflexes": 5,
+                    "weapons": [{"id": "armored_tail", "count": 2},"star_focus","crushing_maw"],
+                    "rules": ["damage_chart", "titanic"],
+                    "min": 1,
+                    "max": 1
+                }
+            ]
+        },
+        "triceratops_with_palanquin": {
+            "name": "Triceratops with Palanquin",
+            "description": "Triceratops mounted with a palanquin crewed by 4 Gecko Warriors. The crew are not treated as separate models and do not gain benefit from the INFANTRY keyword.",
+            "category": "rare",
+            "keywords": ["Monster", "Warmachine"],
+            "models": [
+                {
+                    "options": [
+                        {
+                            "replaceWeapon": ["javelin"],
+                            "withWeapon": [
+                                ["blowpipe"],
+                                ["bolas"]
+                            ]
+                        }
+                   ],
+                    "name": "Triceratops with Palanquin",
+                    "movement": 8,
+                    "courage": 6,
+                    "shoot": 4,
+                    "fight": 5,
+                    "defense": 13,
+                    "reflexes": 5,
+                    "weapons": [{"id":"javelin", "count": 4}, {"id": "horn_and_claws", "count": 5},"crushing_maw"],
+                    "rules": ["damage_chart", "titanic", {"id":"garrison", "count": 10}],
+                    "min": 1,
+                    "max": 1
+                }
+            ]
         }
     },
     "weapons": {
-        "lizard_bite": {"name": "Lizard Bite", "attacks": 1, "short": "Melee", "ap": 1},
-        "azure_lightning": {"name": "Azure Lightning", "attacks": 1, "short": "Melee", "ap": 3, "rules": [{"id": "reach", "x": 2}]},
-        "armored_tail": {"name": "Armored Tail", "attacks": 1, "short": "Melee", "ap": 6, "rules": [{"id": "reach", "x": 1}]},
-        "gargantuan_jaws": {"name": "Gargantuan Jaws", "attacks": 1, "short": "Melee", "ap": 9, "rules": [{"id": "reach", "x": 1}]},
-        "raking_claws": {"name": "Raking Claws", "attacks": 1, "short": "Melee", "ap": 4, "rules": [{"id": "reach", "x": 1}]},
-        "toad_rage": {"name": "Toad Rage", "attacks": 2, "short": 6, "ap": 2, "rules": ["bomb", {"id": "ammo", "x": 2}, {"id": "blast", "x": 2}]},
-        "bolas": {"name": "Bolas", "attacks": 3, "short": 6, "ap": 2}
+        "armored_tail": {
+            "name": "Armored Tail",
+            "attacks": 1,
+            "short": "Melee",
+            "ap": 6,
+            "rules": [{"id": "reach", "x": 1}]
+        },
+        "azure_lightning": {
+            "name": "Azure Lightning",
+            "attacks": 1,
+            "short": "Melee",
+            "ap": 3,
+            "rules": [{"id": "reach", "x": 2}]
+        },
+        "bolas": {
+            "name": "Bolas",
+            "attacks": 3,
+            "short": 6,
+            "ap": 2
+        },
+        "gargantuan_jaws": {
+            "name": "Gargantuan Jaws",
+            "attacks": 1,
+            "short": "Melee",
+            "ap": 9,
+            "rules": [{"id": "reach", "x": 1}]
+        },
+        "lizard_bite": {
+            "name": "Lizard Bite",
+            "attacks": 1,
+            "short": "Melee",
+            "ap": 1
+        },
+        "raking_claws": {
+            "name": "Raking Claws",
+            "attacks": 1,
+            "short": "Melee",
+            "ap": 4,
+            "rules": [{"id": "reach", "x": 1}]
+        },
+        "star_focus": {
+            "name": "Star Focus",
+            "short": 24,
+            "medium": 48,
+            "attacks": 1,
+            "ap": 8,
+            "rules": [{"id": "blast", "x": 2}, "heavy"]
+        },
+        "toad_rage": {
+            "name": "Toad Rage",
+            "attacks": 2,
+            "short": 6,
+            "ap": 2,
+            "rules": ["bomb", {"id": "ammo", "x": 2}, {"id": "blast", "x": 2}]
+        }
     },
     "rules": {
         "lizard_tactics": {
